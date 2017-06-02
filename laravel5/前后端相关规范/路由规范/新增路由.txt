@@ -1,0 +1,210 @@
+2017-05-23新增规范
+
+路由及返回值规范，如下：
+-----------------------------------------------------------------------------
+=======>Database.table：hwdevicecloud.realestateinfo
+		Controller：ComponentCneter\RealEstate_Information_Controller.php
+
+1.获取物业名字为realEstateName的“物业信息”，路由为：
+	http://localhost:8888/api/content/realEstateInfo/realEstateName
+
+	响应请求 GET 方法
+
+	路由最后一个参数（英文字符串）为可变参数：如jinyehotel
+
+	返回json：
+
+		{
+			'dbName': '',
+			'realEstateName': '',
+			'address'：'',
+			'description': '',
+			'longitude':'',
+			'latitude':'',
+			'isDiscarded':''
+		}
+
+2.获取所有的“物业信息”，路由为：
+	http://localhost:8888/api/content/realEstateInfoList
+
+	响应请求 GET 方法
+
+	返回json：
+	{
+		'data':[
+			// 第一个物业信息
+			{
+				'dbName': '',
+				'realEstateName': '',
+				'address'：'',
+				'description': '',
+				'longitude':'',
+				'latitude':'',
+				'isDiscarded':''
+
+			},
+			...
+
+		]
+	}
+
+
+3.获取“所有物业信息，及其下面的所有配电室信息”，路由为：
+	http://localhost:8888/api/content/realEstateRoomInfoList
+
+	响应请求 GET 方法
+
+	返回json：
+	{
+		'data':[
+			// 第一个物业及下面的配电室信息
+			{
+				'realEstate':'金叶大厦',
+				'roomInfo':[
+					{
+						'serialId':'',
+						'roomName':'',
+						'description':'',
+						'address':'',
+						'productionPro':'',
+						'telephoneNumber':'',
+						'installationDate':''
+					},
+					...
+				]
+			},
+			// 第二个物业及下面的配电室信息
+			{
+				'realEstate':'冠城花园',
+				'roomInfo':[
+					...
+				]
+			},
+			...
+
+		]
+	}
+
+3-1.获取“当前物业下面的所有配电室信息”，路由为：
+	http://localhost:8888/api/content/roomList/realEstateName
+
+	最后一个参数（英文字符串）为可变参数，如：jinyehotel
+	    即：http://localhost:8888/api/content/roomList/jinyehotel
+
+	响应请求 GET 方法
+
+	返回json：
+	{
+	    'realEstate':'金叶大厦',
+		'roomList':[
+			// 第一个配电室信息
+			{
+			     'serialId':'',
+			     'roomName':'',
+			     'description':'',
+			     'address':'',
+			     'productionPro':'',
+			     'telephoneNumber':'',
+			     'installationDate':''
+
+			},
+			// 第二个配电室信息
+			{
+			      ...
+			},
+			...
+
+		]
+	}
+
+------------------------------------------------------------------------------
+=======>Database.table：hwdevicecloud.gmdevice_info
+		Controller：ComponentCneter\GmDevice_Information_Controller.php
+4.获取当前小区（realEstate）的所有的设备列表，路由为：
+	http://localhost:8888/api/content/deviceList/realEstateName
+
+	路由最后一个参数（英文字符串）为可变参数；注释：realEstateName对应realestateinfo表中的dbName
+
+	响应请求 GET 方法
+
+	返回json：
+	{
+		'data': [
+			{
+				'gprsID': '0000000001',
+				'deviceName': '昂思1',
+				'deviceTypeName'： 'US2000',
+				'distributionRoom': '配电1',
+			}
+		],
+		'status': 'success'
+	}
+
+
+	===>对应于之前的请求；9 获取当前小区的所有的设备列表
+
+		get 方法
+		http://localhost:8888/api/content/deviceList/locationName
+
+		最后一个参数为可变参数 代表小区名称
+
+		返回数据格式
+
+		{
+			data: [
+				{
+					gprsID: '0000000001',
+					deviceName: '昂思1',
+					deviceTypeName： 'US2000',
+					distributionRoom: '配电1',
+				}
+			],
+			status: 'success'
+		}
+
+
+		如果存在此配电室 那么status 为success
+		反之如果不存在 那么status 为 fail
+
+5. 注册设备，路由为：
+	http://localhost:8888/api/admin/deviceRegister
+
+	响应请求 POST 方法
+	请求发来的json数据：
+	{
+		'gprsID':'000000001',
+		'deviceName':'昂思数显1',
+		'deviceTypeName':'US2000'，
+		'dataBaseName':'jinyehotel',
+		'roomId':'0',
+		'protocolVersion':'1',
+		'protocolRemark':'1',
+		'mobileNumber':'17088176258',
+		'longitude':'0.000000',
+		'latitude':'0.0000000',
+		'installDirection':'1',
+		'controllerAddress':'0',
+		'isDiscarded':'0',
+		'addDate':'2017-01-11 00:00:00'
+	}
+
+	返回json：
+	{
+		'status': 'success' OR 'fail'
+	} 
+
+
+6. 判断gprsID是否已存在
+
+    http://localhost:8888/api/content/verifyGprsID/0000000001
+
+    响应请求 GET 方法
+
+    最后一个参数为可变参数，代表设备gprsID
+
+	返回json：
+    {
+    	'isExist': 'true' OR 'false'
+    }
+
+	

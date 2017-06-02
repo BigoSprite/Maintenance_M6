@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<general_modbus_profile>
+    <polling_arrange>
+        <polling_command_array>4</polling_command_array>
+    </polling_arrange>
+
+    <device_info_array>
+        <device_query_and_return func_code="4" func_desc="召唤实时数据" reg_addr="0" reg_num="11" return_data_len="22" device_type_name="US2000">
+            <Item store_field="Var00"  map_name="AVoltage"               zh_name="A相电压"       data_type="short" byte_seq="BE" scale="0.1"  unit="V"  width="90"/>
+            <Item store_field="Var01"  map_name="BVoltage"               zh_name="B相电压"       data_type="short" byte_seq="BE" scale="0.1"  unit="V"  width="90"/>
+            <Item store_field="Var02"  map_name="CVoltage"               zh_name="C相电压"       data_type="short" byte_seq="BE" scale="0.1"  unit="V"  width="90"/>
+            <Item store_field="Var03"  map_name="ACurrent"               zh_name="A相电流"       data_type="short" byte_seq="BE" scale="0.1"  unit="A"  width="90"/>
+            <Item store_field="Var04"  map_name="BCurrent"               zh_name="B相电流"       data_type="short" byte_seq="BE" scale="0.1"  unit="A"  width="90"/>
+            <Item store_field="Var05"  map_name="CCurrent"               zh_name="C相电流"       data_type="short" byte_seq="BE" scale="0.1"  unit="A"  width="90"/>
+            <Item store_field="Var06"  map_name="Power"                   zh_name="视在功率"      data_type="short" byte_seq="BE" scale="1"    unit="KW" width="110"/>
+            <Item store_field="Var07"  map_name="TotalActivePower"      zh_name="总有功功率"    data_type="short" byte_seq="BE" scale="1"    unit="KW" width="110"/>
+            <Item store_field="Var08"  map_name="TotalReactivePower"    zh_name="总无功功率"    data_type="short" byte_seq="BE" scale="1"    unit="KW" width="110"/>
+            <Item store_field="Var09" map_name="PowerFactor"            zh_name="功率因素"      data_type="short" byte_seq="BE" scale="0.01" unit=""   width="110"/>
+            <Item store_field="Var10" map_name="Frequency"              zh_name="频率"           data_type="short" byte_seq="BE" scale="0.01" unit="Hz" width="110"/>
+        </device_query_and_return>
+
+        <device_query_and_return func_code="4" func_desc="召唤实时数据" reg_addr="0" reg_num="11" return_data_len="22" device_type_name="US2001">
+            <Item store_field="Var00"  map_name="AVoltage"               zh_name="A相电压"       data_type="short" byte_seq="BE" scale="0.1"  unit="V"  width="90"/>
+            <Item store_field="Var01"  map_name="BVoltage"               zh_name="B相电压"       data_type="short" byte_seq="BE" scale="0.1"  unit="V"  width="90"/>
+        </device_query_and_return>
+    </device_info_array>
+</general_modbus_profile>

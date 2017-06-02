@@ -1,0 +1,182 @@
+
+JinYeHotel配电室运维相关路由规范
+
+
+1、“设备信息”对应的路由，返回数据的格式对应deviceInformationTable_bodyData.json
+
+get 方法 
+
+http://localhost/api/content/deviceInformation
+
+返回的数据的各式 和之前的一样
+
+
+2、“设备树数据”对应的路由，返回数据的格式对应deviceTree_bodyData.json
+
+get 方法
+http://localhost/api/content/deviceTreeData
+返回的数据的格式 和之前的一样
+
+
+3、“实时数据”对应的路由，分别为表头和表尾路由；表尾返回数据的格式对应realTimeDataTable_bodyData.json
+
+
+get方法 最后一个参数是可变参数 是设备类型的名称
+
+http://localhost/api/content/deviceRealTimeDataTable_headerData/US2000
+返回的数据的格式和之前的数据格式一样
+
+get 方法  最后一个
+http://localhost/api/content/deviceRealTimeDataTable_bodyData/US2000/0000000001
+最后一个参数为 可变参数 
+
+返回的数据的格式 和之前的一样
+
+
+4、“历史数据”对应的路由，分别为表头和表尾路由；返回的数据格式分别对应historyDataTable_headerData.json和historyDataTable_bodyData.json
+
+get方法 最后一个参数是可变参数 是设备类型的名称
+
+http://localhost/api/content/deviceHistoryDataTable_headerData/US2000
+返回的数据的格式和之前的数据格式一样
+
+get 方法  最后一个
+http://localhost/jinYeHotel/deviceHistoryDataTable_bodyData/US2000/0000000001
+最后一个参数为 可变参数 
+
+返回的数据的格式 和之前的一样
+
+
+5. 用户登录 对应路由
+
+post 方法
+
+{
+	username: "用户名“，
+	password： ‘密码“，
+}
+
+http://host/api/admin/login;
+ {
+	 status: "success" 返回成功或者是失败
+ }
+
+
+ 6 注册配电室信息 
+ post 方法
+
+
+
+
+请求头
+ http://localhost/api/admin/distributeRoomRegister
+
+ 字段尽量以你的数据库里面的字段相同,以免修改数据库
+
+ 	请求体
+
+	 {
+		  userInfo: {
+			  customerName: '',
+			  phone: '',
+			  customerAddress: '',
+			  serialId: '',
+			  productionProperty: '',
+			  contractTime: '',
+		  },
+ 
+	 }
+
+	 相应体
+
+	 {
+		 status: 'success',  或者是fail
+	 }
+ 
+
+ 7 配电室信息 对应的路由
+  get 方法
+http//localhost/api/content/distributeRoomInfo/124
+最后一个可变参数为配电室的serialId（编号）
+
+里面的字段名称尽量以数据库为主 
+
+请求体
+
+  返回的数据的格式
+
+  {
+	  data: {
+		  userInfo: {
+			  customerName: '',
+			  phone: '',
+			  customerAddress: '',
+			  serialId: '',
+			  productionProperty: '',
+			  contractTime: '',
+		  },
+		  根据设备类型(deviceTypeName)的不同 进行区分
+		  deviceListInfo: [
+			  {
+				  gprsID: '',
+				  deivceName: '',
+				  deviceTypeName: '',
+				  amount: '', 
+			  },
+			  {
+			  }
+
+		  ]
+	  }
+  }
+
+  7. 当前配电室的所有的设备信息 
+
+  get 方法
+
+
+http://localhost/api/content/
+
+
+8. 获取当前小区所有的配电室列表
+
+get 方法
+http: //localhost/api/content/distributeRoomList
+
+返回数据格式
+
+例子
+
+{
+	data: [
+		{
+
+			name: '配电室1',
+			serialId: '3043849'
+		},
+		{
+			name: '配电室2',
+			serialId: '23232323',
+		}
+	]
+}
+
+
+
+
+
+
+
+
+
+  
+   
+
+
+
+
+
+
+
+注：① http://localhost为本地测试的URL前缀，端口号：；该主机IPv4地址为：192.168.223.1
+	② 第4条的历史数据路由中参数0000000001对应jinyehotel数据库（MySql）中id为0000000001的的设备，目前只有该设备历史数据。

@@ -1,0 +1,30 @@
+
+JinYeHotel配电室运维相关路由规范
+
+
+1、“设备信息”对应的路由，返回数据的格式对应deviceInformationTable_bodyData.json
+
+http://localhost/jinYeHotel/gmDeviceInfo
+
+
+2、“设备树数据”对应的路由，返回数据的格式对应deviceTree_bodyData.json
+
+http://localhost/jinYeHotel/gmDeviceTreeData
+
+
+3、“实时数据”对应的路由，分别为表头和表尾路由；表尾返回数据的格式对应realTimeDataTable_bodyData.json
+
+http://localhost/jinYeHotel/tableHeader
+
+http://localhost/jinYeHotel/realTimeData
+
+
+4、“历史数据”对应的路由，分别为表头和表尾路由；返回的数据格式分别对应historyDataTable_headerData.json和historyDataTable_bodyData.json
+
+http://localhost/jinYeHotel/historyTableHeader
+
+http://localhost/jinYeHotel/historyData/0000000001
+
+
+注：① http://localhost为本地测试的URL前缀，端口号：；该主机IPv4地址为：192.168.223.1
+	② 第4条的历史数据路由中参数0000000001对应jinyehotel数据库（MySql）中id为0000000001的的设备，目前只有该设备历史数据。

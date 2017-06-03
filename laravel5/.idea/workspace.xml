@@ -21,32 +21,70 @@
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="ajaxPostDemo.blade.php" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/resources/views/ajaxPostDemo.blade.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-190">
-                    <caret line="53" column="42" lean-forward="true" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="laravel5" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf>
+      <file leaf-file-name="ApiInstanceFactory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Utils/ApiInstanceFactory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PHP/D:/wnmp/nginx/nginx-1.12.0/html/laravel5/app/Http/Controllers/Api" pinned="false" current-in-tab="true">
+        <entry file="uml://PHP/D:/wnmp/nginx/nginx-1.12.0/html/laravel5/app/Http/Controllers/Api">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>PHP</ID>
+              <OriginalElement>$PROJECT_DIR$/app/Http/Controllers/Api</OriginalElement>
+              <nodes>
+                <node x="647.0" y="168.0">\App\Http\Controllers\Api\NodeInfoApi</node>
+                <node x="0.0" y="0.0">\App\Http\Controllers\Api\Contracts\Api</node>
+                <node x="278.0" y="168.0">\App\Http\Controllers\Api\_example_template_XXXApi</node>
+                <node x="7.2727272727272805" y="259.5454545454545">$PROJECT_DIR$/app/Http/Controllers/Api/Utils</node>
+              </nodes>
+              <notes>
+                <note x="275.5681818181818" y="364.52272727272725">
+                  <node>$PROJECT_DIR$/app/Http/Controllers/Api/Utils</node>
+                  <value>ApiInstanceFactory::CREATE_FUNC\n($__CLASS_NAME__,\n $__REPOSITORY__,\n $__REPOSITORY_NAME_SPACE__,\n $__NAME_SPACE__)</value>
+                  <edge>
+                    <point x="0.0" y="0.0" />
+                    <point x="446.7272727272727" y="284.04545454545456" />
+                    <point x="0.0" y="0.0" />
+                  </edge>
+                </note>
+              </notes>
+              <edges>
+                <edge source="\App\Http\Controllers\Api\NodeInfoApi" target="\App\Http\Controllers\Api\Contracts\Api">
+                  <point x="0.0" y="0.0" />
+                  <point x="861.5" y="64.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="\App\Http\Controllers\Api\_example_template_XXXApi" target="\App\Http\Controllers\Api\Contracts\Api">
+                  <point x="0.0" y="0.0" />
+                  <point x="442.5" y="64.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.1" x="586.9090909090909" y="325.27272727272725" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Methods</Category>
+                <Category>Constructors</Category>
+                <Category>Fields</Category>
+              </Categories>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -200,11 +238,11 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/_example_template_XXXApi.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/NodeInfoApi.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserApi.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Node/Real_Estate_Info_Api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceInfoApi.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceStatusApi.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceNodeInfoApi.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceRealTimeDataApi.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Node/Real_Estate_Info_Api.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceStatusApi.php" />
       </list>
     </option>
   </component>
@@ -243,6 +281,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -297,6 +336,46 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Repositories" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Repositories" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NodeRepository" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -375,13 +454,12 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Node" />
+              <option name="myItemId" value="Utils" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -580,12 +658,13 @@
       <workItem from="1496406817294" duration="4227000" />
       <workItem from="1496415844545" duration="98000" />
       <workItem from="1496417412108" duration="1158000" />
-      <workItem from="1496453960693" duration="8431000" />
+      <workItem from="1496453960693" duration="10853000" />
+      <workItem from="1496466544923" duration="2188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="449597000" />
+    <option name="totallyTimeSpent" value="454207000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,25 +677,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="31" width="1938" height="1058" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21979167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21979167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23116438" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5072464" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22969837" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5072464" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -637,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="13" column="59" lean-forward="false" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,9 +785,10 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="451.5" y="832.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="452.0" y="833.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
           <VISIBILITY>public</VISIBILITY>
         </state>
       </provider>
@@ -727,12 +807,13 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="0.9" x="114.55555555555554" y="414.0" />
+          <settings layout="Hierarchic Group" zoom="0.9" x="115.0" y="414.0" />
           <SelectedNodes />
           <Categories>
             <Category>Constants</Category>
             <Category>Constructors</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
           <VISIBILITY>public</VISIBILITY>
         </state>
       </provider>
@@ -741,32 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://PHP/D:/wnmp/nginx/nginx-1.12.0/html/laravel5/app/Http/Controllers/Api">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>PHP</ID>
-          <OriginalElement>$PROJECT_DIR$/app/Http/Controllers/Api</OriginalElement>
-          <nodes>
-            <node x="" y="">\App\Http\Controllers\Api\NodeInfoApi</node>
-            <node x="" y="">\App\Http\Controllers\Api\Contracts\Api</node>
-            <node x="" y="">\App\Http\Controllers\Api\_example_template_XXXApi</node>
-            <node x="" y="">\Illuminate\Routing\Controller</node>
-            <node x="" y="">\App\Http\Controllers\Api\ApiInstanceFactory</node>
-            <node x="" y="">$PROJECT_DIR$/app/Http/Controllers/Api/Contracts</node>
-            <node x="" y="">\App\Http\Controllers\Api\RealEstateInfoApi</node>
-            <node x="" y="">\App\Http\Controllers\Api\UserApi</node>
-            <node x="" y="">\App\Http\Controllers\Api\UserInfoApi</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="320.5" y="154.5" />
-          <SelectedNodes />
-          <Categories />
-          <VISIBILITY>public</VISIBILITY>
         </state>
       </provider>
     </entry>
@@ -791,9 +846,10 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="352.5" y="204.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="353.0" y="205.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
           <VISIBILITY>public</VISIBILITY>
         </state>
       </provider>
@@ -806,11 +862,12 @@
           <nodes />
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="774.5" y="528.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="775.0" y="528.0" />
           <SelectedNodes />
           <Categories>
             <Category>All</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
           <VISIBILITY>Details</VISIBILITY>
         </state>
       </provider>
@@ -834,9 +891,10 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="541.5" y="217.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="542.0" y="218.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
           <VISIBILITY>public</VISIBILITY>
         </state>
       </provider>
@@ -845,9 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#212#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,9 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding>
-            <element signature="e#7#212#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -865,9 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
           <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding>
-            <element signature="e#7#212#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -883,7 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,14 +950,6 @@
           <folding>
             <element signature="e#915#2617#1#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/ajaxPostDemo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-190">
-          <caret line="53" column="42" lean-forward="true" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,7 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,9 +980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
           <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-          <folding>
-            <marker date="1496201216513" expanded="true" signature="1785:1836" ph="SELECT * FRO... vdevice_" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -951,7 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1379">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -959,7 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,25 +1001,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-435">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495609516524" expanded="true" signature="1626:1649" ph="SELECT * FRO... gmdevice_" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Node/RealEstateInfoModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Node/RealEstateInfoModel.php" />
     <entry file="file://$PROJECT_DIR$/前后端相关规范/V1/HWDeviceCloudNode.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,7 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2175">
           <caret line="35" column="15" lean-forward="false" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,7 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,7 +1038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,7 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,7 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="30" column="40" lean-forward="true" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1041,20 +1059,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#212#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/NodeRepository/RealEstateInfoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/NodeRepository/RealEstateInfoRepository.php" />
     <entry file="file://$PROJECT_DIR$/app/Repositories/NodeRepository/VDeviceInfoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -1095,21 +1103,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Utils/ApiInstanceFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/NodeInfoApi.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1864">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#43#86#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1117,10 +1114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="e#2051#3390#0#PHP" expanded="false" />
-            <element signature="e#3770#3828#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1128,9 +1121,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#121#164#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1138,7 +1128,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2346">
           <caret line="107" column="36" lean-forward="false" selection-start-line="107" selection-start-column="36" selection-end-line="107" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1150,63 +1139,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/_example_template_XXXApi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding>
-            <element signature="e#248#291#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceStatusApi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding>
-            <element signature="e#253#296#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Contracts/Api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceNodeInfoApi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceRealTimeDataApi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Node/Real_Estate_Info_Api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="377">
+          <caret line="43" column="44" lean-forward="false" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceNodeInfoApi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="43" column="44" lean-forward="false" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceRealTimeDataApi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="43" column="44" lean-forward="false" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceStatusApi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Node/VDeviceInfoApi.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="43" column="44" lean-forward="false" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/_example_template_XXXApi.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Utils/ApiInstanceFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/ajaxPostDemo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="53" column="42" lean-forward="false" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://PHP/D:/wnmp/nginx/nginx-1.12.0/html/laravel5/app/Http/Controllers/Api">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>$PROJECT_DIR$/app/Http/Controllers/Api</OriginalElement>
+          <nodes>
+            <node x="647.0" y="168.0">\App\Http\Controllers\Api\NodeInfoApi</node>
+            <node x="0.0" y="0.0">\App\Http\Controllers\Api\Contracts\Api</node>
+            <node x="278.0" y="168.0">\App\Http\Controllers\Api\_example_template_XXXApi</node>
+            <node x="7.2727272727272805" y="259.5454545454545">$PROJECT_DIR$/app/Http/Controllers/Api/Utils</node>
+          </nodes>
+          <notes>
+            <note x="275.5681818181818" y="364.52272727272725">
+              <node>$PROJECT_DIR$/app/Http/Controllers/Api/Utils</node>
+              <value>ApiInstanceFactory::CREATE_FUNC\n($__CLASS_NAME__,\n $__REPOSITORY__,\n $__REPOSITORY_NAME_SPACE__,\n $__NAME_SPACE__)</value>
+              <edge>
+                <point x="0.0" y="0.0" />
+                <point x="446.7272727272727" y="284.04545454545456" />
+                <point x="0.0" y="0.0" />
+              </edge>
+            </note>
+          </notes>
+          <edges>
+            <edge source="\App\Http\Controllers\Api\NodeInfoApi" target="\App\Http\Controllers\Api\Contracts\Api">
+              <point x="0.0" y="0.0" />
+              <point x="861.5" y="64.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="\App\Http\Controllers\Api\_example_template_XXXApi" target="\App\Http\Controllers\Api\Contracts\Api">
+              <point x="0.0" y="0.0" />
+              <point x="442.5" y="64.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.1" x="586.9090909090909" y="325.27272727272725" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Constructors</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>

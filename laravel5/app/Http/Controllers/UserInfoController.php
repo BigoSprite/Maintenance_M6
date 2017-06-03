@@ -61,7 +61,7 @@ class UserInfoController extends Controller
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      *
      * 响应请求 方法 GET
-     * http://localhost:8888/api/admin/verify/user/admin1
+     * http://localhost:8888/api/admin/verify/user/admin
      */
     public function isUserNameExist($userName)
     {

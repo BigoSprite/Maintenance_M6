@@ -1,53 +1,51 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: fm
- * Date: 2017/6/1
- * Time: 9:43
+ * This file is created by hanzhiwei using _example_template_XXXApi.php
+ *
+ * @Copyright
+ *      @user: hanzhiwei
+ *      @Email: bigosprite@163.com
+ *      @GitHub: https://github.com/BigoSprite
  */
 
 namespace App\Http\Controllers\Api;
-use App\Repositories\UserInfoRepository as UserMgr;
-use Illuminate\Container\Container as App;
+use App\Http\Controllers\Api\Contracts\Api;
+use App\Repositories\Eloquent\AbstractRepository;
+use App\Http\Controllers\Api\Utils\ApiInstanceFactory;
 
-class UserInfoApi
+/** MAKE SURE that yourApi class extents Api in order to use the (REPOSITORY MANAGER) */
+class UserInfoApi extends Api
 {
     /**
-     * 用户信息表仓库管理员
+     * Constructor.
      *
-     * the model table userinfo
-     * @var
+     * @param AbstractRepository $repository
+     * @NOTE you HAVE TO implement constructor and call parent constructor like follow.
      */
-    private $userMgr;
-
-    /**
-     * assign value to $userMgr by DI(依赖注入)
-     *
-     * UserInfoApi constructor.
-     * @param UserMgr $userMgr
-     */
-    private function __construct(UserMgr $userMgr)
+    public function __construct(AbstractRepository $repository)
     {
-        $this->userMgr = $userMgr;
+        /** Don't forget to call parent constructor. */
+        parent::__construct($repository);
     }
 
     /**
-     * 创建型方法
+     * Create Function
      *
-     * @return UserInfoApi|null
+     * @return object
      */
     public static function create()
     {
-        // 实例化管理员
-        $userMgr = new UserMgr(App::getInstance());
-
-        $instance = new UserInfoApi($userMgr);
-        if($instance != null){
-            return $instance;
-        }
-        return null;
+        /** CREATE_FUNC like Cocos2d-x's CREATE_FUNC */
+        /** Don't forget to CHANGE the parameters of CREATE_FUNC! */
+        /** @NOTE 魔术常量__NAMESPACE__表示的当前命名空间 */
+        return ApiInstanceFactory::CREATE_FUNC(
+            'UserInfoApi',
+            __NAMESPACE__,
+            'UserInfoRepository',
+            'App\Repositories'
+        );
     }
-
 
     /**
      * 功能：获取所有信息
@@ -57,7 +55,7 @@ class UserInfoApi
      */
     public function all()
     {
-        $modelArray = $this->userMgr->all();
+        $modelArray = $this->repositoryMgr->all();
 
         $data = array();
 
@@ -82,7 +80,7 @@ class UserInfoApi
         $username = $data['userName'];
         $password = $data['loginPassword'];
 
-        $userInfoMap =  $this->userMgr->findBy('userName', $username);
+        $userInfoMap =  $this->repositoryMgr->findBy('userName', $username);
 
         if(count($userInfoMap) > 0){
             if( $userInfoMap['userName'] == $username && $userInfoMap['loginPassword'] == $password){
@@ -99,7 +97,7 @@ class UserInfoApi
      */
     public function isUserNameExist($userName)
     {
-        $isExist = $this->userMgr->isFieldExist('userName', $userName);
+        $isExist = $this->repositoryMgr->isFieldExist('userName', $userName);
 
         if($isExist){
             return ['isExist'=>'true'];
@@ -117,7 +115,7 @@ class UserInfoApi
      */
     public function registerUser($data, $primaryKey, $value)
     {
-        return $this->userMgr->create_Ex($data, $primaryKey, $value);
+        return $this->repositoryMgr->create_Ex($data, $primaryKey, $value);
     }
 
     /**
@@ -129,7 +127,7 @@ class UserInfoApi
      */
     public function updateUserPassword($data, $primaryKey, $value)
     {
-        return $this->userMgr->update_Ex($data, $primaryKey, $value);
+        return $this->repositoryMgr->update_Ex($data, $primaryKey, $value);
     }
 
 }

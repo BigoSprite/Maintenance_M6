@@ -16,8 +16,10 @@ class NodeInfoApi extends Api
     {
         return ApiInstanceFactory::CREATE_FUNC(
             'NodeInfoApi',
+            __NAMESPACE__,
             'NodeInfoRepository',
             'App\Repositories'
+
             );
     }
 

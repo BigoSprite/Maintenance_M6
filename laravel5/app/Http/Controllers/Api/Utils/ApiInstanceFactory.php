@@ -6,33 +6,30 @@ use Illuminate\Container\Container as App;
 class ApiInstanceFactory
 {
     /**
+     * Cocos2d-x style CREATE_FUNC
+     *
      * @param $__CLASS_NAME__
+     * @param string $__CLASS_NAME_SPACE__
      * @param $__REPOSITORY__
      * @param $__REPOSITORY_NAME_SPACE__
-     * @param string $__NAME_SPACE__, default __NAMESPACE__
      * @return mixed
-     *
-     * @NOTE 魔术常量__NAMESPACE__表示$__CLASS_NAME__的当前命名空间
-     *
      */
     public static function CREATE_FUNC(
         $__CLASS_NAME__,
+        $__CLASS_NAME_SPACE__,
         $__REPOSITORY__,
-        $__REPOSITORY_NAME_SPACE__,
-        $__NAME_SPACE__ = __NAMESPACE__)
+        $__REPOSITORY_NAME_SPACE__)
     {
-        $className = $__NAME_SPACE__.'\\'.ucfirst($__CLASS_NAME__);
-
-        $repositoryClassName = $__REPOSITORY_NAME_SPACE__.'\\'.ucfirst($__REPOSITORY__);
-        $repositoryMgr = new $repositoryClassName(App::getInstance());
-
+        $className = $__CLASS_NAME_SPACE__.'\\'.ucfirst($__CLASS_NAME__);
         if (!class_exists($className)) {
             throw new \InvalidArgumentException('Missing api class.');
         }
 
+        $repositoryClassName = $__REPOSITORY_NAME_SPACE__.'\\'.ucfirst($__REPOSITORY__);
         if (!class_exists($repositoryClassName)) {
             throw new \InvalidArgumentException('Missing repository class.');
         }
+        $repositoryMgr = new $repositoryClassName(App::getInstance());
 
         return new $className($repositoryMgr);
     }

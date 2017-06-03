@@ -36,10 +36,11 @@ class VDeviceRealTimeDataApi extends Api
      */
     public static function create()
     {
-        /** CREATE_FUNC like Cocos2d-x CREATE_FUNC */
+        /** CREATE_FUNC like Cocos2d-x's CREATE_FUNC */
         /** Don't forget to CHANGE the parameters of CREATE_FUNC! */
         return ApiInstanceFactory::CREATE_FUNC(
             'VDeviceRealTimeDataApi',
+            __NAMESPACE__,
             'VDeviceRealTimeDataRepository',
             'App\Repositories\NodeRepository'
         );

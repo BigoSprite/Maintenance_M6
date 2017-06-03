@@ -36,10 +36,12 @@ class _example_template_XXXApi extends Api
      */
     public static function create()
     {
-        /** CREATE_FUNC like Cocos2d-x CREATE_FUNC */
+        /** CREATE_FUNC like Cocos2d-x's CREATE_FUNC */
         /** Don't forget to CHANGE the parameters of CREATE_FUNC! */
+        /** @NOTE 魔术常量__NAMESPACE__表示$__CLASS_NAME__的当前命名空间 */
         return ApiInstanceFactory::CREATE_FUNC(
             '_example_template_XXXApi',
+            __NAMESPACE__,
             '_example_template_XXXRepository',
             'App\Repositories'
         );

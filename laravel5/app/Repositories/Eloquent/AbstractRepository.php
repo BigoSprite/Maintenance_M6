@@ -28,7 +28,7 @@ abstract class AbstractRepository implements IRepository
      */
     abstract function model();
 
-    public function makeModel() {
+    private function makeModel() {
         $model = $this->app->make($this->model());
 
         //if (!$model instanceof Model)
@@ -98,33 +98,33 @@ abstract class AbstractRepository implements IRepository
         return $this->model->where($field, '=', $value)->first($columns);
     }
 
-    /**
-     * @function Mass Assignment with Exception throw, if the primary key has been existed.
-     *
-     * @param array $data: format such as ['fieldName'=>'value', 'anotherFieldName'=>'value2', ...]
-     * @param string $primaryKey
-     * @param string $value: the value of $primaryKey
-     *
-     * @return \Illuminate\Http\JsonResponse
-     *
-     * @NOTE MAKE SURE that you have configured "fillable" array in corresponding data model.
-     */
-    public function create(array $data, $primaryKey = 'id', $value = '0')
-    {
-        // data exists, Exception throw
-        $target = $this->model->where($primaryKey, '=', $value)->first([$primaryKey]);
-        if($target != null){
-            return response()->json(['status'=>'fail', 'isExist'=>'true'], 200);
-        }
-
-        // data doesn't exist; insert it right now.
-        $m = $this->model::create($data);// use the static method create of Model
-        if($m != null){
-            return response()->json(['status'=>'success', 'isExist'=>'false'], 200);
-        }else{
-            return response()->json(['status'=>'fail', 'isExist'=>'false'], 200);
-        }
-    }
+//    /**
+//     * @function Mass Assignment with Exception throw, if the primary key has been existed.
+//     *
+//     * @param array $data: format such as ['fieldName'=>'value', 'anotherFieldName'=>'value2', ...]
+//     * @param string $primaryKey
+//     * @param string $value: the value of $primaryKey
+//     *
+//     * @return \Illuminate\Http\JsonResponse
+//     *
+//     * @NOTE MAKE SURE that you have configured "fillable" array in corresponding data model.
+//     */
+//    public function create(array $data, $primaryKey = 'id', $value = '0')
+//    {
+//        // data exists, Exception throw
+//        $target = $this->model->where($primaryKey, '=', $value)->first([$primaryKey]);
+//        if($target != null){
+//            return response()->json(['status'=>'fail', 'isExist'=>'true'], 200);
+//        }
+//
+//        // data doesn't exist; insert it right now.
+//        $m = $this->model::create($data);// use the static method create of Model
+//        if($m != null){
+//            return response()->json(['status'=>'success', 'isExist'=>'false'], 200);
+//        }else{
+//            return response()->json(['status'=>'fail', 'isExist'=>'false'], 200);
+//        }
+//    }
 
     /**
      * @function Mass Assignment with Exception throw, if the primary key has been existed.
@@ -160,29 +160,29 @@ abstract class AbstractRepository implements IRepository
     }
 
 
-    /**
-     * @function Update Model
-     * @param array $data: format such as ['fieldName'=>'value', 'anotherFieldName'=>'value2', ...]
-     *
-     * @param $field
-     * @param $value
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function update(array $data, $field, $value) {
-
-        $target = $this->model->where($field, '=', $value);
-
-        if($target == null){
-            return response()->json(['status'=>'fail', 'isExist'=>'false'], 200);
-        }else{
-            $affected  = $target->update($data);
-            if($affected > 0){
-                return response()->json(['status'=>'success', 'isExist'=>'true'], 200);
-            }else{
-                return response()->json(['status'=>'fail', 'isExist'=>'true'], 200);
-            }
-        }
-    }
+//    /**
+//     * @function Update Model
+//     * @param array $data: format such as ['fieldName'=>'value', 'anotherFieldName'=>'value2', ...]
+//     *
+//     * @param $field
+//     * @param $value
+//     * @return \Illuminate\Http\JsonResponse
+//     */
+//    public function update(array $data, $field, $value) {
+//
+//        $target = $this->model->where($field, '=', $value);
+//
+//        if($target == null){
+//            return response()->json(['status'=>'fail', 'isExist'=>'false'], 200);
+//        }else{
+//            $affected  = $target->update($data);
+//            if($affected > 0){
+//                return response()->json(['status'=>'success', 'isExist'=>'true'], 200);
+//            }else{
+//                return response()->json(['status'=>'fail', 'isExist'=>'true'], 200);
+//            }
+//        }
+//    }
 
     /**
      * @function Update Model

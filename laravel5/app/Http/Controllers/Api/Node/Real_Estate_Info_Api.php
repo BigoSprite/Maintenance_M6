@@ -36,10 +36,11 @@ class Real_Estate_Info_Api extends Api
      */
     public static function create()
     {
-        /** CREATE_FUNC like Cocos2d-x CREATE_FUNC */
+        /** CREATE_FUNC like Cocos2d-x's CREATE_FUNC */
         /** Don't forget to CHANGE the parameters of CREATE_FUNC! */
         return ApiInstanceFactory::CREATE_FUNC(
             'Real_Estate_Info_Api',
+            __NAMESPACE__,
             'Real_Estate_Info_Repository',
             'App\Repositories\NodeRepository'
         );

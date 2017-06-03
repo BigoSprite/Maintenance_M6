@@ -81,19 +81,22 @@ Route::group(['prefix'=>'api'],function (){
         // 验证
         Route::group(['prefix'=>'verify'], function (){
             Route::post('login', 'UserInfoController@verifyLogin');
-            Route::get('{username}', 'UserInfoController@isUserNameExist');
+            Route::get('user/{userName}', 'UserInfoController@isUserNameExist');
+            Route::get('node/{nodeName}', 'NodeInfoController@isNodeExist');
         });
 
         // 注册
         Route::group(['prefix'=>'register'], function(){
             Route::post('user', 'UserInfoController@registerUser');
             Route::post('realEstate', 'RealEstateInfoController@registerRealEstateInfo');
+            Route::post('node', 'NodeInfoController@registerNodeInfo');
         });
 
         // 更新
         Route::group(['prefix'=>'update'], function(){
             Route::post('password', 'UserInfoController@updateUserPassword');
             Route::post('realEstate', 'RealEstateInfoController@updateRealEstateInfo');
+            Route::post('node', 'NodeInfoController@updateNodeInfo');
         });
 
         /** new end */

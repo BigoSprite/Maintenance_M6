@@ -14,7 +14,7 @@ use App\Repositories\Eloquent\AbstractRepository;
 use Illuminate\Container\Container as App;
 
 /** Concrete Repository of AbstractRepository */
-class VDeviceRealTimeDataRepository extends AbstractRepository
+class Real_Estate_Info_Repository extends AbstractRepository
 {
     /**
      * Constructor.
@@ -35,6 +35,6 @@ class VDeviceRealTimeDataRepository extends AbstractRepository
     function model()
     {
         /** Don't forget to CHANGE the namespace according to the right Model location! */
-        return 'App\Models\Node\VDeviceRealTimeDataModel';
+        return 'App\Models\Node\Real_Estate_Info_Model';
     }
 }

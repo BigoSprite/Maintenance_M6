@@ -103,9 +103,9 @@ class UserInfoApi
 
         if($isExist){
             return ['isExist'=>'true'];
-        }else{
-            return ['isExist'=>'false'];
         }
+
+        return ['isExist'=>'false'];
     }
 
     /**

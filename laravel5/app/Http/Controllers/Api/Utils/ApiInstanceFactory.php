@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Utils;
 use Illuminate\Container\Container as App;
 
 class ApiInstanceFactory

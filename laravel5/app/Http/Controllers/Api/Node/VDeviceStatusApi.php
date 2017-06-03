@@ -9,13 +9,13 @@
  *      @GitHub: https://github.com/BigoSprite
  */
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Node;
 use App\Http\Controllers\Api\Contracts\Api;
 use App\Repositories\Eloquent\AbstractRepository;
 use App\Http\Controllers\Api\Utils\ApiInstanceFactory;
 
-/** MAKE SURE that yourApi class extents Api in order to use the $repositoryMgr(REPOSITORY MANAGER) */
-class _example_template_XXXApi extends Api
+/** MAKE SURE that yourApi class extents Api in order to use the (REPOSITORY MANAGER) */
+class VDeviceStatusApi extends Api
 {
     /**
      * Constructor.

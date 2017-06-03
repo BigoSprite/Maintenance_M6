@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Api\Contracts\Api;
+use App\Http\Controllers\Api\Utils\ApiInstanceFactory;
 use App\Repositories\Eloquent\AbstractRepository;
 
 class NodeInfoApi extends Api
@@ -20,6 +21,16 @@ class NodeInfoApi extends Api
             );
     }
 
+    public function isNodeExist($nodeName)
+    {
+        $isExist = $this->repositoryMgr->isFieldExist('nodeName', $nodeName);
+
+        if($isExist){
+            return ['isExist'=>'true'];
+        }
+
+        return ['isExist'=>'false'];
+    }
 
     public function all()
     {
@@ -76,19 +87,14 @@ class NodeInfoApi extends Api
         return ['data'=>$data];
     }
 
-    public function registerNodeInfo()
+    public function registerNodeInfo($data, $primaryKey, $value)
     {
-
+        return $this->repositoryMgr->create_Ex($data, $primaryKey, $value);
     }
 
-    public function updateNodeInfo()
+    public function updateNodeInfo($data, $primaryKey, $value)
     {
-
+        return $this->repositoryMgr->update_Ex($data, $primaryKey, $value);
     }
-
-
-
-
-
 
 }

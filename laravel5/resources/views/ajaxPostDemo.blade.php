@@ -27,25 +27,47 @@
 //                url:'api/admin/verify/login',
 //                data:{'username':"hanzhiwei2", 'password':'hanzhiwei2'},
 
-                url:'api/admin/update/realEstate',
+//                url:'api/admin/update/realEstate',
+//                data:{
+//                    'dbName':'guachenghuayuan1',
+//                    'realEstateName': '冠城花园1',
+//                    'address':'test address',
+//                    'description':'test desc',
+//                    'manageCompany':'uestc',
+//                    'serviceEndDateTime':'2018-02-11-22',
+//                    'contactPersonName':'hanzhiwei',
+//                    'contactTel':'15828251950',
+//                    'longitude':'23',
+//                    'latitude':'23',
+//                    'nodeInfo_nodeName':'冠城花园',
+//                    'dbIp':'127.0.0.1',
+//                    'dbPort':'3306',
+//                    'dbUserName':'root',
+//                    'dbPassword':'root',
+//                    'isDiscarded':'0'
+//                },
+
+
+                url:'api/admin/register/node',
                 data:{
-                    'dbName':'guachenghuayuan1',
-                    'realEstateName': '冠城花园1',
-                    'address':'test address',
-                    'description':'test desc',
-                    'manageCompany':'uestc',
-                    'serviceEndDateTime':'2018-02-11-22',
-                    'contactPersonName':'hanzhiwei',
-                    'contactTel':'15828251950',
-                    'longitude':'23',
-                    'latitude':'23',
-                    'nodeInfo_nodeName':'冠城花园',
-                    'dbIp':'127.0.0.1',
-                    'dbPort':'3306',
-                    'dbUserName':'root',
-                    'dbPassword':'root',
-                    'isDiscarded':'0'
+                    'nodeName':'宜宾',
+                    'nodeIp': '127.0.0.1',
+                    'nodeUserName':'root',
+                    'nodePassword':'root123',
+                    'address':'四川 宜宾',
+                    'remark':'该服务器座落在四川宜宾32号街道'
                 },
+                url:'api/admin/update/node',
+                data:{
+                    'nodeName':'宜宾',
+                    'nodeIp': '127.0.0.1',
+                    'nodeUserName':'root',
+                    'nodePassword':'root123',
+                    'address':'四川 宜宾',
+                    'remark':'该服务器座落在四川宜宾32号街道 HW'
+                },
+
+
 
 //                data:{
 //                    'serialId':"5",

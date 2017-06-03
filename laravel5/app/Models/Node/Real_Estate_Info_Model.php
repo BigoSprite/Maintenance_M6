@@ -9,11 +9,11 @@
  *      @GitHub: https://github.com/BigoSprite
  */
 
-namespace App\Models;
+namespace App\Models\Node;
 use Illuminate\Database\Eloquent\Model;
 
 /** Concrete Model extents Model */
-class NodeInfoModel extends Model
+class Real_Estate_Info_Model extends Model
 {
     /**
      * The connection name for the model.
@@ -21,14 +21,14 @@ class NodeInfoModel extends Model
      * @var string
      * @NOTE You can change the connect by changing the value of $connection.
      */
-    protected $connection = 'mysql';
+    protected $connection = 'mysql_cloud_node';
 
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'nodeinfo';
+    protected $table = 'real_estate_info';
 
     /**
      * Indicates if the model should be timestamped.

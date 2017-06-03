@@ -41,15 +41,13 @@ CREATE TABLE vdevice_status (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE realestateinfo (
+CREATE TABLE real_estate_info (
   dbName						char(50) 					NOT NULL,
   realEstateName				char(50) 					NOT NULL,
   address						char(200) 					NOT NULL,
   description					text 				    	NOT NULL,
   PRIMARY KEY (dbName)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
 
 CREATE TABLE vdevice_realtimedata (
   gprsID						char(20) 					NOT NULL,

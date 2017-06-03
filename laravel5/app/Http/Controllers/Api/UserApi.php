@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\Contracts\Api;
+use App\Http\Controllers\Api\Utils\ApiInstanceFactory;
 use App\Repositories\Eloquent\AbstractRepository;
 use Illuminate\Container\Container as App;
 

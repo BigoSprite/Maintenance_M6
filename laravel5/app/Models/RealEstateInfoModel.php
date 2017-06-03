@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * This file is created by hanzhiwei using _example_template_XXXModel.php
+ *
+ * @Copyright
+ *      @user: hanzhiwei
+ *      @Email: bigosprite@163.com
+ *      @GitHub: https://github.com/BigoSprite
+ */
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;

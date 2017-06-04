@@ -89,22 +89,45 @@
 //                    'addDate':'2015-01-11'
 //                },
 
-                  url:'api/content/update/device',
-                  data:{
-                      'gprsID':'0000000002',
-                      'deviceName':'昂思数显3',
-                      'deviceTypeName':'US2000',
-                      'deviceRemark':'deviceRemark test',
-                      'monitoredUnitName':'0',
-                      'realestateinfo_dbName':'jinyehotel',
-                      'protocolVersion':'1',
-                      'protocolRemark':'test remark',
-                      'contactPersonName':'hanzhiwei',
-                      'contactTel':'15888765678',
-                      'deviceDetailInfo':'null test',
-                      'isDiscarded':'0',
-                      'addDate':'2017-09-02-11'
-                  },
+//                  url:'api/content/update/device',
+//                  data:{
+//                      'gprsID':'0000000002',
+//                      'deviceName':'昂思数显222',
+//                      'deviceTypeName':'US2000',
+//                      'deviceRemark':'deviceRemark test',
+//                      'monitoredUnitName':'0',
+//                      'realestateinfo_dbName':'jinyehotel',
+//                      'protocolVersion':'1',
+//                      'protocolRemark':'test remark',
+//                      'contactPersonName':'hanzhiwei',
+//                      'contactTel':'15888765678',
+//                      'deviceDetailInfo':'null test',
+//                      'isDiscarded':'0',
+//                      'addDate':'2017-09-02-11'
+//                  },
+
+//                    url:'api/content/update/deviceStatus',
+//                    data:{
+//                        'gprsID':'0000000001',
+//                        'isLogin':'1',
+//                        'lastLoginTime':'2018-02-11',
+//                        'alarmFlag':'flag1111',
+//                        'alarmUpdateTime':'2018-02-11',
+//                        'isOperating':'1',
+//                        'operationDesc':'test111',
+//                        'operationUpdateTime':'2018-02-11'
+//                    },
+
+                url:'api/content/update/node/realEstateInfo',
+                data:{
+                    'dbName':'jinyehotel',
+                    'realEstateName':'金叶大厦11',
+                    'address':'测试地址',
+                    'description':'测试描述'
+                },
+
+
+
                 dataType: 'json',
 //                headers: {
 //                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')

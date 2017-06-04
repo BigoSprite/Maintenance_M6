@@ -195,7 +195,6 @@ abstract class AbstractRepository implements IRepository
     public function update_Ex(array $data, $field, $value)
     {
         $target = $this->model->where($field, '=', $value);
-
         if($target == null){
             return ['status'=>'fail', 'isExist'=>'false'];
         }else{

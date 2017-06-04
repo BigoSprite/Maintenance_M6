@@ -20,7 +20,7 @@ class NodeInfoController extends Controller
     {
         $arr = NodeInfoApi::create()->isNodeExist($nodeName);
 
-        return response(json_encode($arr), JSON_UNESCAPED_UNICODE);
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
     }
 
     /**

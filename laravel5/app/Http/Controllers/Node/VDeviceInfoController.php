@@ -20,7 +20,7 @@ class VDeviceInfoController extends Controller
     {
         $arr = VDeviceInfoApi::create()->isGprsIdExist($gprsId);
 
-        return response(json_encode($arr), JSON_UNESCAPED_UNICODE);
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
     }
 
     /**

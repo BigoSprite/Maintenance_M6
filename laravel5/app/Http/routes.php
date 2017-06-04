@@ -38,10 +38,19 @@ Route::group(['prefix'=>'api'],function (){
             Route::get('deviceHistoryDataTable_headerData/{gprsid}','VDeviceHistoryDataController@getTableHeader');
             Route::get('deviceHistoryDataTable_bodyData/{gprsid}','VDeviceHistoryDataController@getHistoryData');
 
+
+            Route::get('deviceNodeInfo/{nodeName}', 'VDeviceNodeInfoController@getNodeInfo');
+            Route::get('deviceNodeInfoList', 'VDeviceNodeInfoController@getNodeList');
+
+            Route::get('node/realEstateInfo/{dbName}', 'Real_Estate_Info_Controller@get_Real_Estate_Info');
+            Route::get('node/realEstateInfoList', 'Real_Estate_Info_Controller@get_Real_Estate_Info_List');
+
             /** 注册 */
             Route::group(['prefix'=>'register'], function(){
                 Route::post('device', 'VDeviceInfoController@registerDeviceInfo');
                 Route::post('deviceStatus', 'VDeviceStatusController@registerDeviceStatus');
+                Route::post('node/realEstateInfo', 'Real_Estate_Info_Controller@register_Real_Estate_Info');
+
 
             });
 
@@ -53,12 +62,16 @@ Route::group(['prefix'=>'api'],function (){
                 Route::get('deviceRealTime/{gprsId}', 'VDeviceRealTimeDataController@isDeviceExist');
                 Route::get('deviceInfo/{gprsId}', 'VDeviceInfoController@isGprsIdExist');
 
+                Route::get('deviceNodeInfo/{nodeName}', 'VDeviceNodeInfoController@isNodeExist');
+                Route::get('node/realEstateInfo/{dbName}', 'Real_Estate_Info_Controller@isDBNameExist');
+
             });
 
             /** 更新 */
             Route::group(['prefix'=>'update'], function(){
                 Route::post('deviceStatus', 'VDeviceStatusController@updateDeviceStatus');
                 Route::post('device', 'VDeviceInfoController@updateDeviceInfo');
+                Route::post('node/realEstateInfo', 'Real_Estate_Info_Controller@update_Real_Estate_Info');
             });
 
         });

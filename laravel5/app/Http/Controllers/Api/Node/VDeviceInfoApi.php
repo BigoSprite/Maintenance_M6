@@ -158,4 +158,40 @@ class VDeviceInfoApi extends Api
         return $this->repositoryMgr->update_Ex($data, $primaryKey, $value);
     }
 
+
+    /**
+     * 功能：返回对象数组
+     *
+     * @param $gprsId
+     * @return array
+     *["data"=>
+     * [
+     *    (
+            "alias":"var00",
+            "name_en":"AVoltage",
+            "name_ch":"A相电压",
+            "data_type":"short",
+            "byte_seq":"BE",
+            "scale":"0.1",
+            "unit":"V",
+            "width":"90"
+          ),// one object
+     *    ...
+     * ]
+     *]
+     *
+     */
+    public function getParseJSON($gprsId)
+    {
+        $parseJSONArrMap = $this->repositoryMgr->findBy('gprsID', $gprsId, ['parseJSON']);
+
+        $objArray = array();
+        if(count($parseJSONArrMap) > 0){
+            $obj = json_decode("{$parseJSONArrMap['parseJSON']}");
+            $objArray = $obj->data;
+        }
+
+        return ['data'=>$objArray];
+    }
+
 }

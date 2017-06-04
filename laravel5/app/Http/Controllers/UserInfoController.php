@@ -2,23 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Api\UserApi;
 use App\Http\Controllers\Api\UserInfoApi;
 use Illuminate\Support\Facades\Input;
 
 class UserInfoController extends Controller
 {
-
-    // http://localhost:8888/test
-    public function test()
-    {
-        $arr = UserApi::create()->all();
-        return response(json_encode($arr));
-
-    }
-
-
-
     /**
      * 功能：获取所有信息
      * 响应请求 方法 GET

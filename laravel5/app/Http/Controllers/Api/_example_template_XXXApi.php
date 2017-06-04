@@ -48,14 +48,59 @@ class _example_template_XXXApi extends Api
     }
 
     /**
-     * Test Method.
+     * 功能：判断XXX对应的数据对象是否存在
+     * @param $XXX
+     * @return array
+     *
+     * @NOTE Don't forget to CHANGE XXX to the right attribute!
+     */
+    public function isXXXExist/** 1*/($XXX/** 2*/)
+    {
+        $ret = [
+            'isExist'=>'false'
+        ];
+
+        $isExist = $this->repositoryMgr->isFieldExist('_example_primaryKey_name_'/** 3*/, $XXX/** 4*/);
+
+        if($isExist){
+            $ret['isExist'] = 'true';
+        }
+
+        return $ret;
+    }
+
+    /**
+     * 功能：注册
+     * @param $data
+     * @param $primaryKey
+     * @param $value
+     * @return array
+     */
+    public function register($data, $primaryKey, $value)
+    {
+        return $this->repositoryMgr->create_Ex($data, $primaryKey, $value);
+    }
+
+    /**
+     * 功能：更新
+     * @param $data
+     * @param $primaryKey
+     * @param $value
+     * @return mixed
+     */
+    public function update($data, $primaryKey, $value)
+    {
+        return $this->repositoryMgr->update_Ex($data, $primaryKey, $value);
+    }
+
+    /**
+     * Other Method
      *
      * @NOTE you can add you own method like this.
      *
      */
-    public function test()
+    public function otherMethod()
     {
         //
     }
-
 }

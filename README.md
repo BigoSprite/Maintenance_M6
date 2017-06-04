@@ -4,6 +4,7 @@
 
 本文主要以实现类似于J2EE目前流行的MVC框架为目的，设计一个基于PHP的大型WEB系统分布式平台架构，并以一个实际例子（模拟FACEBOOK业务）详细说明分布式业务对象缓存、分布式文件系统存取、数据库集群、网页静态化处理、用户安全认证等技术的设计和使用。
 
+
 ## 1. 软件架构
 ### 1.1 组件或功能的划分
 整个系统由各个独立的模块组建而成。
@@ -54,7 +55,7 @@ Repository 模式将业务逻辑和数据访问分离开，两者之间通过 Re
 
     function model()
     {
-		// 返回user_info这张表对应的Model（with namespace）
+    	// 返回user_info这张表对应的Model（with namespace）
         return 'App\Models\UserInfoModel';
     }
 
@@ -77,13 +78,13 @@ XXXModel常用的成员变量有：
      * @NOTE You can change the connect by changing the value of $connection.
      */
     protected $connection = 'mysql';
-
+    
     /** @var string. The table associated with the model. */
     protected $table = 'example_table_name';
-
+    
     /** @var bool. Indicates if the model should be timestamped. */
     public $timestamps = false;
-
+    
     /**
      * @var array. The attributes that aren't mass assignable.
      * @NOTE 如果想使用Mass Assignable，那么需要"显式"设置$fillable，或$guarded置为空数组（全部字段均可批量赋值）
@@ -95,7 +96,7 @@ XXXModel常用的成员变量有：
 
 到目前为止，有了UserInfoRepository（仓库管理员类）和UserInfoModel（数据模型类），那么是时候谈谈业务逻辑了，将在下一小节中详细介绍。
 
-#### 3.2.3 Api的前世今生
+#### 3.2.4 Api的前世今生
 
 之前已经介绍过，为解除业务逻辑和Controller的耦合，可以把仓库管理员与Controller分离。否则，仓库管理员访问数据库（其实就是业务逻辑）和Controller混在一起，这时如果别的控制器A需要使用当前控制器（依赖它）时，就不能为控制器A提供清晰的服务，这是因为一个规则：Controller的主要任务是响应请求（get、post等），且Controller中的每个方法对应一个路由（Route）；破坏了这一规则，就破坏了**单一职责原则**，程序的结构将越来越复杂混乱。
 
@@ -106,20 +107,24 @@ XXXModel常用的成员变量有：
 请记住：父类Api是我规定的一个契约，所有的Api子类都应该继承它。Api仅有一个数据成员$repositoryMgr（仓库管理员），那么如何关联到具体数据模型的仓库管理员呢？这里我借鉴了Cocos2d-x中[CREATE_FUNC](http://baike.baidu.com/link?url=6WfTtr1SaeezotqiTea9e43X8xDAPaIaLPB2CrZMpg6G_8UC157gsjPTJ3F5mgisHAwajSunz17-jbandHJKbLtFjIdxpfMY9wC0B3unAaG "Cocos2d-x CREATE_FUNC")宏的设计，并加以改进为ApiInstanceFactory工具类，该工具类使用**静态工厂方法模式**；只需要在派生类Api中的静态方法create中调用该工具类的CREATE_FUNC即可关联到具体的仓库管理员。
 
 
-#### 3.2.4 Outstanding Feature
+#### 3.2.5 Outstanding Feature
 
-突出特性：
+这里总结一下后端项目的突出特性：
 
 - 基于Repository的业务逻辑和数据访问分离，使得应用具有易扩展性和高复用性
 - 仅需简单配置即可新增**具体的仓库**及**具体的Api**，具有极高复用性
 - Model和Controller解耦，提供Api与之交互
 - 提供了Api，并借助**静态工厂模式**实现了Cocos2d-x style **CREATE_FUNC**，快速创建Api
 - 每个模块职责单一，方便分层独立开发
-- 一个没有被关注的特性——基于以上全部特性，自动生成如下三种模板：
-- \_example\_template_XXXModel.php
-- \_example\_template_XXXRepository.php
-- \_example\_template_XXXApi.php
+- 一个没有被关注的特性：借助PhpStorm IDE自动生成特化的Model、Api及Repository
+
+
+基于以上全部特性，自动生成如下三种模板，提高开发效率并降低错误：
+
+1. \_example\_template_XXXModel.php
+2. \_example\_template_XXXRepository.php
+3. \_example\_template_XXXApi.php
 
 因此，系统核心架构如下图所示：
 
-![Final](http://i.imgur.com/QwiBjHw.png)
+![Final](http://i.imgur.com/FxmYTfh.png)

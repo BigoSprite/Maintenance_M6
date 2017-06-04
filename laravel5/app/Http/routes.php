@@ -27,7 +27,6 @@ Route::group(['prefix'=>'api'],function (){
 
         Route::group(['namespace'=>'Node'], function(){
 
-            Route::get('verifyGprsID/{gprsid}', 'VDeviceInfoController@verifyGprsID');
             Route::get('deviceInformation','VDeviceInfoController@getDeviceInfoList');
             Route::get('deviceInformation/{gprsid}','VDeviceInfoController@getDeviceInfo');
             Route::get('deviceStatusList', 'VDeviceStatusController@getDeviceStatusList');
@@ -52,12 +51,14 @@ Route::group(['prefix'=>'api'],function (){
 
                 Route::get('deviceStatus/{gprsId}', 'VDeviceStatusController@isGprsIdExist');
                 Route::get('deviceRealTime/{gprsId}', 'VDeviceRealTimeDataController@isDeviceExist');
+                Route::get('deviceInfo/{gprsId}', 'VDeviceInfoController@isGprsIdExist');
 
             });
 
             /** 更新 */
             Route::group(['prefix'=>'update'], function(){
                 Route::post('deviceStatus', 'VDeviceStatusController@updateDeviceStatus');
+                Route::post('device', 'VDeviceInfoController@updateDeviceInfo');
             });
 
         });

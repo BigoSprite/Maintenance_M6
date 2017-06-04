@@ -13,6 +13,7 @@ namespace App\Http\Controllers\Api\Node;
 use App\Http\Controllers\Api\Contracts\Api;
 use App\Repositories\Eloquent\AbstractRepository;
 use App\Http\Controllers\Api\Utils\ApiInstanceFactory;
+use function Symfony\Component\Debug\Tests\testHeader;
 
 /** MAKE SURE that yourApi class extents Api in order to use the (REPOSITORY MANAGER) */
 class VDeviceInfoApi extends Api
@@ -31,7 +32,6 @@ class VDeviceInfoApi extends Api
 
     /**
      * Create Function
-     *
      * @return object
      */
     public static function create()
@@ -47,14 +47,115 @@ class VDeviceInfoApi extends Api
     }
 
     /**
-     * Test Method.
-     *
-     * @NOTE you can add you own method like this.
-     *
+     * 功能：判断$gprsID对应的设备是否存在
+     * @param $gprsId
+     * @return array
      */
-    public function test()
+    public function isGprsIdExist($gprsId)
     {
-        //
+        $ret = [
+            'isExist'=>'false'
+        ];
+
+        $isExist = $this->repositoryMgr->isFieldExist('gprsID', $gprsId);
+
+        if($isExist){
+            $ret['isExist'] = 'true';
+        }
+
+        return $ret;
+    }
+
+    /**
+     * 功能：获取$gprsId对应的设备信息
+     * @param $gprsId
+     * @return array
+     */
+    public function getDeviceInfo($gprsId)
+    {
+        $arrMap = $this->repositoryMgr->findBy('gprsID', $gprsId);
+        $retArray = array();
+        if(count($arrMap) > 0){
+            $retArray = [
+                "gprsID"=> $arrMap['gprsID'],
+                "deviceName"=>$arrMap['deviceName'],
+                "deviceTypeName"=>$arrMap['deviceTypeName'],
+                "deviceRemark"=>$arrMap['deviceRemark'],
+                "monitoredUnitName"=>$arrMap['monitoredUnitName'],
+                "realestateinfo_dbName"=>$arrMap['realestateinfo_dbName'],
+                "protocolVersion"=>$arrMap['protocolVersion'],
+                "protocolRemark"=>$arrMap['protocolRemark'],
+                "contactPersonName"=>$arrMap['contactPersonName'],
+                "contactTel"=>$arrMap['contactTel'],
+                "deviceDetailInfo"=>$arrMap['deviceDetailInfo'],
+//                "parseJSON"=>$arrMap['parseJSON'],
+                "isDiscarded"=>$arrMap['isDiscarded'],
+                "addDate"=> $arrMap['addDate'],
+            ];
+        }
+
+        return ["data"=>$retArray];
+    }
+
+    /**
+     * 功能：获取全部设备的信息
+     * @return array
+     */
+    public function getDeviceInfoList()
+    {
+        $deviceModelList = $this->repositoryMgr->all();
+
+        $retArray = array();
+        if(count($deviceModelList) > 0){
+            foreach ($deviceModelList as $model) {
+                // 构造临时数组
+                $tmp_array = [
+                    "gprsID"=> $model->gprsID,
+                    "deviceName"=> $model->deviceName,
+                    "deviceTypeName"=> $model->deviceTypeName,
+                    "deviceRemark"=> $model->deviceRemark,
+                    "monitoredUnitName"=> $model->monitoredUnitName,
+                    "realestateinfo_dbName"=> $model->realestateinfo_dbName,
+                    "protocolVersion"=> $model->protocolVersion,
+                    "protocolRemark"=> $model->protocolRemark,
+                    "contactPersonName"=> $model->contactPersonName,
+                    "contactTel"=> $model->contactTel,
+                    "deviceDetailInfo"=> $model->deviceDetailInfo,
+//                "parseJSON"=> $model->parseJSON,
+                    "isDiscarded"=> $model->isDiscarded,
+                    "addDate"=> $model->addDate,
+                ];
+
+                // 加入最终的数组中
+                $retArray[] = $tmp_array;
+            }
+        }
+
+        return ["data"=>$retArray];
+    }
+
+    /**
+     * 功能：注册设备
+     * @param $data
+     * @param $primaryKey
+     * @param $value
+     * @return array
+     */
+    public function registerDeviceInfo($data, $primaryKey, $value)
+    {
+        return $this->repositoryMgr->create_Ex($data, $primaryKey, $value);
+    }
+
+    /**
+     * 功能：更新设备
+     * @param $data
+     * @param $primaryKey
+     * @param $value
+     * @return array
+     */
+    public function updateDeviceInfo($data, $primaryKey, $value)
+    {
+        return $this->repositoryMgr->update_Ex($data, $primaryKey, $value);
     }
 
 }

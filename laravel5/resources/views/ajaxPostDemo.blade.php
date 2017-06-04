@@ -48,24 +48,24 @@
 //                },
 
 
-                url:'api/admin/register/node',
-                data:{
-                    'nodeName':'宜宾',
-                    'nodeIp': '127.0.0.1',
-                    'nodeUserName':'root',
-                    'nodePassword':'root123',
-                    'address':'四川 宜宾',
-                    'remark':'该服务器座落在四川宜宾32号街道'
-                },
-                url:'api/admin/update/node',
-                data:{
-                    'nodeName':'宜宾',
-                    'nodeIp': '127.0.0.1',
-                    'nodeUserName':'root',
-                    'nodePassword':'root123',
-                    'address':'四川 宜宾',
-                    'remark':'该服务器座落在四川宜宾32号街道 HW'
-                },
+//                url:'api/admin/register/node',
+//                data:{
+//                    'nodeName':'宜宾',
+//                    'nodeIp': '127.0.0.1',
+//                    'nodeUserName':'root',
+//                    'nodePassword':'root123',
+//                    'address':'四川 宜宾',
+//                    'remark':'该服务器座落在四川宜宾32号街道'
+//                },
+//                url:'api/admin/update/node',
+//                data:{
+//                    'nodeName':'宜宾',
+//                    'nodeIp': '127.0.0.1',
+//                    'nodeUserName':'root',
+//                    'nodePassword':'root123',
+//                    'address':'四川 宜宾',
+//                    'remark':'该服务器座落在四川宜宾32号街道 HW'
+//                },
 
 
 
@@ -89,23 +89,22 @@
 //                    'addDate':'2015-01-11'
 //                },
 
-//                  url:'api/cloud/deviceRegister',
-//                  data:{
-//                      'gprsID':'000000001',
-//                      'deviceName':'昂思数显1',
-//                      'deviceTypeName':'US2000',
-//                      'dataBaseName':'jinyehotel',
-//                      'roomId':'0',
-//                      'protocolVersion':'1',
-//                      'protocolRemark':'1',
-//                      'mobileNumber':'17088176258',
-//                      'longitude':'0.000000',
-//                      'latitude':'0.0000000',
-//                      'installDirection':'1',
-//                      'controllerAddress':'test',
-//                      'isDiscarded':'0',
-//                      'addDate':'2017-01-11 00:00:00'
-//        },
+                  url:'api/content/update/device',
+                  data:{
+                      'gprsID':'0000000002',
+                      'deviceName':'昂思数显3',
+                      'deviceTypeName':'US2000',
+                      'deviceRemark':'deviceRemark test',
+                      'monitoredUnitName':'0',
+                      'realestateinfo_dbName':'jinyehotel',
+                      'protocolVersion':'1',
+                      'protocolRemark':'test remark',
+                      'contactPersonName':'hanzhiwei',
+                      'contactTel':'15888765678',
+                      'deviceDetailInfo':'null test',
+                      'isDiscarded':'0',
+                      'addDate':'2017-09-02-11'
+                  },
                 dataType: 'json',
 //                headers: {
 //                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')

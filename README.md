@@ -127,4 +127,4 @@ XXXModel常用的成员变量有：
 
 因此，系统核心架构如下图所示：
 
-![Final](http://i.imgur.com/1LGpuFF.png)
+![Final](http://i.imgur.com/ERM9Hnm.png)

@@ -76,6 +76,18 @@ return [
             'strict'    => false,
             'engine'    => null,
         ],
+        'mysql_client_jinyehotel' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST_CLIENT_JINYEHOTEL', 'localhost'),
+            'database'  => env('DB_DATABASE_CLIENT_JINYEHOTEL', 'forge'),
+            'username'  => env('DB_USERNAME_CLIENT_JINYEHOTEL', 'forge'),
+            'password'  => env('DB_PASSWORD_CLIENT_JINYEHOTEL', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+            'engine'    => null,
+        ],
 
         'pgsql' => [
             'driver'   => 'pgsql',

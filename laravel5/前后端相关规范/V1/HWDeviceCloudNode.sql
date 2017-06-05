@@ -15,7 +15,7 @@ CREATE TABLE vdevice_info (
   deviceTypeName 				char(50) 					NOT NULL,
   deviceRemark                  text                        DEFAULT NULL,
   monitoredUnitName             char(50)                    NOT NULL, # 配电室名称（例如：配电室1）
-  realestateinfo_dbName			char(50) 				    NOT NULL, # 也是数据库名称 外键（realestateinfo中的 dbName）
+  realestateinfo_dbName			char(50) 				    NOT NULL, # 也是数据库名称 外键（real_estate_info中的 dbName）
   protocolVersion				char(10) 					NOT NULL,
   protocolRemark				text    					DEFAULT NULL,
   contactPersonName             char(20)                    NOT NULL,                        

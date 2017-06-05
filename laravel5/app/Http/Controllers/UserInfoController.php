@@ -18,7 +18,7 @@ class UserInfoController extends Controller
     {
         $arr = UserInfoApi::create()->all();
 
-        return response(json_encode($arr));
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
     }
 
     /**
@@ -55,7 +55,7 @@ class UserInfoController extends Controller
     {
         $arr = UserInfoApi::create()->isUserNameExist($userName);
 
-        return response(json_encode($arr), JSON_UNESCAPED_UNICODE);
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
     }
 
     /**

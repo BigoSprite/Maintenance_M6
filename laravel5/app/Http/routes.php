@@ -14,12 +14,8 @@ Route::get('/', function(){
     return redirect('http://221.236.173.192:8888/index.html');
 });
 
-
-Route::get('test', 'UserInfoController@test');
-
 Route::group(['prefix'=>'api'],function (){
 
-    /** new begin */
     Route::group(['prefix'=>'content'], function () {
 
         Route::get('realEstateInfo/{realEstateName}', 'RealEstateInfoController@getRealEstateInfo');
@@ -51,12 +47,10 @@ Route::group(['prefix'=>'api'],function (){
                 Route::post('deviceStatus', 'VDeviceStatusController@registerDeviceStatus');
                 Route::post('node/realEstateInfo', 'Real_Estate_Info_Controller@register_Real_Estate_Info');
 
-
             });
 
             /** 验证 */
             Route::group(['prefix'=>'verify'], function(){
-
 
                 Route::get('deviceStatus/{gprsId}', 'VDeviceStatusController@isGprsIdExist');
                 Route::get('deviceRealTime/{gprsId}', 'VDeviceRealTimeDataController@isDeviceExist');
@@ -76,15 +70,33 @@ Route::group(['prefix'=>'api'],function (){
 
         });
 
+        Route::group(['namespace'=>'Client'], function (){
 
+            Route::get('distributionRoomInfo/{serialId}', 'DistributionRoomInfoController@getRoomInfo');
+            Route::get('distributionRoomInfoList', 'DistributionRoomInfoController@getRoomInfoList');
+            Route::get('distributionRoomNameList/serialId', 'DistributionRoomInfoController@getRoomNameListWithSerialId');
+
+            Route::get('assetInfoList', 'AssetInfoController@getAssetInfoList');
+            // 验证
+            Route::group(['prefix'=>'verify'], function (){
+                Route::get('distributionRoom/{serialId}', 'DistributionRoomInfoController@isRoomExist');
+
+            });
+            // 注册
+            Route::group(['prefix'=>'register'], function(){
+                Route::post('distributionRoom', 'DistributionRoomInfoController@registerRoom');
+                Route::post('asset', 'AssetInfoController@registerAssetInfo');
+            });
+            // 更新
+            Route::group(['prefix'=>'update'], function(){
+                Route::post('distributionRoom', 'DistributionRoomInfoController@updateRoom');
+            });
+        });
 
     });
-    /** new end */
-
 
     Route::group(['prefix'=>'admin'], function(){
 
-        /** new begin */
         Route::get('login', 'UserInfoController@all');
 
         Route::get('nodeInfoList', 'NodeInfoController@all');
@@ -98,57 +110,18 @@ Route::group(['prefix'=>'api'],function (){
             Route::get('user/{userName}', 'UserInfoController@isUserNameExist');
             Route::get('node/{nodeName}', 'NodeInfoController@isNodeExist');
         });
-
         // 注册
         Route::group(['prefix'=>'register'], function(){
             Route::post('user', 'UserInfoController@registerUser');
             Route::post('realEstate', 'RealEstateInfoController@registerRealEstateInfo');
             Route::post('node', 'NodeInfoController@registerNodeInfo');
         });
-
         // 更新
         Route::group(['prefix'=>'update'], function(){
             Route::post('password', 'UserInfoController@updateUserPassword');
             Route::post('realEstate', 'RealEstateInfoController@updateRealEstateInfo');
             Route::post('node', 'NodeInfoController@updateNodeInfo');
         });
-
-        /** new end */
-
-        Route::group(['prefix'=>'verify1', 'namespace'=>'Center'], function(){
-
-            Route::post('login', 'UserInfo_Controller@isUserExist');
-
-
-            // http://localhost:8888/api/admin/verify/userName
-            Route::post('userName', 'UserInfo_Controller@isUserNameExist');
-
-        });
-
-
-
-        Route::group(['prefix'=>'update1', 'namespace'=>'Center'], function(){
-
-            // http://localhost:8888/api/admin/update/userInfo
-            Route::post('userInfo', 'UserInfo_Controller@updateUserInfo');
-            // http://localhost:8888/api/admin/update/userPassword
-            Route::post('userPassword', 'UserInfo_Controller@updateUserPassword');
-        });
-
-
-
-    });
-
-
-
-
-    Route::group(['prefix'=>'admin_BAK'], function(){
-
-        Route::post('login', 'ComponentCommon\UserInfoController@isUserExist');
-
-        Route::post('distributeRoomRegister', 'ComponentCenter\Distribution_Room_Controller@registerDistributionRoom');
-
-        Route::post('deviceRegister', 'ComponentCenter\GmDevice_Information_Controller@registerDeviceInfo');
     });
 });
 

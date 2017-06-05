@@ -13,7 +13,6 @@ namespace App\Http\Controllers\Api\Node;
 use App\Http\Controllers\Api\Contracts\Api;
 use App\Repositories\Eloquent\AbstractRepository;
 use App\Http\Controllers\Api\Utils\ApiInstanceFactory;
-use function Symfony\Component\Debug\Tests\testHeader;
 
 /** MAKE SURE that yourApi class extents Api in order to use the (REPOSITORY MANAGER) */
 class VDeviceInfoApi extends Api

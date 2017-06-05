@@ -2,7 +2,7 @@ CREATE DATABASE JinYeHotel;
 
 USE JinYeHotel;
 
-CREATE TABLE distributionroom (
+CREATE TABLE distribution_room_info (
   serialId						char(20) 				NOT NULL,
   roomName						char(50) 				NOT NULL,
   description					char(100) 				DEFAULT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE distributionroom (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE gmdevice_type (
+CREATE TABLE vdevice_type_info (
   name 							char(50) 				NOT NULL,
   typeDesc						text,
   PRIMARY KEY (name)

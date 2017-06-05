@@ -118,12 +118,33 @@
 //                        'operationUpdateTime':'2018-02-11'
 //                    },
 
-                url:'api/content/update/node/realEstateInfo',
+//                url:'api/content/update/node/realEstateInfo',
+//                data:{
+//                    'dbName':'jinyehotel',
+//                    'realEstateName':'金叶大厦11',
+//                    'address':'测试地址',
+//                    'description':'测试描述'
+//                },
+
+//                url:'api/content/update/distributionRoom',
+//                data:{
+//                    'serialId':'10',
+//                    'roomName':'配电室2',
+//                    'description':'test',
+//                    'address':'测试地址',
+//                    'productionPro':'test',
+//                    'telephoneNumber':'12344556778',
+//                    'installationDate':'2019-01-22'
+//                },
+
+                url:'api/content/register/asset',
                 data:{
-                    'dbName':'jinyehotel',
-                    'realEstateName':'金叶大厦11',
-                    'address':'测试地址',
-                    'description':'测试描述'
+                    'distributionRoomInfo_serialId':'0',
+                    'name':'昂思数显表1',
+                    'type':'电表',
+                    'unit':'个',
+                    'amount':'2',
+                    'addDate':'2017-09-11'
                 },
 
 

@@ -14,9 +14,9 @@
 ### 2.1	系统物理拓扑结构
 
 ## 3. 应用设计结构
-### 3.1	Laravel目录
+### 3.1	Laravel项目核心目录及其介绍
 
-![APP](http://i.imgur.com/lyKexRR.png)
+![APP](http://i.imgur.com/FUOvy34.png)
 
 ### 3.2	基于“仓库模式”的业务逻辑和数据访问分离
 #### 3.2.1 仓库模式逻辑结构

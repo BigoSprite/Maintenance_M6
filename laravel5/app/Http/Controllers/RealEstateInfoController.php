@@ -115,7 +115,6 @@ class RealEstateInfoController extends Controller
         return response()->json($arr, 200);
     }
 
-
     /**
      * 功能：更新物业信息
      * @return \Illuminate\Http\JsonResponse
@@ -151,6 +150,12 @@ class RealEstateInfoController extends Controller
     }
 
 
+//// http://localhost:8888/test/西北节点
+//    public function getRealEstateWithDBInfoList($nodeName)
+//    {
+//        $arr = RealEstateInfoApi::create()->getRealEstateWithDBInfoList($nodeName);
+//        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
+//    }
 
 
     // TODO... create realEstateInfo database.

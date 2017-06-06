@@ -3,6 +3,7 @@
 namespace App\Api;
 use App\Api\Contracts\Api;
 use App\Api\Utils\ApiInstanceFactory;
+use App\Api\Utils\DBDirector;
 use App\Repositories\Eloquent\AbstractRepository;
 
 class NodeInfoApi extends Api
@@ -97,6 +98,67 @@ class NodeInfoApi extends Api
     public function updateNodeInfo($data, $primaryKey, $value)
     {
         return $this->repositoryMgr->update_Ex($data, $primaryKey, $value);
+    }
+
+
+    /**
+     * 功能：获取节点树上的数据
+     *
+     * @return array
+     */
+    public function getNodeTree()
+    {
+        // 1. 得节点的名字数组
+        $objNameArr = $this->repositoryMgr->all(['nodeName']);
+        $nodeNameList = array();
+        foreach ($objNameArr as $obj) {
+            $nodeNameList[] = $obj->nodeName;
+        }
+
+        $retData = array();
+
+        // 2. 遍历节点名字数组并增加物业名字和配电室列表
+        foreach ($nodeNameList as $nodeName) {
+
+            $elemNode = [
+                'label'=>$nodeName,
+                'children'=>[]
+            ];
+
+            // 获得物业名字数组
+            $data = RealEstateInfoApi::create()->getRealEstateWithDBInfoList($nodeName);
+            $realEstateNameList = $data['data'];
+            // 遍历物业名字数组，获得物业label及该物业下的所有配电室
+            foreach ($realEstateNameList as $item) {
+                $tmp = [
+                    'label'=> $item['realEstateName'],
+                    'children'=>[]
+                ];
+
+                // 获取数据库信息并连接
+                $dbName = $item['dbName'];
+                $dbIp = $item['dbIp'];
+                $dbPort = $item['dbPort'];
+                $dbUserName= $item['dbUserName'];
+                $dbPassword = $item['dbPassword'];
+                $conn = DBDirector::getInstance()->connection($dbIp, $dbName, $dbUserName, $dbPassword);
+                if($conn != null){
+                    $modelArr = $conn->select("SELECT * FROM distribution_room_info");
+                    foreach ($modelArr as $e) {
+                        $tmp['children'][] = [
+                            'label'=>$e->roomName
+                        ];
+                    }
+                }else{
+                    continue;
+                }
+
+                $elemNode['children'][] = $tmp;
+            }
+            $retData[] = $elemNode;
+        }
+
+        return ['data'=>$retData];
     }
 
 }

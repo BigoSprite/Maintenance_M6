@@ -8,6 +8,7 @@ interface IRepository
     public function all($columns = array('*'));
     public function find($id, $columns = array('*'));
     public function findBy($field, $value, $columns = array('*'));
+    public function find2NBy($field, $value, $columns = array('*'));
 //    public function create(array $data, $primaryKey = 'id', $value = "0");
     public function create_Ex(array $data, $primaryKey = 'id', $value = "0");
 //    public function update(array $data, $field, $value);

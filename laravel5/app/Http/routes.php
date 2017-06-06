@@ -14,6 +14,12 @@ Route::get('/', function(){
     return redirect('http://221.236.173.192:8888/index.html');
 });
 
+
+
+Route::get('test/{nodeName}', 'RealEstateInfoController@getRealEstateWithDBInfoList');
+Route::get('test', 'NodeInfoController@getNodeListWithChildren');
+
+
 Route::group(['prefix'=>'api'],function (){
 
     Route::group(['prefix'=>'content'], function () {
@@ -114,6 +120,7 @@ Route::group(['prefix'=>'api'],function (){
         Route::get('nodeNameList', 'NodeInfoController@getNodeNameList');
         Route::get('nodeServerInfo/{nodeName}', 'NodeInfoController@getNodeServerInfo');
 
+        Route::get('nodeTreeInfo', 'NodeInfoController@getNodeTree');
 
         // 验证
         Route::group(['prefix'=>'verify'], function (){

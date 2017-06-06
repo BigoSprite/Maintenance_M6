@@ -222,4 +222,36 @@ class RealEstateInfoApi
         return $data;
     }
 
+
+    /**
+     * 功能：获得节点（名字为$nodeName）下的物业列表
+     * @param $nodeName
+     * @return array
+     */
+    public function getRealEstateWithDBInfoList($nodeName)
+    {
+        $collection =  $this->realEstateMgr->find2NBy('nodeInfo_nodeName', $nodeName, [
+            'dbName',
+            'realEstateName',
+            'dbIp',
+            'dbPort',
+            'dbUserName',
+            'dbPassword'
+        ]);
+        $data = array();
+        if(count($collection) > 0){
+            foreach ($collection as $item) {
+                $tmp = [
+                    'dbName'=>$item->dbName,
+                    'realEstateName'=>$item->realEstateName,
+                    'dbIp'=>$item->dbIp,
+                    'dbPort'=>$item->dbPort,
+                    'dbUserName'=>$item->dbUserName,
+                    'dbPassword'=>$item->dbPassword,
+                ];
+                $data[] = $tmp;
+            }
+        }
+        return ['data'=>$data];
+    }
 }

@@ -54,7 +54,15 @@ class DBDirector
     public function connection($dbIp, $database, $user, $password)
     {
         $dsn = "mysql:host={$dbIp};dbname={$database}";
-        $db = new \PDO($dsn, $user, $password);
+        $db = null;
+        try{
+            $db = new \PDO($dsn, $user, $password);
+        }catch (\PDOException $exception){
+
+            //die("Error, " . $exception->getMessage() . "<br/>");
+            return null;
+        }
+
         $con = new Connection($db);
         return $con;
     }

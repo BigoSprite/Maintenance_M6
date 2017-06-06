@@ -4,9 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Api\NodeInfoApi;
 use Illuminate\Support\Facades\Input;
+use PhpParser\Node;
 
 class NodeInfoController extends Controller
 {
+
+    /**
+     * 功能：获取节点树上的数据
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     *
+     * 响应请求 方法 GET
+     * http://localhost:8888/api/admin/nodeTreeInfo
+     */
+    public function getNodeTree()
+    {
+        $arr = NodeInfoApi::create()->getNodeTree();
+
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
+    }
+
     /**
      * 功能：判断数据库是否存在某节点
      *

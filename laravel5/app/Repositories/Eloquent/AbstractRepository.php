@@ -98,6 +98,14 @@ abstract class AbstractRepository implements IRepository
         return $this->model->where($field, '=', $value)->first($columns);
     }
 
+
+    public function find2NBy($field, $value, $columns = array('*'))
+    {
+        return $this->model->where($field, '=', $value)->get($columns);
+    }
+
+
+
 //    /**
 //     * @function Mass Assignment with Exception throw, if the primary key has been existed.
 //     *

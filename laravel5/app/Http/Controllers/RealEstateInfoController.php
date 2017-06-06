@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Api\RealEstateInfoApi;
+use App\Api\RealEstateInfoApi;
 use App\Http\Controllers\Handlers\NodeInfoHandler;
 use App\Repositories\RealEstateInfoRepository as RealEstateInfoMgr;
 use Illuminate\Support\Facades\Input;

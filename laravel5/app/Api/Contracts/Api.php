@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Contracts;
+namespace App\Api\Contracts;
 
 use App\Repositories\Eloquent\AbstractRepository;
 

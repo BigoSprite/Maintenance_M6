@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Api;
-use App\Http\Controllers\Api\Contracts\Api;
-use App\Http\Controllers\Api\Utils\ApiInstanceFactory;
+namespace App\Api;
+use App\Api\Contracts\Api;
+use App\Api\Utils\ApiInstanceFactory;
 use App\Repositories\Eloquent\AbstractRepository;
 
 class NodeInfoApi extends Api

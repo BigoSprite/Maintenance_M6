@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Api\UserInfoApi;
+use App\Api\UserInfoApi;
 use Illuminate\Support\Facades\Input;
 
 class UserInfoController extends Controller

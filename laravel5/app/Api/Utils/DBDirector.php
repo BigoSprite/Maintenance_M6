@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Utils;
+namespace App\Api\Utils;
 
 use Illuminate\Database\Connection; /** for Connection */
 

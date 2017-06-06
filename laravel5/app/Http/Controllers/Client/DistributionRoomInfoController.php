@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
-use App\Http\Controllers\Api\Client\DistributionRoomInfoApi;
+use App\Api\Client\DistributionRoomInfoApi;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Node;
 
-use App\Http\Controllers\Api\Node\VDeviceInfoApi;
+use App\Api\Node\VDeviceInfoApi;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 

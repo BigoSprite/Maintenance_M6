@@ -9,13 +9,13 @@
  *      @GitHub: https://github.com/BigoSprite
  */
 
-namespace App\Http\Controllers\Api\Node;
-use App\Http\Controllers\Api\Contracts\Api;
+namespace App\Api\Node;
+use App\Api\Contracts\Api;
 use App\Repositories\Eloquent\AbstractRepository;
-use App\Http\Controllers\Api\Utils\ApiInstanceFactory;
+use App\Api\Utils\ApiInstanceFactory;
 
 /** MAKE SURE that yourApi class extents Api in order to use the (REPOSITORY MANAGER) */
-class Real_Estate_Info_Api extends Api
+class VDeviceNodeInfoApi extends Api
 {
     /**
      * Constructor.
@@ -39,25 +39,26 @@ class Real_Estate_Info_Api extends Api
         /** CREATE_FUNC like Cocos2d-x's CREATE_FUNC */
         /** Don't forget to CHANGE the parameters of CREATE_FUNC! */
         return ApiInstanceFactory::CREATE_FUNC(
-            'Real_Estate_Info_Api',
+            'VDeviceNodeInfoApi',
             __NAMESPACE__,
-            'Real_Estate_Info_Repository',
+            'VDeviceNodeInfoRepository',
             'App\Repositories\NodeRepository'
         );
     }
 
+
     /**
-     * 功能：判断$dbName对应的物业信息是否存在
-     * @param $dbName
+     * 功能：判断$nodeName对应的节点是否存在
+     * @param $nodeName
      * @return array
      */
-    public function isDBNameExist($dbName)
+    public function isNodeExist($nodeName)
     {
         $ret = [
             'isExist'=>'false'
         ];
 
-        $isExist = $this->repositoryMgr->isFieldExist('dbName', $dbName);
+        $isExist = $this->repositoryMgr->isFieldExist('nodeName', $nodeName);
 
         if($isExist){
             $ret['isExist'] = 'true';
@@ -67,20 +68,19 @@ class Real_Estate_Info_Api extends Api
     }
 
     /**
-     * 功能：获取$dbName对应的物业信息
-     * @param $dbName
+     * 功能：获取$nodeName对应的节点信息
+     * @param $nodeName
      * @return array
      */
-    public function get_Real_Estate_Info($dbName)
+    public function getNodeInfo($nodeName)
     {
-        $arrMap = $this->repositoryMgr->findBy('dbName', $dbName);
+        $arrMap = $this->repositoryMgr->findBy('nodeName', $nodeName);
+
         $retArray = array();
         if(count($arrMap) > 0){
             $retArray = [
-                "dbName"=> $arrMap['dbName'],
-                "realEstateName"=>$arrMap['realEstateName'],
-                "address"=>$arrMap['address'],
-                "description"=>$arrMap['description'],
+                "nodeName"=> $arrMap['nodeName'],
+                "nodeRemark"=>$arrMap['nodeRemark'],
             ];
         }
 
@@ -88,22 +88,20 @@ class Real_Estate_Info_Api extends Api
     }
 
     /**
-     * 功能：获取全部物业信息
+     * 功能：获取全部节点信息
      * @return array
      */
-    public function get_Real_Estate_Info_List()
+    public function getNodeList()
     {
-        $modelList = $this->repositoryMgr->all();
+        $nodeList = $this->repositoryMgr->all();
 
         $retArray = array();
-        if(count($modelList) > 0){
-            foreach ($modelList as $model) {
+        if(count($nodeList) > 0){
+            foreach ($nodeList as $obj) {
                 // 构造临时数组
                 $tmp_array = [
-                    "dbName"=> $model->dbName,
-                    "realEstateName"=>$model->realEstateName,
-                    "address"=>$model->address,
-                    "description"=>$model->description,
+                    "nodeName"=> $obj->nodeName,
+                    "nodeRemark"=> $obj->nodeRemark,
                 ];
 
                 // 加入最终的数组中

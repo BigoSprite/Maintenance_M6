@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
-use App\Http\Controllers\Api\Client\AssetInfoApi;
+use App\Api\Client\AssetInfoApi;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 

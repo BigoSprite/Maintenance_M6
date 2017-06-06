@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Node;
 
-use App\Http\Controllers\Api\Node\VDeviceNodeInfoApi;
+use App\Api\Node\VDeviceNodeInfoApi;
 use App\Http\Controllers\Controller;
 
 class VDeviceNodeInfoController extends Controller

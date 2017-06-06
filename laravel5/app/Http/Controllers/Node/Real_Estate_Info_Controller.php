@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Node;
 
-use App\Http\Controllers\Api\Node\Real_Estate_Info_Api;
+use App\Api\Node\Real_Estate_Info_Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 

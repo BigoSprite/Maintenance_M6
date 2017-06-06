@@ -9,10 +9,11 @@
  *      @GitHub: https://github.com/BigoSprite
  */
 
-namespace App\Http\Controllers\Api\Client;
-use App\Http\Controllers\Api\Contracts\Api;
+namespace App\Api\Client;
+
+use App\Api\Contracts\Api;
 use App\Repositories\Eloquent\AbstractRepository;
-use App\Http\Controllers\Api\Utils\ApiInstanceFactory;
+use App\Api\Utils\ApiInstanceFactory;
 
 /** MAKE SURE that yourApi class extents Api in order to use the (REPOSITORY MANAGER) */
 class AssetInfoApi extends Api

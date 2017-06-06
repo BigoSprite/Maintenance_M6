@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Node;
 
-use App\Http\Controllers\Api\Node\VDeviceRealTimeDataApi;
+use App\Api\Node\VDeviceRealTimeDataApi;
 use App\Http\Controllers\Controller;
 
 class VDeviceRealTimeDataController extends Controller

@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Api;
-use App\Events\RealEstateRegistered;
+namespace App\Api;
 use App\Repositories\RealEstateInfoRepository as RealEstateMgr;
 use Illuminate\Container\Container as App;
-use Illuminate\Support\Facades\Event;
 
 /** !!!!没有使用CREATE_FUNC的例子 */
 class RealEstateInfoApi

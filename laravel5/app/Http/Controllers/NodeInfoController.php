@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Api\NodeInfoApi;
+use App\Api\NodeInfoApi;
 use Illuminate\Support\Facades\Input;
 
 class NodeInfoController extends Controller

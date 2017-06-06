@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Node;
 
-use App\Http\Controllers\Api\Node\VDeviceHistoryDataApi;
+use App\Api\Node\VDeviceHistoryDataApi;
 use App\Http\Controllers\Controller;
 
 class VDeviceHistoryDataController extends Controller

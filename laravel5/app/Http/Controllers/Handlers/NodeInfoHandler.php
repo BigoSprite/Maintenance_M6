@@ -3,9 +3,6 @@
 namespace App\Http\Controllers\Handlers;
 
 use App\Models\NodeInfoModel;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class NodeInfoHandler extends Controller

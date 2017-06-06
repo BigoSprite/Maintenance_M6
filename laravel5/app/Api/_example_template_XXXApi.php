@@ -9,13 +9,13 @@
  *      @GitHub: https://github.com/BigoSprite
  */
 
-namespace App\Http\Controllers\Api\Client;
-use App\Http\Controllers\Api\Contracts\Api;
+namespace App\Api;
+use App\Api\Contracts\Api;
 use App\Repositories\Eloquent\AbstractRepository;
-use App\Http\Controllers\Api\Utils\ApiInstanceFactory;
+use App\Api\Utils\ApiInstanceFactory;
 
-/** MAKE SURE that yourApi class extents Api in order to use the (REPOSITORY MANAGER) */
-class VDeviceTypeInfoApi extends Api
+/** MAKE SURE that yourApi class extents Api in order to use the $repositoryMgr(REPOSITORY MANAGER) */
+class _example_template_XXXApi extends Api
 {
     /**
      * Constructor.
@@ -38,29 +38,29 @@ class VDeviceTypeInfoApi extends Api
     {
         /** CREATE_FUNC like Cocos2d-x's CREATE_FUNC */
         /** Don't forget to CHANGE the parameters of CREATE_FUNC! */
-        /** @NOTE 魔术常量__NAMESPACE__表示的当前命名空间 */
+        /** @NOTE 魔术常量__NAMESPACE__表示$__CLASS_NAME__的当前命名空间 */
         return ApiInstanceFactory::CREATE_FUNC(
-            'VDeviceTypeInfoApi',
+            '_example_template_XXXApi',
             __NAMESPACE__,
-            'VDeviceTypeInfoRepository',
-            'App\Repositories\ClientRepository'
+            '_example_template_XXXRepository',
+            'App\Repositories'
         );
     }
 
     /**
      * 功能：判断XXX对应的数据对象是否存在
-     * @param $name
+     * @param $XXX
      * @return array
      *
      * @NOTE Don't forget to CHANGE XXX to the right attribute!
      */
-    public function isDeviceTypeExist/** 1*/($name/** 2*/)
+    public function isXXXExist/** 1*/($XXX/** 2*/)
     {
         $ret = [
             'isExist'=>'false'
         ];
 
-        $isExist = $this->repositoryMgr->isFieldExist('name'/** 3*/, $name/** 4*/);
+        $isExist = $this->repositoryMgr->isFieldExist('_example_primaryKey_name_'/** 3*/, $XXX/** 4*/);
 
         if($isExist){
             $ret['isExist'] = 'true';

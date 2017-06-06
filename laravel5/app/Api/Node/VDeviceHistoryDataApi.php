@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Api\Node;
+namespace App\Api\Node;
 
-use App\Http\Controllers\Api\Utils\DBDirector;
+use App\Api\Utils\DBDirector;
 use Illuminate\Container\Container as App;
 
 class VDeviceHistoryDataApi

@@ -10,7 +10,7 @@
  */
 
 namespace App\Models\Client;
-use App\Http\Controllers\Api\RealEstateInfoApi;
+use App\Api\RealEstateInfoApi;
 use Illuminate\Database\Eloquent\Model;
 
 /** Concrete Model extents Model */

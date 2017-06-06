@@ -137,14 +137,20 @@
 //                    'installationDate':'2019-01-22'
 //                },
 
-                url:'api/content/register/asset',
+//                url:'api/content/register/asset',
+//                data:{
+//                    'distributionRoomInfo_serialId':'0',
+//                    'name':'昂思数显表1',
+//                    'type':'电表',
+//                    'unit':'个',
+//                    'amount':'2',
+//                    'addDate':'2017-09-11'
+//                },
+
+                url:'api/content/update/deviceTypeInfo',
                 data:{
-                    'distributionRoomInfo_serialId':'0',
-                    'name':'昂思数显表1',
-                    'type':'电表',
-                    'unit':'个',
-                    'amount':'2',
-                    'addDate':'2017-09-11'
+                    'name':'US2000',
+                    'typeDesc':'电表'
                 },
 
 

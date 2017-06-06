@@ -1,0 +1,103 @@
+1. 验证节点是否存在
+   对应路由为：http://localhost:8888/api/admin/verify/node/{nodeName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/admin/verify/node/成都
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+      "isExist": "true" or "false"
+   }
+
+2. 获取所有节点信息
+   对应路由为：http://localhost:8888/api/admin/nodeInfoList
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":
+            [
+                {
+                    "nodeName":"宜宾",
+                    "nodeIp":"127.0.0.1",
+                    "nodePort":"0",
+                    "nodeUserName":"root",
+                    "nodePassword":"root123",
+                    "address":"四川 宜宾",
+                    "remark":"该服务器座落在四川宜宾32号街道 HW"
+                },
+                ...
+            ]
+   }
+
+3. 获取节点名字列表
+   对应路由为：http://localhost:8888/api/admin/nodeNameList
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":
+            [
+                {
+                    "nodeName":"宜宾"
+                },
+                {
+                    "nodeName":"成都"
+                }
+                ...
+            ]
+   }
+
+4. 获取特定节点的服务器信息（——该条路由前端可能不需要）
+   对应路由为：http://localhost:8888/api/admin/nodeServerInfo/{nodeName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/admin/nodeServerInfo/成都
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":
+            {
+                "nodeIp":"127.0.0.1",
+                "nodePort":9809,
+                "nodeUserName":"fm",
+                "nodePassword":"fm123456"
+            }
+   }
+
+5. 注册节点
+   对应路由为：http://localhost:8888/api/admin/register/node
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+      'nodeName':'宜宾',
+      'nodeIp': '127.0.0.1',
+      'nodeUserName':'root',
+      'nodePassword':'root123',
+      'address':'四川 宜宾',
+      'remark':'该服务器座落在四川宜宾32号街道'
+   }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+6. 更新节点
+   对应路由为：http://localhost:8888/api/admin/update/node
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+       'nodeName':'宜宾',
+       'nodeIp': '127.0.0.1',
+       'nodeUserName':'root',
+       'nodePassword':'root123',
+       'address':'四川 宜宾',
+       'remark':'该服务器座落在四川宜宾32号街道'
+    }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+
+

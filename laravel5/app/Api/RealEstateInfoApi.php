@@ -45,6 +45,22 @@ class RealEstateInfoApi
     }
 
     /**
+     * 功能：验证物业否已存在
+     * @param $dbName
+     * @return array
+     */
+    public function isRealEstateExist($dbName)
+    {
+        $isExist = $this->realEstateMgr->isFieldExist('dbName', $dbName);
+
+        if($isExist){
+            return ['isExist'=>'true'];
+        }
+
+        return ['isExist'=>'false'];
+    }
+
+    /**
      * 功能：获取$dbName对应的物业信息
      * @param $dbName
      * @return array

@@ -1,0 +1,63 @@
+1. 验证实时数据表中的某虚拟设备是否存在
+   对应路由为：http://localhost:8888/api/content/verify/deviceRealTime/{gprsId}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/verify/deviceRealTime/0000000001
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+       "isExist":"false" OR "true"
+   }
+
+2.获取$gprsId对应的虚拟设备的实时数据——表头
+    对应路由为： http://localhost:8888/api/content/deviceRealTimeDataTable_headerData/{gprsId}
+    最后一个参数为可变参数，如: http://localhost:8888/api/content/deviceRealTimeDataTable_headerData/0000000001
+
+    响应请求 方法 GET
+
+    返回数据格式：和historyDataTable_headerData.json对应的json格式一样
+    {
+      "data": [
+        {
+          "id": "var00",
+          "name": "A相电压"
+        },
+        {
+          "id": "var01",
+          "name": "B相电压"
+        },
+        {
+          "id": "var02",
+          "name": "C相电压"
+        },
+        ...
+      ]
+    }
+
+3.获取$gprsId对应的虚拟设备的实时数据
+    对应路由为：http://localhost:8888/api/content/deviceRealTimeDataTable_bodyData/{gprsId}
+
+    最后一个参数为可变参数，如：http://localhost:8888/api/content/deviceRealTimeDataTable_bodyData/0000000001
+
+    响应请求 方法 GET
+
+    返回json：对应realTimeDataTable_bodyData.json
+    {
+      "lastUpdateTime":"2017-01-22 00:00:00",
+      "data": [
+        {
+          "name": "A相电压",
+          "value": "1V"
+        },
+        {
+          "name": "B相电压",
+          "value": "2V"
+        },
+        {
+          "name": "C相电压",
+          "value": "3V"
+        }
+        ...
+      ]
+    }
+

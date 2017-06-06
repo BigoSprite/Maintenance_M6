@@ -37,7 +37,7 @@ class VDeviceStatusController extends Controller
     }
 
     /**
-     * 功能：获取全部设备的状态
+     * 功能：获取全部设备的状态列表
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      *
      * 响应请求 方法 GET

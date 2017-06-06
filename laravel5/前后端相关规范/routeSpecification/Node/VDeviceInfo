@@ -1,0 +1,112 @@
+1. 验证gprsID对应的设备是否存在
+   对应路由为：http://localhost:8888/api/content/verify/deviceInfo/{gprsId}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/verify/deviceInfo/0000000001
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+      "isExist": "true" or "false"
+   }
+
+2. 获取gprsId对应的设备信息
+   对应路由为：http://localhost:8888/api/content/deviceInformation/{gprsId}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/deviceInformation/0000000002
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":
+            {
+                "gprsID":"0000000002",
+                "deviceName":"昂思数显222",
+                "deviceTypeName":"US2000",
+                "deviceRemark":"deviceRemark test",
+                "monitoredUnitName":"0",
+                "realestateinfo_dbName":"jinyehotel", // 这里是否需要返回中文名字
+                "protocolVersion":"1",
+                "protocolRemark":"test remark",
+                "contactPersonName":"hanzhiwei",
+                "contactTel":"15888765678",
+                "deviceDetailInfo":"null test",
+                "isDiscarded":1,
+                "addDate":"2017-09-02 11:00:00"
+            }
+   }
+
+3. 获取全部设备的信息
+   对应路由为：http://localhost:8888/api/content/deviceInformation
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+           "data":[
+               {
+                   "gprsID":"0000000002",
+                   "deviceName":"昂思数显222",
+                   "deviceTypeName":"US2000",
+                   "deviceRemark":"deviceRemark test",
+                   "monitoredUnitName":"0",
+                   "realestateinfo_dbName":"jinyehotel", // 这里是否需要返回中文名字
+                   "protocolVersion":"1",
+                   "protocolRemark":"test remark",
+                   "contactPersonName":"hanzhiwei",
+                   "contactTel":"15888765678",
+                   "deviceDetailInfo":"null test",
+                   "isDiscarded":1,
+                   "addDate":"2017-09-02 11:00:00"
+               },
+               ...
+           ]
+   }
+
+5. 注册设备信息
+   对应路由为：http://localhost:8888/api/content/register/device
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+         "gprsID":"0000000001",
+         "deviceName":"昂思数显1",
+         "deviceTypeName":"US2000",
+         "deviceRemark":"deviceRemark test",
+         "monitoredUnitName":"0",
+         "realestateinfo_dbName":"jinyehotel",
+         "protocolVersion":"1",
+         "protocolRemark":"test remark",
+         "contactPersonName":"hanzhiwei",
+         "contactTel":"15888765678",
+         "deviceDetailInfo":"null test",
+         "isDiscarded":1,
+         "addDate":"2017-09-02 11:00:00"
+   }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+6. 更新设备信息
+   对应路由为：http://localhost:8888/api/content/update/device
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+        "gprsID":"0000000001",
+        "deviceName":"昂思数显1",
+        "deviceTypeName":"US2000",
+        "deviceRemark":"deviceRemark test",
+        "monitoredUnitName":"test name",
+        "realestateinfo_dbName":"jinyehotel",
+        "protocolVersion":"1",
+        "protocolRemark":"test remark",
+        "contactPersonName":"hanzhiwei",
+        "contactTel":"15888765678",
+        "deviceDetailInfo":"null test",
+        "isDiscarded":1,
+        "addDate":"2017-09-02 11:00:00"
+   }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+
+

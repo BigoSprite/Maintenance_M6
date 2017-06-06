@@ -1,0 +1,93 @@
+1. 验证gprsId对应的设备状态信息是否存在
+   对应路由为：http://localhost:8888/api/content/verify/deviceStatus/{gprsId}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/verify/deviceStatus/0000000001
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+      "isExist": "true" or "false"
+   }
+
+2. 获取特定grsID的设备的状态
+   对应路由为：http://localhost:8888/api/content/deviceStatus/{gprsId}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/deviceStatus/0000000002
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":
+            {
+                "gprsID":"0000000002",
+                "isLogin":1,
+                "lastLoginTime":"2018-02-11 00:00:00",
+                "alarmFlag":1,
+                "alarmUpdateTime":"2018-02-11 00:00:00",
+                "isOperating":"1",
+                "operationDesc":"test",
+                "operationUpdateTime":"2018-02-11 00:00:00"
+            }
+   }
+
+3. 获取全部设备的状态列表
+   对应路由为：http://localhost:8888/api/content/deviceStatusList
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":
+            [
+                {
+                    "gprsID":"0000000001",
+                    "isLogin":1,
+                    "lastLoginTime":"2018-02-11 00:00:00",
+                    "alarmFlag":"1",
+                    "alarmUpdateTime":"2018-02-11 00:00:00",
+                    "isOperating":"1",
+                    "operationDesc":"test111",
+                    "operationUpdateTime":"2018-02-11 00:00:00"
+                },
+                ...
+            ]
+   }
+
+5. 注册设备状态信息
+   对应路由为：http://localhost:8888/api/content/register/deviceStatus
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+        'gprsID':'0000000001',
+        'isLogin':'1',
+        'lastLoginTime':'2018-02-11',
+        'alarmFlag':'flag1111',
+        'alarmUpdateTime':'2018-02-11',
+        'isOperating':'1',
+        'operationDesc':'test111',
+        'operationUpdateTime':'2018-02-11'
+   }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+6. 更新设备状态信息
+   对应路由为：http://localhost:8888/api/content/update/deviceStatus
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+        'gprsID':'0000000001',
+        'isLogin':'1',
+        'lastLoginTime':'2018-02-11',
+        'alarmFlag':'flag1111',
+        'alarmUpdateTime':'2018-02-11',
+        'isOperating':'1',
+        'operationDesc':'test111',
+        'operationUpdateTime':'2018-02-11'
+   }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+
+

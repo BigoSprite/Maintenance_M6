@@ -8,9 +8,24 @@ use Illuminate\Support\Facades\Input;
 class UserInfoController extends Controller
 {
     /**
+     * 功能：验证用户名是否已存在
+     * @param $userName
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     *
+     * 响应请求 方法 GET
+     * http://localhost:8888/api/admin/verify/user/admin
+     */
+    public function isUserNameExist($userName)
+    {
+        $arr = UserInfoApi::create()->isUserNameExist($userName);
+
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
+    }
+
+    /**
      * 功能：获取所有信息
      * 响应请求 方法 GET
-     * http://localhost:8888/api/admin/login
+     * http://localhost:8888/api/admin/userInfoList
      *
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      */
@@ -42,21 +57,6 @@ class UserInfoController extends Controller
         return response()->json($arr, 200);
     }
 
-
-    /**
-     * 功能：验证用户名是否已存在
-     * @param $userName
-     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
-     *
-     * 响应请求 方法 GET
-     * http://localhost:8888/api/admin/verify/user/admin
-     */
-    public function isUserNameExist($userName)
-    {
-        $arr = UserInfoApi::create()->isUserNameExist($userName);
-
-        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
-    }
 
     /**
      * 功能：注册用户

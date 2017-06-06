@@ -70,6 +70,49 @@ class VDeviceTypeInfoApi extends Api
     }
 
     /**
+     * 功能：获得特定设备类型名称（name）的设备信息
+     *
+     * @param $name
+     * @return array
+     */
+    public function getDeviceTypeInfo($name)
+    {
+        $modelArr = $this->repositoryMgr->findBy('name', $name);
+        $data = null;
+        if($modelArr != null){
+            $data = [
+                'name'=>$modelArr['name'],
+                'typeDesc'=>$modelArr['typeDesc']
+            ];
+        }
+
+        return ['data'=>$data];
+    }
+
+    /**
+     * 功能：获取所有设备类型的信息
+     *
+     * @return array
+     */
+    public function getDeviceTypeInfoList()
+    {
+        $objArr = $this->repositoryMgr->all();
+        $data = array();
+        if(count($objArr) > 0){
+            foreach ($objArr as $obj) {
+                $tmp = [
+                    'name'=>$obj->name,
+                    'typeDesc'=>$obj->typeDesc
+                ];
+                $data[] = $tmp;
+            }
+
+        }
+        return ['data'=>$data];
+    }
+
+
+    /**
      * 功能：注册
      * @param $data
      * @param $primaryKey

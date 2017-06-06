@@ -32,6 +32,21 @@ class RealEstateInfoController extends Controller
     }
 
     /**
+     * 功能：验证物业是否已存在
+     * @param $dbName
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     *
+     * 响应请求 方法 GET
+     * http://localhost:8888/api/content/verify/realEstate/jinyehotel
+     */
+    public function isRealEstateExist($dbName)
+    {
+        $arr = RealEstateInfoApi::create()->isRealEstateExist($dbName);
+
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
+    }
+
+    /**
      * 功能：获取特定物业信息
      * @param $dbName 物业(一般是小区)名字
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response

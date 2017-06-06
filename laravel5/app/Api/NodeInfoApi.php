@@ -44,7 +44,7 @@ class NodeInfoApi extends Api
             $tmp = [
                 'nodeName' => $item->nodeName,
                 'nodeIp' => $item->nodeIp,
-                'nodePort'=>$item->nodePort,
+                'nodePort'=>(string)$item->nodePort,
                 'nodeUserName'=>$item->nodeUserName,
                 'nodePassword'=>$item->nodePassword,
                 'address'=>$item->address,

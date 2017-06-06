@@ -1,0 +1,52 @@
+1. 获取gprsId对应设备的“历史数据”——表头
+    对应路由为：http://localhost:8888/api/content/deviceHistoryDataTable_headerData/{gprsId}
+    最后一个参数为可变参数，如: http://localhost:8888/api/content/deviceHistoryDataTable_headerData/0000000001
+
+    响应请求 方法 GET
+
+    返回数据格式：和historyDataTable_headerData.json对应的json格式一样
+    {
+      "data": [
+        {
+          "id": "var00",
+          "name": "A相电压"
+        },
+        {
+          "id": "var01",
+          "name": "B相电压"
+        },
+        {
+          "id": "var02",
+          "name": "C相电压"
+        },
+        ...
+      ]
+    }
+
+2. 从gprsid对应的历史数据表中获得对应的设备历史数据——最近100条记录
+    对应路由为：http://localhost:8888/api/content/deviceHistoryDataTable_bodyData/{gprsId}
+
+    最后一个参数为可变参数，如：http://localhost:8888/api/content/deviceHistoryDataTable_bodyData/0000000001
+
+    响应请求 方法 GET
+
+    返回数据格式：
+    {
+        "data":[
+            {
+                "saveTime":"2018-01-22 00:00:00",
+                "var00":"3769.9V",
+                "var01":"3769.9V",
+                "var02":"3769.9V",
+                "var03":"3769.9A",
+                "var04":"3769.9A",
+                "var05":"3769.9A",
+                "var06":"37699KW",
+                "var07":"37699KW",
+                "var08":"37699KW",
+                "var09":"376.99",
+                "var10":"0Hz"
+            },
+            ...
+        ]
+    }

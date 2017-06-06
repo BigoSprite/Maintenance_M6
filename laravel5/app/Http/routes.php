@@ -21,6 +21,11 @@ Route::group(['prefix'=>'api'],function (){
         Route::get('realEstateInfo/{realEstateName}', 'RealEstateInfoController@getRealEstateInfo');
         Route::get('realEstateInfoList', 'RealEstateInfoController@getRealEstateInfoList');
 
+        // 验证
+        Route::group(['prefix'=>'verify'], function (){
+            Route::get('realEstate/{dbName}', 'RealEstateInfoController@isRealEstateExist');
+        });
+
         Route::group(['namespace'=>'Node'], function(){
 
             Route::get('deviceInformation','VDeviceInfoController@getDeviceInfoList');
@@ -77,19 +82,25 @@ Route::group(['prefix'=>'api'],function (){
             Route::get('distributionRoomNameList/serialId', 'DistributionRoomInfoController@getRoomNameListWithSerialId');
 
             Route::get('assetInfoList', 'AssetInfoController@getAssetInfoList');
+
+            Route::get('deviceTypeInfo/{typeName}', 'VDeviceTypeInfoController@getDeviceTypeInfo');
+            Route::get('deviceTypeInfoList', 'VDeviceTypeInfoController@getDeviceTypeInfoList');
+
             // 验证
             Route::group(['prefix'=>'verify'], function (){
                 Route::get('distributionRoom/{serialId}', 'DistributionRoomInfoController@isRoomExist');
-
+                Route::get('deviceType/{typeName}', 'VDeviceTypeInfoController@isDeviceTypeExist');
             });
             // 注册
             Route::group(['prefix'=>'register'], function(){
                 Route::post('distributionRoom', 'DistributionRoomInfoController@registerRoom');
                 Route::post('asset', 'AssetInfoController@registerAssetInfo');
+                Route::post('deviceTypeInfo', 'VDeviceTypeInfoController@registerDeviceType');
             });
             // 更新
             Route::group(['prefix'=>'update'], function(){
                 Route::post('distributionRoom', 'DistributionRoomInfoController@updateRoom');
+                Route::post('deviceTypeInfo', 'VDeviceTypeInfoController@updateDeviceType');
             });
         });
 
@@ -97,7 +108,7 @@ Route::group(['prefix'=>'api'],function (){
 
     Route::group(['prefix'=>'admin'], function(){
 
-        Route::get('login', 'UserInfoController@all');
+        Route::get('userInfoList', 'UserInfoController@all');
 
         Route::get('nodeInfoList', 'NodeInfoController@all');
         Route::get('nodeNameList', 'NodeInfoController@getNodeNameList');

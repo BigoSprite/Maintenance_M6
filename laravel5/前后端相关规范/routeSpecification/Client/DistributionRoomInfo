@@ -1,0 +1,103 @@
+1. 验证序列号serialId的配电室是否存在
+   对应路由为：http://localhost:8888/api/content/verify/distributionRoom/{serialId}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/verify/distributionRoom/0
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+      "isExist": "true" or "false"
+   }
+
+2. 从distribution_Room_info表中获得“某序列号”对应的一行（配电室的所有属性）
+   对应路由为：http://localhost:8888/api/content/distributionRoomInfo/{serialId}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/distributionRoomInfo/0
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":{
+            "serialId":"0",
+            "roomName":"配电室1",
+            "description":"test",
+            "address":"测试地址",
+            "productionPro":"test",
+            "telephoneNumber":"12344556778",
+            "installationDate":"2017-06-05 21:07:32"
+        }
+   }
+
+3. 从distribution_Room_info表中获得所有配电室信息
+   对应路由为：http://localhost:8888/api/content/distributionRoomInfoList
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":[
+            {
+                "serialId":"0",
+                "roomName":"配电室1",
+                "description":"test",
+                "address":"测试地址",
+                "productionPro":"test",
+                "telephoneNumber":"12344556778",
+                "installationDate":"2017-06-05 21:07:32"
+            },
+            ...
+        ]
+   }
+
+4. 获得所有配电室名字及其序列号
+   对应路由为：http://localhost:8888/api/content/distributionRoomNameList/serialId
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":[
+            {
+                "name":"配电室1",
+                "serialId":"0"
+            },
+            ...
+        ]
+   }
+
+5. 注册配电室
+   对应路由为：http://localhost:8888/api/content/register/distributionRoom
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+        'serialId':'10',
+        'roomName':'配电室2',
+        'description':'test',
+        'address':'测试地址',
+        'productionPro':'test',
+        'telephoneNumber':'12344556778',
+        'installationDate':'2019-01-22'
+   }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+6. 更新配电室
+   对应路由为：http://localhost:8888/api/content/update/distributionRoom
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+        serialId':'10',
+        roomName':'配电室2',
+        description':'test',
+        address':'测试地址',
+        productionPro':'test',
+        telephoneNumber':'12344556778',
+        installationDate':'2019-01-22'
+   }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+
+

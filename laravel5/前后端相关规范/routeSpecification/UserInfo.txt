@@ -1,0 +1,64 @@
+1. 验证用户名是否已存在
+   对应路由为：http://localhost:8888/api/admin/verify/user/{userName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/admin/verify/user/admin
+   响应请求 方法 GET
+   返回数据格式
+   {
+      "isExist": "true" or "false"
+   }
+
+2. 获取所有User信息
+   对应路由为：http://localhost:8888/api/admin/userInfoList
+   响应请求 方法 GET
+   返回数据格式：
+   {
+       "data":[
+                   {
+                       "username":"admin",
+                       "loginPassword":"admin"
+                   },
+                   ...
+               ]
+   }
+
+3. 验证用户名和密码是否正确
+   对应路由为：http://localhost:8888/api/admin/verify/login
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+       "username": "",
+       "password": ""
+   }
+
+   返回数据格式：
+   {
+       "status":"success" or "fail"
+   }
+
+4. 注册用户
+   对应路由为：http://localhost:8888/api/admin/register/user
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+       "username": "",
+       "password": ""
+   }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+4. 更新用户
+   对应路由为：http://localhost:8888/api/admin/update/password
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+       "username": "",
+       "password": ""
+   }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+
+

@@ -1,0 +1,65 @@
+1. 验证typeName对应的设备类型是否存在
+   对应路由为：http://localhost:8888/api/content/verify/deviceType/{typeName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/verify/deviceType/US2000
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+      "isExist": "true" or "false"
+   }
+
+2. 获得特定设备类型名称（typeName）的设备信息
+   对应路由为：http://localhost:8888/api/content/deviceTypeInfo/{typeName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/deviceTypeInfo/US2000
+
+   响应请求 方法 GET
+   {
+        "data":{
+            "name":"US2000",
+            "typeDesc":"电表"
+        }
+   }
+
+3. 获取所有设备类型的信息
+   对应路由为：http://localhost:8888/api/content/deviceTypeInfoList
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":[
+            {
+                "name":"US2000",
+                "typeDesc":"电表"
+            },
+            ...
+         ]
+   }
+
+4. 注册设备类型信息
+   对应路由为：http://localhost:8888/api/content/register/deviceTypeInfo
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+        'name':'US2000',
+        'typeDesc':'电表'
+   }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+5. 更新设备类型信息
+   对应路由为：http://localhost:8888/api/content/update/deviceTypeInfo
+   响应请求 方法 POST
+
+   请求数据格式：
+   {
+        'name':'US2000',
+        'typeDesc':'电表'
+   }
+
+   返回数据格式：见插入或更新数据时后端返回状态规范
+
+
+

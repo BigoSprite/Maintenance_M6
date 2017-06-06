@@ -1,0 +1,42 @@
+1. 判断$nodeName对应的节点是否存在
+   对应路由为：http://localhost:8888/api/content/verify/deviceNodeInfo/{nodeName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/verify/deviceNodeInfo/jinyehotel
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+      "isExist": "true" or "false"
+   }
+
+2. 获取nodeName对应的节点信息
+   对应路由为：http://localhost:8888/api/content/deviceNodeInfo/{nodeName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/deviceNodeInfo/jinyehotel
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":
+            {
+                "nodeName":"jinyehotel",
+                "nodeRemark":"金叶大厦"
+            }
+   }
+
+3. 获取全部节点信息
+   对应路由为：http://localhost:8888/api/content/deviceNodeInfoList
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":
+            [
+                {
+                    "nodeName":"jinye",
+                    "nodeRemark":"金叶大厦"
+                },
+                ...
+            ]
+   }

@@ -18,6 +18,8 @@
 
 ![APP](http://i.imgur.com/FUOvy34.png)
 
+![](http://i.imgur.com/smKa59X.png)
+
 ### 3.2	基于“仓库模式”的业务逻辑和数据访问分离
 #### 3.2.1 仓库模式逻辑结构
 

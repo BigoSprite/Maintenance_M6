@@ -135,7 +135,7 @@ class NodeInfoApi extends Api
                     'children'=>[]
                 ];
 
-                // 获取数据库信息并连接
+                // ---------连接远程数据库
                 $dbName = $item['dbName'];
                 $dbIp = $item['dbIp'];
                 $dbPort = $item['dbPort'];

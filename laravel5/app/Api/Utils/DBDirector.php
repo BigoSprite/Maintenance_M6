@@ -59,11 +59,22 @@ class DBDirector
             $db = new \PDO($dsn, $user, $password);
         }catch (\PDOException $exception){
 
-            //die("Error, " . $exception->getMessage() . "<br/>");
-            return null;
+            die("Error, " . $exception->getMessage() . "<br/>");
+//            return null;
         }
 
         $con = new Connection($db);
         return $con;
+    }
+
+    public function connection_Ex(array $data)
+    {
+        $dbIp = $data['dbIp'];
+        $dbPort = $data['dbPort'];
+        $database = $data['dbName'];
+        $user = $data['dbUserName'];
+        $password = $data['dbPassword'];
+
+        return $this->connection($dbIp, $database, $user, $password);
     }
 }

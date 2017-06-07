@@ -1,0 +1,62 @@
+
+1. 获取节点下的所有物业，物业下面的所有配电室
+   对应路由为：http://localhost:8888/api/admin/nodeTreeInfo
+
+   响应请求 方法 GET
+
+   返回数据格式为：
+    {
+        "data": [
+            {
+                "label": "西南节点",
+                "children": [
+                    {
+                        "label": "金叶大厦",
+                        "children": [
+                            {
+                                "label": "配电室（001）"
+                            },
+                            {
+                                "label": "配电室（002）"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "管城花园",
+                        "children": [
+                            {
+                                "label": "配电室（001）"
+                            },
+                            {
+                                "label": "水电房（002）"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "lable": "西北节点",
+                "children": [{
+                        "label": "T大厦",
+                        "children": [{
+                                "label": "配电室（001）"
+                            },
+                            {
+                                "label": "配电室（002）"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "R花园",
+                        "children": [{
+                                "label": "配电室（001）"
+                            },
+                            {
+                                "label": "水电房（002）"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }

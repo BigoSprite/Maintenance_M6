@@ -30,7 +30,7 @@
                 url:'api/admin/update/realEstate',
                 data:{
                     'dbName':'guachenghuayuan',
-                    'realEstateName': '冠城花园',
+                    'realEstateName': '冠城花园11',
                     'address':'test address1',
                     'description':'test desc',
                     'manageCompany':'uestc',

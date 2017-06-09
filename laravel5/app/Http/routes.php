@@ -14,12 +14,6 @@ Route::get('/', function(){
     return redirect('http://221.236.173.192:8888/index.html');
 });
 
-
-
-Route::get('test/{nodeName}', 'RealEstateInfoController@getRealEstateWithDBInfoList');
-Route::get('test', 'NodeInfoController@getNodeListWithChildren');
-
-
 Route::group(['prefix'=>'api'],function (){
 
     Route::group(['prefix'=>'content'], function () {
@@ -84,9 +78,9 @@ Route::group(['prefix'=>'api'],function (){
 
         Route::group(['namespace'=>'Client'], function (){
 
-            Route::get('distributionRoomInfo/{serialId}', 'DistributionRoomInfoController@getRoomInfo');
-            Route::get('distributionRoomInfoList', 'DistributionRoomInfoController@getRoomInfoList');
-            Route::get('distributionRoomNameList/serialId', 'DistributionRoomInfoController@getRoomNameListWithSerialId');
+            Route::get('distributionRoomInfo/{dbName}/{serialId}', 'DistributionRoomInfoController@getRoomInfo');
+            Route::get('distributionRoomInfoList/{dbName}', 'DistributionRoomInfoController@getRoomInfoList');
+            Route::get('distributionRoomNameList/serialId/{dbName}', 'DistributionRoomInfoController@getRoomNameListWithSerialId');
 
             Route::get('assetInfoList', 'AssetInfoController@getAssetInfoList');
 
@@ -95,18 +89,18 @@ Route::group(['prefix'=>'api'],function (){
 
             // 验证
             Route::group(['prefix'=>'verify'], function (){
-                Route::get('distributionRoom/{serialId}', 'DistributionRoomInfoController@isRoomExist');
+                Route::get('distributionRoom/{dbName}/{serialId}', 'DistributionRoomInfoController@isRoomExist');
                 Route::get('deviceType/{typeName}', 'VDeviceTypeInfoController@isDeviceTypeExist');
             });
             // 注册
             Route::group(['prefix'=>'register'], function(){
-                Route::post('distributionRoom', 'DistributionRoomInfoController@registerRoom');
+                Route::post('distributionRoom/{dbName}', 'DistributionRoomInfoController@registerRoom');
                 Route::post('asset', 'AssetInfoController@registerAssetInfo');
                 Route::post('deviceTypeInfo', 'VDeviceTypeInfoController@registerDeviceType');
             });
             // 更新
             Route::group(['prefix'=>'update'], function(){
-                Route::post('distributionRoom', 'DistributionRoomInfoController@updateRoom');
+                Route::post('distributionRoom/{dbName}', 'DistributionRoomInfoController@updateRoom');
                 Route::post('deviceTypeInfo', 'VDeviceTypeInfoController@updateDeviceType');
             });
         });

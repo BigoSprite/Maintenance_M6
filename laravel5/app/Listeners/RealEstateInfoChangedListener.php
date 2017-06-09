@@ -23,8 +23,8 @@ class RealEstateInfoChangedListener
      */
     public function handle(RealEstateInfoChanged $event)
     {
-        $data = $event->realEstateData;
-        $type = $event->type;
+        $data = $event->data;
+        $type = $event->MSG_TYPE;
         $dbName = $data['dbName'];
 
         $realEstateModel = new Real_Estate_Info_Model();

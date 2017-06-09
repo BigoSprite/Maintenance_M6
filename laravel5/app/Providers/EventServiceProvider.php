@@ -13,12 +13,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\SomeEvent' => [
-            'App\Listeners\EventListener',
-        ],
-        'App\Events\RealEstateRegistered' => [
-            'App\Listeners\RealEstateRegisteredListener',
-        ],
+        /** 在这里注册你的事件及监听器 */
         'App\Events\RealEstateInfoChanged' => [
             'App\Listeners\RealEstateInfoChangedListener',
         ],

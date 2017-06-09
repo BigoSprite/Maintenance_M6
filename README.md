@@ -35,12 +35,8 @@ Laravel中数据库配置文件为config/database.php，打开该文件，默认
 	    'default' => env('DB_CONNECTION', 'mysql'),
 	
 	    'connections' => [
-	        //sqlite数据库相关配置
-	        'sqlite' => [
-	            'driver' => 'sqlite',
-	            'database' => storage_path('database.sqlite'),
-	            'prefix' => '',
-	        ],
+	        ...
+
 	        //mysql数据库相关配置
 	        'mysql' => [
 	            'driver' => 'mysql',
@@ -53,43 +49,13 @@ Laravel中数据库配置文件为config/database.php，打开该文件，默认
 	            'prefix' => '',
 	            'strict' => false,
 	        ],
-	        //Postgres数据库相关配置
-	        'pgsql' => [
-	            'driver' => 'pgsql',
-	            'host' => env('DB_HOST', 'localhost'),
-	            'database' => env('DB_DATABASE', 'forge'),
-	            'username' => env('DB_USERNAME', 'forge'),
-	            'password' => env('DB_PASSWORD', ''),
-	            'charset' => 'utf8',
-	            'prefix' => '',
-	            'schema' => 'public',
-	        ],
-	        //SQL Server数据库相关配置
-	        'sqlsrv' => [
-	            'driver' => 'sqlsrv',
-	            'host' => env('DB_HOST', 'localhost'),
-	            'database' => env('DB_DATABASE', 'forge'),
-	            'username' => env('DB_USERNAME', 'forge'),
-	            'password' => env('DB_PASSWORD', ''),
-	            'charset' => 'utf8',
-	            'prefix' => '',
-	        ],
+
+	      	...
 	
 	    ],
-	    //迁移表名称
-	    'migrations' => 'migrations',
-	    //Redis数据库相关配置
-	    'redis' => [
-	
-	        'cluster' => false,
-	
-	        'default' => [
-	            'host' => '127.0.0.1',
-	            'port' => 6379,
-	            'database' => 0,
-	        ],
-	 
-	    ],
+		
+		...
+
 	];
 
 如果要修改数据库配置信息，去修改.env对应值即可。多个数据库配置，参考[这里](http://fideloper.com/laravel-multiple-database-connections "Multiple DB Connections in Laravel")。
@@ -213,3 +179,5 @@ XXXModel常用的成员变量有：
 因此，系统核心架构如下图所示：
 
 ![Final](http://i.imgur.com/ERM9Hnm.png)
+
+### 3.3	基于“订阅·发布”模式的消息驱动模型

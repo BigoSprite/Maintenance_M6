@@ -1,7 +1,6 @@
 <?php
-
 /**
- * This file is created by hanzhiwei using _example_template_XXXModel.php
+ * This file is created by hanzhiwei using _example_template_remote_XXXModel.php
  *
  * @Copyright
  *      @user: hanzhiwei
@@ -10,7 +9,6 @@
  */
 
 namespace App\Models\Client;
-use App\Api\RealEstateInfoApi;
 use Illuminate\Database\Eloquent\Model;
 
 /** Concrete Model extents Model */
@@ -20,21 +18,16 @@ class DistributionRoomInfoModel extends Model
      * The connection name for the model.
      *
      * @var string
-     * @NOTE Remote mysql connection. Configure it in constructor.
+     * @NOTE 'mysql_client'corresponding to config/database.php/connections['mysql_client'].
+     *       If you wanna configure model's connection at runtime, you have to assign $connection to 'mysql_client'.
      */
-    protected $connection;
-
-    public function __construct(array $attributes = [])
-    {
-        $this->connection = 'mysql_client_jinyehotel';
-
-        parent::__construct($attributes);
-    }
+    protected $connection = 'mysql_client';
 
     /**
      * The table associated with the model.
      *
      * @var string
+     * @NOTE Don't forget to change $table's value corresponding to the right table!
      */
     protected $table = 'distribution_room_info';
 
@@ -54,18 +47,5 @@ class DistributionRoomInfoModel extends Model
      * 且二者只可设置其一，切记！它们决定create()是否可用！
      */
     protected $guarded = [];
-
-
-    /**
-     * @param $dbName
-     * @return array map | null
-     */
-    private function __getRemoteConnection($dbName)
-    {
-        $arr = RealEstateInfoApi::create()->getRealEstateDBInfo($dbName);
-        $map = $arr['data'];
-
-        return $map;
-    }
 
 }

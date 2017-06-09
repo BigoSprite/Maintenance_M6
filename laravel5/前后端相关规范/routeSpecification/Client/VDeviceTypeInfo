@@ -1,6 +1,8 @@
-1. 验证typeName对应的设备类型是否存在
-   对应路由为：http://localhost:8888/api/content/verify/deviceType/{typeName}
-   最后一个参数为可变参数，如：http://localhost:8888/api/content/verify/deviceType/US2000
+   注：参数dbName为小区的英文名字，也是对应的数据库名字，如：jinyehotel。
+
+1. 验证dbName数据库下的typeName对应的设备类型是否存在
+   对应路由为：http://localhost:8888/api/content/verify/deviceType/{dbName}/{typeName}
+   后两个参数为可变参数，如：http://localhost:8888/api/content/verify/deviceType/jinyehotel/US2000
 
    响应请求 方法 GET
 
@@ -9,9 +11,9 @@
       "isExist": "true" or "false"
    }
 
-2. 获得特定设备类型名称（typeName）的设备信息
-   对应路由为：http://localhost:8888/api/content/deviceTypeInfo/{typeName}
-   最后一个参数为可变参数，如：http://localhost:8888/api/content/deviceTypeInfo/US2000
+2. 获得dbName数据库下的特定设备类型名称（typeName）的设备信息
+   对应路由为：http://localhost:8888/api/content/deviceTypeInfo/{dbName}/{typeName}
+   后两个参数为可变参数，如：http://localhost:8888/api/content/deviceTypeInfo/jinyehotel/US2000
 
    响应请求 方法 GET
    {
@@ -21,9 +23,9 @@
         }
    }
 
-3. 获取所有设备类型的信息
-   对应路由为：http://localhost:8888/api/content/deviceTypeInfoList
-
+3. 获取dbName数据库下的所有设备类型的信息
+   对应路由为：http://localhost:8888/api/content/deviceTypeInfoList/{dbName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/deviceTypeInfoList/jinyehotel
    响应请求 方法 GET
 
    返回数据格式：
@@ -37,8 +39,9 @@
          ]
    }
 
-4. 注册设备类型信息
-   对应路由为：http://localhost:8888/api/content/register/deviceTypeInfo
+4. 注册dbName数据库下的设备类型信息
+   对应路由为：http://localhost:8888/api/content/register/deviceTypeInfo/{dbName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/register/deviceTypeInfo/jinyehotel
    响应请求 方法 POST
 
    请求数据格式：
@@ -49,8 +52,9 @@
 
    返回数据格式：见插入或更新数据时后端返回状态规范
 
-5. 更新设备类型信息
-   对应路由为：http://localhost:8888/api/content/update/deviceTypeInfo
+5. 更新dbName数据库下的设备类型信息
+   对应路由为：http://localhost:8888/api/content/update/deviceTypeInfo/{dbName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/update/deviceTypeInfo/jinyehotel
    响应请求 方法 POST
 
    请求数据格式：

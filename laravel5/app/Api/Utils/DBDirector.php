@@ -41,16 +41,6 @@ class DBDirector
     {
     }
 
-    /**
-     * 防止被反序列化
-     *
-     * @return void
-     */
-    private function __wakeup()
-    {
-        // TODO: Implement __wakeup() method.
-    }
-
     public function connection($dbIp, $database, $user, $password)
     {
         $dsn = "mysql:host={$dbIp};dbname={$database}";
@@ -77,4 +67,6 @@ class DBDirector
 
         return $this->connection($dbIp, $database, $user, $password);
     }
+
+
 }

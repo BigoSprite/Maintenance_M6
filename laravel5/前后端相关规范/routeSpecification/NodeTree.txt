@@ -19,7 +19,8 @@
                             {
                                 "label": "配电室（002）"
                             }
-                        ]
+                        ],
+                        "database":'jinyehotel'
                     },
                     {
                         "label": "管城花园",
@@ -30,7 +31,8 @@
                             {
                                 "label": "水电房（002）"
                             }
-                        ]
+                        ],
+                        "database":'guanchenghuayuan'
                     }
                 ]
             },
@@ -44,7 +46,8 @@
                             {
                                 "label": "配电室（002）"
                             }
-                        ]
+                        ],
+                        "database":'thotel'
                     },
                     {
                         "label": "R花园",
@@ -54,7 +57,8 @@
                             {
                                 "label": "水电房（002）"
                             }
-                        ]
+                        ],
+                        "database":'rhuayuan'
                     }
                 ]
             }

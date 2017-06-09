@@ -153,7 +153,8 @@ class NodeInfoApi extends Api
             foreach ($realEstateNameList as $item) {
                 $tmp = [
                     'label'=> $item['realEstateName'],
-                    'children'=>[]
+                    'children'=>[],
+                    'database'=>$item['dbName']
                 ];
 
                 // ---------连接远程数据库

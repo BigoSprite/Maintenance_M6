@@ -1,6 +1,9 @@
-1. 验证序列号serialId的配电室是否存在
-   对应路由为：http://localhost:8888/api/content/verify/distributionRoom/{serialId}
-   最后一个参数为可变参数，如：http://localhost:8888/api/content/verify/distributionRoom/0
+   注：参数dbName为小区的英文名字，也是对应的数据库名字，如：jinyehotel。
+
+
+1. 验证dbName数据库下的序列号serialId的配电室是否存在
+   对应路由为：http://localhost:8888/api/content/verify/distributionRoom/{dbName}/{serialId}
+   倒数两个参数为可变参数，如：http://localhost:8888/api/content/verify/distributionRoom/jinyehotel/0
 
    响应请求 方法 GET
 
@@ -9,9 +12,9 @@
       "isExist": "true" or "false"
    }
 
-2. 从distribution_Room_info表中获得“某序列号”对应的一行（配电室的所有属性）
-   对应路由为：http://localhost:8888/api/content/distributionRoomInfo/{serialId}
-   最后一个参数为可变参数，如：http://localhost:8888/api/content/distributionRoomInfo/0
+2. 从dbName数据库下的distribution_Room_info表中获得“某序列号”对应的一行（配电室的所有属性）
+   对应路由为：http://localhost:8888/api/content/distributionRoomInfo/{dbName}/{serialId}
+   倒数两个参数为可变参数，如：http://localhost:8888/api/content/distributionRoomInfo/jinyehotel/0
 
    响应请求 方法 GET
 
@@ -28,8 +31,9 @@
         }
    }
 
-3. 从distribution_Room_info表中获得所有配电室信息
-   对应路由为：http://localhost:8888/api/content/distributionRoomInfoList
+3. 从dbName数据库下的distribution_Room_info表中获得所有配电室信息
+   对应路由为：http://localhost:8888/api/content/distributionRoomInfoList/{dbName}
+   最后一个参数为可变参数
 
    响应请求 方法 GET
 
@@ -49,8 +53,8 @@
         ]
    }
 
-4. 获得所有配电室名字及其序列号
-   对应路由为：http://localhost:8888/api/content/distributionRoomNameList/serialId
+4. 获得dbName数据库下的所有配电室名字及其序列号
+   对应路由为：http://localhost:8888/api/content/distributionRoomNameList/serialId/{dbName}
 
    响应请求 方法 GET
 
@@ -65,8 +69,8 @@
         ]
    }
 
-5. 注册配电室
-   对应路由为：http://localhost:8888/api/content/register/distributionRoom
+5. 注册dbName数据库下的配电室
+   对应路由为：http://localhost:8888/api/content/register/distributionRoom/{dbName}
    响应请求 方法 POST
 
    请求数据格式：
@@ -82,8 +86,8 @@
 
    返回数据格式：见插入或更新数据时后端返回状态规范
 
-6. 更新配电室
-   对应路由为：http://localhost:8888/api/content/update/distributionRoom
+6. 更新dbName数据库下的配电室
+   对应路由为：http://localhost:8888/api/content/update/distributionRoom/{dbName}
    响应请求 方法 POST
 
    请求数据格式：

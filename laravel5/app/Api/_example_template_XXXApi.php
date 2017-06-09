@@ -36,11 +36,12 @@ class _example_template_XXXApi extends Api
      * @param string $runtimeDatabaseName
      * @return object
      */
-    public static function create(string $runtimeDatabaseName = '')
+    public static function create(string $runtimeDatabaseName = "")
     {
         /** ！！！需要在运行期动态设置数据库的连接 */
-        if($runtimeDatabaseName != '')
+        if($runtimeDatabaseName != "")
         {
+            // 以RealEstateInfoApi为例，其他类似！
             $data = RealEstateInfoApi::create()->getRealEstateDBInfo($runtimeDatabaseName);
             $dbInfo = $data['data'];
 

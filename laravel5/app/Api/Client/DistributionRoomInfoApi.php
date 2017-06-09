@@ -37,10 +37,10 @@ class DistributionRoomInfoApi extends Api
      * @param string $runtimeDatabaseName
      * @return object
      */
-    public static function create(string $runtimeDatabaseName = '')
+    public static function create(string $runtimeDatabaseName = "")
     {
         /** ！！！需要在运行期动态设置数据库的连接 */
-        if($runtimeDatabaseName != '')
+        if($runtimeDatabaseName != "")
         {
             $data = RealEstateInfoApi::create()->getRealEstateDBInfo($runtimeDatabaseName);
             $dbInfo = $data['data'];

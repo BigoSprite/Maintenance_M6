@@ -67,6 +67,25 @@
             }
    }
 
+4-1. 获取特定节点的节点信息
+   对应路由为：http://localhost:8888/api/admin/nodeInfo/{nodeName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/admin/nodeInfo/西南节点
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+     "data":{
+         "nodeName":"西南节点",
+         "nodeIp":"127.0.0.1",
+         "nodePort":"0",
+         "nodeUserName":"root",
+         "nodePassword":"root123",
+         "address":"四川 宜宾",
+         "remark":"该服务器座落在四川宜宾32号街道 HW"
+     }
+   }
+
 5. 注册节点
    对应路由为：http://localhost:8888/api/admin/register/node
    响应请求 方法 POST

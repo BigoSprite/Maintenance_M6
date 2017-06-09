@@ -81,9 +81,30 @@ class NodeInfoApi extends Api
         if(count($arrMap) > 0){
             $data = [
                 'nodeIp'=>$arrMap['nodeIp'],
-                'nodePort'=>$arrMap['nodePort'],
+                'nodePort'=>(string)$arrMap['nodePort'],
                 'nodeUserName'=>$arrMap['nodeUserName'],
                 'nodePassword'=>$arrMap['nodePassword'],
+            ];
+        }
+
+        return ['data'=>$data];
+    }
+
+    public function getNodeInfo($nodeName)
+    {
+        $arrMap = $this->repositoryMgr->findBy('nodeName', $nodeName);
+
+        $data = array();
+
+        if(count($arrMap) > 0){
+            $data = [
+                'nodeName'=>$nodeName,
+                'nodeIp'=>$arrMap['nodeIp'],
+                'nodePort'=>(string)$arrMap['nodePort'],
+                'nodeUserName'=>$arrMap['nodeUserName'],
+                'nodePassword'=>$arrMap['nodePassword'],
+                'address'=>$arrMap['address'],
+                'remark'=>$arrMap['remark']
             ];
         }
 

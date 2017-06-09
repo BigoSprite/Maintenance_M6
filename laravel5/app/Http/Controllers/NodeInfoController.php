@@ -86,6 +86,23 @@ class NodeInfoController extends Controller
     }
 
     /**
+     * 功能：获特定节点信息
+     *
+     * @param $nodeName
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     *
+     * 响应请求 方法 GET
+     * http://localhost:8888/api/admin/nodeInfo/成都
+     */
+    public function getNodeInfo($nodeName)
+    {
+        $arr = NodeInfoApi::create()->getNodeInfo($nodeName);
+
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
+    }
+
+
+    /**
      * 功能：注册新节点
      * @return \Illuminate\Http\JsonResponse
      *

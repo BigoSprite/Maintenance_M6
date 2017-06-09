@@ -60,6 +60,33 @@
         ]
    }
 
+3-1.获取所有的物业信息
+   对应路由为：http://localhost:8888/api/content/realEstateInfoList/{nodeName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/realEstateInfoList/西南节点
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+        "data":[
+            {
+                "dbName":"jinyehotel",
+                "realEstateName":"金叶大厦",
+                "address":"测试地址",
+                "description":"金叶大厦",
+                "manageCompany":"uestc",
+                "serviceEndDateTime":"2017-02-09 11:00:00",
+                "contactPersonName":"韩志伟",
+                "contactTel":"15828251950",
+                "longitude":1,
+                "latitude":1,
+                "isDiscarded":"0",
+                "nodeInfo_nodeName":"成都"
+            },
+            ...
+        ]
+   }
+
 4. 注册物业
    对应路由为：http://localhost:8888/api/admin/register/realEstate
    响应请求 方法 POST

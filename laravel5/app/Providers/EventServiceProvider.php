@@ -19,6 +19,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\RealEstateRegistered' => [
             'App\Listeners\RealEstateRegisteredListener',
         ],
+        'App\Events\RealEstateInfoChanged' => [
+            'App\Listeners\RealEstateInfoChangedListener',
+        ],
+
 
 
     ];

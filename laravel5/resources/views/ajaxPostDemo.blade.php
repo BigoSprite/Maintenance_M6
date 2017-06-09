@@ -27,25 +27,25 @@
 //                url:'api/admin/verify/login',
 //                data:{'username':"hanzhiwei2", 'password':'hanzhiwei2'},
 
-//                url:'api/admin/update/realEstate',
-//                data:{
-//                    'dbName':'guachenghuayuan1',
-//                    'realEstateName': '冠城花园1',
-//                    'address':'test address',
-//                    'description':'test desc',
-//                    'manageCompany':'uestc',
-//                    'serviceEndDateTime':'2018-02-11-22',
-//                    'contactPersonName':'hanzhiwei',
-//                    'contactTel':'15828251950',
-//                    'longitude':'23',
-//                    'latitude':'23',
-//                    'nodeInfo_nodeName':'冠城花园',
-//                    'dbIp':'127.0.0.1',
-//                    'dbPort':'3306',
-//                    'dbUserName':'root',
-//                    'dbPassword':'root',
-//                    'isDiscarded':'0'
-//                },
+                url:'api/admin/update/realEstate',
+                data:{
+                    'dbName':'guachenghuayuan',
+                    'realEstateName': '冠城花园',
+                    'address':'test address1',
+                    'description':'test desc',
+                    'manageCompany':'uestc',
+                    'serviceEndDateTime':'2018-02-11-22',
+                    'contactPersonName':'hanzhiwei',
+                    'contactTel':'15828251950',
+                    'longitude':'0',
+                    'latitude':'0',
+                    'nodeInfo_nodeName':'冠城花园',
+                    'dbIp':'127.0.0.1',
+                    'dbPort':'3306',
+                    'dbUserName':'root',
+                    'dbPassword':'root',
+                    'isDiscarded':'0'
+                },
 
 
 //                url:'api/admin/register/node',
@@ -147,11 +147,11 @@
 //                    'addDate':'2017-09-11'
 //                },
 
-                url:'api/content/update/deviceTypeInfo',
-                data:{
-                    'name':'US2000',
-                    'typeDesc':'电表'
-                },
+//                url:'api/content/update/deviceTypeInfo',
+//                data:{
+//                    'name':'US2000',
+//                    'typeDesc':'电表'
+//                },
 
 
 

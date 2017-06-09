@@ -62,6 +62,21 @@ class RealEstateInfoController extends Controller
     }
 
     /**
+     * 功能：获得节点（名字为$nodeName）下的物业列表
+     * @param $nodeName
+     * @return array
+     *
+     * 响应请求 方法 GET
+     * http://localhost:8888/api/content/realEstateInfoList/西南节点
+     */
+    public function getRealEstateListOfNode($nodeName)
+    {
+        $arr = RealEstateInfoApi::create()->getRealEstateListOfNode($nodeName);
+
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
+    }
+
+    /**
      * 功能：获取所有的物业信息
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      *
@@ -148,15 +163,6 @@ class RealEstateInfoController extends Controller
 
         return response()->json($arr,200);
     }
-
-
-//// http://localhost:8888/test/西北节点
-//    public function getRealEstateWithDBInfoList($nodeName)
-//    {
-//        $arr = RealEstateInfoApi::create()->getRealEstateWithDBInfoList($nodeName);
-//        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
-//    }
-
 
     // TODO... create realEstateInfo database.
     //$data = [

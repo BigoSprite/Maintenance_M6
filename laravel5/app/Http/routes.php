@@ -26,6 +26,7 @@ Route::group(['prefix'=>'api'],function (){
 
         Route::get('realEstateInfo/{realEstateName}', 'RealEstateInfoController@getRealEstateInfo');
         Route::get('realEstateInfoList', 'RealEstateInfoController@getRealEstateInfoList');
+        Route::get('realEstateInfoList/{nodeName}', 'RealEstateInfoController@getRealEstateListOfNode');
 
         // 验证
         Route::group(['prefix'=>'verify'], function (){
@@ -119,6 +120,7 @@ Route::group(['prefix'=>'api'],function (){
         Route::get('nodeInfoList', 'NodeInfoController@all');
         Route::get('nodeNameList', 'NodeInfoController@getNodeNameList');
         Route::get('nodeServerInfo/{nodeName}', 'NodeInfoController@getNodeServerInfo');
+        Route::get('nodeInfo/{nodeName}', 'NodeInfoController@getNodeInfo');
 
         Route::get('nodeTreeInfo', 'NodeInfoController@getNodeTree');
 

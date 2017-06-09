@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Api;
+use App\Events\RealEstateInfoChanged;
+use App\Events\RealEstateRegistered;
 use App\Repositories\RealEstateInfoRepository as RealEstateMgr;
 use Illuminate\Container\Container as App;
+use Illuminate\Support\Facades\Event;
 
 /** !!!!没有使用CREATE_FUNC的例子 */
 class RealEstateInfoApi
@@ -155,14 +158,18 @@ class RealEstateInfoApi
 //            $this->__registerDatabase($input);
 //
 //            // TODO... 2.同步nodeinfo表，其中realestate_info表中的外键nodeinfo_nodeName对应nodeinfo表中主键nodeName
-            //Event::fire(new RealEstateRegistered());
-
-            return ['status'=>'success', 'isExist'=>'false'];
-        }elseif ($map['status'] == 'fail' && $map['isExist'] == 'true'){//插入失败， 因为主键已经存在
-            return ['status'=>'fail', 'isExist'=>'true'];
-        }elseif ($map['status'] == 'fail' && $map['isExist'] == 'false'){
-            return ['status'=>'fail', 'isExist'=>'false'];
+            $input_data = [
+                'dbName'=>$data['dbName'],
+                'realEstateName'=>$data['realEstateName'],
+                'address'=>$data['address'],
+                'description'=>$data['description']
+            ];
+            Event::fire(new RealEstateInfoChanged($input_data, 0));
         }
+
+        // 回滚失败操作 TODO
+
+        return $map;
     }
 
     /**
@@ -175,7 +182,22 @@ class RealEstateInfoApi
      */
     public function updateRealEstateInfo(array $data, $primaryKey, $value)
     {
-        return $this->realEstateMgr->update_Ex($data, $primaryKey, $value);
+        $map = $this->realEstateMgr->update_Ex($data, $primaryKey, $value);
+
+        if($map['status'] == 'success' && $map['isExist'] == 'true')
+        {
+            $input_data = [
+                'dbName'=>$data['dbName'],
+                'realEstateName'=>$data['realEstateName'],
+                'address'=>$data['address'],
+                'description'=>$data['description']
+            ];
+            Event::fire(new RealEstateInfoChanged($input_data, 1));
+        }
+
+        // 回滚失败操作 TODO
+
+        return $map;
     }
 
 
@@ -224,7 +246,7 @@ class RealEstateInfoApi
 
 
     /**
-     * 功能：获得节点（名字为$nodeName）下的物业列表
+     * 功能：获得节点（名字为$nodeName）下的物业列表(数据库版)
      * @param $nodeName
      * @return array
      */
@@ -248,6 +270,52 @@ class RealEstateInfoApi
                     'dbPort'=>$item->dbPort,
                     'dbUserName'=>$item->dbUserName,
                     'dbPassword'=>$item->dbPassword,
+                ];
+                $data[] = $tmp;
+            }
+        }
+        return ['data'=>$data];
+    }
+
+
+    /**
+     * 功能：获得节点（名字为$nodeName）下的物业列表
+     * @param $nodeName
+     * @return array
+     */
+    public function getRealEstateListOfNode($nodeName)
+    {
+        $collection =  $this->realEstateMgr->find2NBy('nodeInfo_nodeName', $nodeName, [
+            'dbName',
+            'realEstateName',
+            'address',
+            'description',
+            'manageCompany',
+            'serviceEndDateTime',
+            'contactPersonName',
+            'contactTel',
+            'longitude',
+            'latitude',
+            'isDiscarded',
+            'nodeInfo_nodeName'
+
+        ]);
+        $data = array();
+        if(count($collection) > 0){
+            foreach ($collection as $item) {
+                $tmp = [
+                    'dbName'=>$item->dbName,
+                    'realEstateName'=>$item->realEstateName,
+                    'address'=>$item->address,
+                    'description'=>$item->description,
+                    'manageCompany'=>$item->manageCompany,
+                    'serviceEndDateTime'=>$item->serviceEndDateTime,
+                    'contactPersonName'=>$item->contactPersonName,
+                    'contactTel'=>$item->contactTel,
+                    'longitude'=>(string)$item->longitude,
+                    'latitude'=>(string)$item->latitude,
+                    'isDiscarded'=>(string)$item->isDiscarded,
+                    'nodeInfo_nodeName'=>(string)$item->nodeInfo_nodeName,
                 ];
                 $data[] = $tmp;
             }

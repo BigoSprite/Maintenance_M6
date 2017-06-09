@@ -32,11 +32,14 @@ class AssetInfoApi extends Api
 
     /**
      * Create Function
-     *
+     * @param $runtimeDatabaseName
      * @return object
      */
-    public static function create()
+    public static function create(string $runtimeDatabaseName = "")
     {
+        /** Don't forget to configure model's connection, if you wanna change database at runtime! */
+        parent::configureConnection($runtimeDatabaseName);
+
         /** CREATE_FUNC like Cocos2d-x's CREATE_FUNC */
         /** Don't forget to CHANGE the parameters of CREATE_FUNC! */
         /** @NOTE 魔术常量__NAMESPACE__表示的当前命名空间 */
@@ -50,12 +53,13 @@ class AssetInfoApi extends Api
 
     /**
      * 功能：获得所有资产
+     * @param $dbName
      * @return array
      */
-    public function getAssetInfoList()
+    public function getAssetInfoList($dbName)
     {
         // 1. 获取外键distributionRoomInfo_serialId对应的配电室的中文名字
-        $dataMap = DistributionRoomInfoApi::create()->getRoomNameListWithSerialId();
+        $dataMap = DistributionRoomInfoApi::create($dbName)->getRoomNameListWithSerialId();
         $arr = $dataMap['data'];
 
         $serialId_name_map = array();

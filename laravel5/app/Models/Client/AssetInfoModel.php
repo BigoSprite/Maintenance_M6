@@ -18,14 +18,13 @@ class AssetInfoModel extends Model
      * The connection name for the model.
      *
      * @var string
-     * @NOTE Remote mysql connection. Configure it in constructor.
+     * @NOTE 'mysql_client'corresponding to config/database.php/connections['mysql_client'].
+     *       If you wanna configure model's connection at runtime, you have to assign $connection to 'mysql_client'.
      */
-    protected $connection;
+    protected $connection = 'mysql_client';
 
     public function __construct(array $attributes = [])
     {
-        $this->connection = 'mysql_client_jinyehotel';
-
         parent::__construct($attributes);
     }
 

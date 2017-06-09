@@ -1,0 +1,27 @@
+1. 获得所有资产信息列表
+   对应的路由为：http://localhost:8888/api/content/assetInfoList/{dbName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/assetInfoList/jinyehotel
+   响应请求 方法 GET
+   返回数据格式：
+   {
+       "data":[
+           {
+               "distributionRoomInfo_serialId":"0",
+               "distributionRoomName":"配电室1",
+               "name":"昂思数显表1",
+               "type":"电表",
+               "unit":"个",
+               "amount":"2",
+               "addDate":"2017-09-11 00:00:00"
+           },
+           ...
+       ]
+   }
+
+2. 注册资产
+   对应的路由为：http://localhost:8888/api/content/register/assetInfo/{dbName}
+   最后一个参数为可变参数，如：http://localhost:8888/api/content/register/assetInfo/jinyehotel
+
+   响应请求 方法 POST
+
+   返回数据格式：见插入或更新数据时后端返回状态规范

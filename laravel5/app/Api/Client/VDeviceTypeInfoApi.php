@@ -32,10 +32,14 @@ class VDeviceTypeInfoApi extends Api
     /**
      * Create Function
      *
+     * @param string $runtimeDatabaseName
      * @return object
      */
-    public static function create()
+    public static function create(string $runtimeDatabaseName = "")
     {
+        /** Don't forget to configure model's connection, if you wanna change database at runtime! */
+        parent::configureConnection($runtimeDatabaseName);
+
         /** CREATE_FUNC like Cocos2d-x's CREATE_FUNC */
         /** Don't forget to CHANGE the parameters of CREATE_FUNC! */
         /** @NOTE 魔术常量__NAMESPACE__表示的当前命名空间 */
@@ -54,13 +58,13 @@ class VDeviceTypeInfoApi extends Api
      *
      * @NOTE Don't forget to CHANGE XXX to the right attribute!
      */
-    public function isDeviceTypeExist/** 1*/($name/** 2*/)
+    public function isDeviceTypeExist($name)
     {
         $ret = [
             'isExist'=>'false'
         ];
 
-        $isExist = $this->repositoryMgr->isFieldExist('name'/** 3*/, $name/** 4*/);
+        $isExist = $this->repositoryMgr->isFieldExist('name', $name);
 
         if($isExist){
             $ret['isExist'] = 'true';
@@ -110,7 +114,6 @@ class VDeviceTypeInfoApi extends Api
         }
         return ['data'=>$data];
     }
-
 
     /**
      * 功能：注册

@@ -11,8 +11,6 @@
 
 namespace App\Api\Client;
 use App\Api\Contracts\Api;
-use App\Api\RealEstateInfoApi;
-use App\Api\Utils\DBConfigUtil;
 use App\Repositories\Eloquent\AbstractRepository;
 use App\Api\Utils\ApiInstanceFactory;
 
@@ -39,19 +37,8 @@ class DistributionRoomInfoApi extends Api
      */
     public static function create(string $runtimeDatabaseName = "")
     {
-        /** ！！！需要在运行期动态设置数据库的连接 */
-        if($runtimeDatabaseName != "")
-        {
-            $data = RealEstateInfoApi::create()->getRealEstateDBInfo($runtimeDatabaseName);
-            $dbInfo = $data['data'];
-
-            if(count($dbInfo) > 0){
-                $host = $dbInfo['dbIp'];
-                $username = $dbInfo['dbUserName'];
-                $password = $dbInfo['dbPassword'];
-                DBConfigUtil::create()->setClientModelConnection($host, $runtimeDatabaseName, $username, $password);
-            }
-        }
+        /** Don't forget to configure model's connection, if you wanna change database at runtime! */
+        parent::configureConnection($runtimeDatabaseName);
 
         /** CREATE_FUNC like Cocos2d-x's CREATE_FUNC */
         /** Don't forget to CHANGE the parameters of CREATE_FUNC! */

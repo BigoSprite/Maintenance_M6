@@ -82,26 +82,25 @@ Route::group(['prefix'=>'api'],function (){
             Route::get('distributionRoomInfoList/{dbName}', 'DistributionRoomInfoController@getRoomInfoList');
             Route::get('distributionRoomNameList/serialId/{dbName}', 'DistributionRoomInfoController@getRoomNameListWithSerialId');
 
-            Route::get('assetInfoList', 'AssetInfoController@getAssetInfoList');
-
-            Route::get('deviceTypeInfo/{typeName}', 'VDeviceTypeInfoController@getDeviceTypeInfo');
-            Route::get('deviceTypeInfoList', 'VDeviceTypeInfoController@getDeviceTypeInfoList');
+            Route::get('assetInfoList/{dbName}', 'AssetInfoController@getAssetInfoList');
+            Route::get('deviceTypeInfo/{dbName}/{typeName}', 'VDeviceTypeInfoController@getDeviceTypeInfo');
+            Route::get('deviceTypeInfoList/{dbName}', 'VDeviceTypeInfoController@getDeviceTypeInfoList');
 
             // 验证
             Route::group(['prefix'=>'verify'], function (){
                 Route::get('distributionRoom/{dbName}/{serialId}', 'DistributionRoomInfoController@isRoomExist');
-                Route::get('deviceType/{typeName}', 'VDeviceTypeInfoController@isDeviceTypeExist');
+                Route::get('deviceType/{dbName}/{typeName}', 'VDeviceTypeInfoController@isDeviceTypeExist');
             });
             // 注册
             Route::group(['prefix'=>'register'], function(){
                 Route::post('distributionRoom/{dbName}', 'DistributionRoomInfoController@registerRoom');
-                Route::post('asset', 'AssetInfoController@registerAssetInfo');
-                Route::post('deviceTypeInfo', 'VDeviceTypeInfoController@registerDeviceType');
+                Route::post('asset/{dbName}', 'AssetInfoController@registerAssetInfo');
+                Route::post('deviceTypeInfo/{dbName}', 'VDeviceTypeInfoController@registerDeviceType');
             });
             // 更新
             Route::group(['prefix'=>'update'], function(){
                 Route::post('distributionRoom/{dbName}', 'DistributionRoomInfoController@updateRoom');
-                Route::post('deviceTypeInfo', 'VDeviceTypeInfoController@updateDeviceType');
+                Route::post('deviceTypeInfo/{dbName}', 'VDeviceTypeInfoController@updateDeviceType');
             });
         });
 

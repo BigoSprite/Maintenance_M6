@@ -79,15 +79,15 @@
 //                    'installationDate':'2015-01-11'
 //                },
 
-//                url:'api/content/insertAssetInfo',
-//                data:{
-//                    'serialId': '111',
-//                    'name':'开关2',
-//                    'type':"switch",
-//                    'unit':'个',
-//                    'amount':'4',
-//                    'addDate':'2015-01-11'
-//                },
+                url:'api/content/register/asset/jinyehotel',
+                data:{
+                    'distributionRoomInfo_serialId':'1',
+                    'name':'开关2',
+                    'type':"switch",
+                    'unit':'个',
+                    'amount':'4',
+                    'addDate':'2015-01-11'
+                },
 
 //                  url:'api/content/update/device',
 //                  data:{

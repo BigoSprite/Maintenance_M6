@@ -14,20 +14,27 @@
 ### 2.1	系统物理拓扑结构
 
 ## 3. 应用设计结构
-### 3.1	Laravel应用程序核心目录及其介绍
+### 3.1	Laravel应用核心程序包结构
 
-#### 3.1.1 应用程序包结构
-
-#### 3.1.2 app
+#### 3.1.1 app目录概览
 
 ![APP](http://i.imgur.com/RqZ7Lp1.png)
 
+#### 3.1.2 核心目录一瞥
+
+![Model](http://i.imgur.com/x5YSZvY.png)
+
+![Repository](http://i.imgur.com/p0k8xIt.png)
+
+![Api](http://i.imgur.com/iHGgxOz.png)
+
+
+
 #### 3.1.3 数据库配置
 
-Laravel中数据库配置文件为config/database.php，打开该文件，默认内容如下：
+Laravel中数据库配置文件为config/database.php，打开该文件，设置内容如下：
 
     <?php
-
 	return [
 	    //默认返回结果集为PHP对象实例
 	    'fetch' => PDO::FETCH_CLASS,
@@ -36,8 +43,7 @@ Laravel中数据库配置文件为config/database.php，打开该文件，默认
 	
 	    'connections' => [
 	        ...
-
-	        //mysql数据库相关配置
+	        // 数据库hw***root
 	        'mysql' => [
 	            'driver' => 'mysql',
 	            'host' => env('DB_HOST', 'localhost'),
@@ -49,24 +55,55 @@ Laravel中数据库配置文件为config/database.php，打开该文件，默认
 	            'prefix' => '',
 	            'strict' => false,
 	        ],
-
+ 			// 数据库hw***node
+	        'mysql_cloud_node' => [
+	            'driver'    => 'mysql',
+	            'host'      => env('DB_HOST', 'localhost'),
+	            'database'  => env('DB_DATABASE_CLOUD_NODE', 'forge'),
+	            'username'  => env('DB_USERNAME', 'forge'),
+	            'password'  => env('DB_PASSWORD', ''),
+	            'charset'   => 'utf8',
+	            'collation' => 'utf8_unicode_ci',
+	            'prefix'    => '',
+	            'strict'    => false,
+	            'engine'    => null,
+	        ],
+	        /** mysql_client表示客户的物业数据库信息---这里的host、databse、username和password在runtime动态赋值以实现复用 */
+	        'mysql_client' => [
+	            'driver'    => 'mysql',
+	            'host'      => '',
+	            'database'  => '',
+	            'username'  => '',
+	            'password'  => '',
+	            'charset'   => 'utf8',
+	            'collation' => 'utf8_unicode_ci',
+	            'prefix'    => '',
+	            'strict'    => false,
+	            'engine'    => null,
+	        ],
 	      	...
-	
-	    ],
-		
+	    ],		
 		...
-
 	];
 
-如果要修改数据库配置信息，去修改.env对应值即可。多个数据库配置，参考[这里](http://fideloper.com/laravel-multiple-database-connections "Multiple DB Connections in Laravel")。
-
-#### 3.1.4 config
-
-
-
-
+如果要修改数据库配置信息，去修改.env对应值即可。多个数据库配置，参考[这里](http://fideloper.com/laravel-multiple-database-connections "Multiple DB Connections in Laravel")。mysql_client用于关联具体的物业数据库，使用Config::set()方法修改。
 
 ### 3.2	基于“仓库模式”的业务逻辑和数据访问分离
+
+本章主要介绍后端开发过程中的一些重要特性，由于该应用的前后端完全分离——基于“前端请求·后端响应”的机制，前端负责MVC架构的View模块，所以这里主要介绍模型（Model）和控制器（Controller）模块。
+
+在Laravel框架下，比较一般的开发流程是：
+
+1. 使用DB门面、查询构建器或Eloquent ORM的Model来访问数据库；
+2. 在Controller层中注入Model数据模型，然后访问数据库；
+3. 在Route中编写Controller的Api，交递给前端。
+
+存在的缺点：
+
+- Model和Controller职责不单一，不利于维护和扩展；
+- Controller主要负责和Route做交互，过多的逻辑写在Controller中，不利于复用；
+- Model和Controller混合在一起，虽然可以实现功能，但会写更多重复代码，代码耦合性更强。
+
 #### 3.2.1 仓库模式逻辑结构
 
 首先需要声明的是设计模式和使用的框架以及语言是无关的，关键是要理解设计模式背后的原则。

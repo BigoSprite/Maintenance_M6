@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Api\RealEstateInfoApi;
-use App\Http\Controllers\Handlers\NodeInfoHandler;
 use App\Repositories\RealEstateInfoRepository as RealEstateInfoMgr;
 use Illuminate\Support\Facades\Input;
 
@@ -162,36 +161,6 @@ class RealEstateInfoController extends Controller
         $arr = RealEstateInfoApi::create()->updateRealEstateInfo($data, 'dbName', $primaryKey_dbName);
 
         return response()->json($arr,200);
-    }
-
-    // TODO... create realEstateInfo database.
-    //$data = [
-    //'database'=>$primaryKey_dbName,
-    //'ip'=>$dbIp,
-    //'port'=>$dbPort,
-    //'user'=>$dbUserName,
-    //'password'=>$dbPassword
-    //];
-    private function __registerDatabase(array $data)
-    {
-    }
-
-    private function __syncNodeInfoTable($nodeName)
-    {
-        $nodeInfoObj = NodeInfoHandler::create();
-        if(!$nodeInfoObj->isNodeExist($nodeName))
-        {
-            $data = [
-                'nodeName'=>$nodeName,
-                'nodeIp'=>'',
-                'nodePort'=>'',
-                'nodeUserName'=>'',
-                'nodePassword'=>'',
-                'address'=>'',
-                'remark'=>'',
-            ];
-            return $nodeInfoObj->registerNodeInfo($data);
-        }
     }
 
 }

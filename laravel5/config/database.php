@@ -76,18 +76,6 @@ return [
             'strict'    => false,
             'engine'    => null,
         ],
-        'mysql_client_jinyehotel' => [
-            'driver'    => 'mysql',
-            'host'      => env('DB_HOST_CLIENT_JINYEHOTEL', 'localhost'),
-            'database'  => env('DB_DATABASE_CLIENT_JINYEHOTEL', 'forge'),
-            'username'  => env('DB_USERNAME_CLIENT_JINYEHOTEL', 'forge'),
-            'password'  => env('DB_PASSWORD_CLIENT_JINYEHOTEL', ''),
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'strict'    => false,
-            'engine'    => null,
-        ],
         /** mysql_client表示客户的物业数据库信息---这里的host、databse、username和password在runtime动态赋值以实现复用 */
         'mysql_client' => [
             'driver'    => 'mysql',
@@ -95,6 +83,19 @@ return [
             'database'  => '',
             'username'  => '',
             'password'  => '',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+            'engine'    => null,
+        ],
+
+        'mysql_client_jinyehotel' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST_CLIENT_JINYEHOTEL', 'localhost'),
+            'database'  => env('DB_DATABASE_CLIENT_JINYEHOTEL', 'forge'),
+            'username'  => env('DB_USERNAME_CLIENT_JINYEHOTEL', 'forge'),
+            'password'  => env('DB_PASSWORD_CLIENT_JINYEHOTEL', ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

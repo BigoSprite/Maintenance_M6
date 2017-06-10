@@ -1,8 +1,8 @@
 # 基于Laravel5的WEB系统分布式架构解决方案
 
-一般的大型WEB 系统都是由大量的子系统、模块采用构件的方式进行搭建完成；整个系统必须要能解决大量用户并发访问、高并发请求、业务数据缓冲等一系列的关键功能；在PHP以前该类系统都是基于J2EE的底层技术开发设计的，对于目前已经很流行的MVC开发框架方面PHP更是很少有比较成功的产品以及经验可以供借鉴。
+一般的大型WEB 系统都是由大量的子系统、模块采用构件的方式进行搭建完成；整个系统必须要能解决大量用户并发访问、高并发请求、业务数据缓冲等一系列的关键功能。
 
-本文主要以实现类似于J2EE目前流行的MVC框架为目的，设计一个基于PHP的大型WEB系统分布式平台架构，并以一个实际例子（模拟FACEBOOK业务）详细说明分布式业务对象缓存、分布式文件系统存取、数据库集群、网页静态化处理、用户安全认证等技术的设计和使用。
+本文主要以实现前后端完全分离、低耦合、易扩展及高复用性的WEB应用为目的，设计一个基于Laravel框架的PHP大型WEB系统分布式平台架构，并以一个实际例子（配电室运维后台管理系统）详细说明分布式业务对象缓存、分布式数据库数据存取、数据库集群、网页静态化处理、用户安全认证等技术的设计和使用。
 
 
 ## 1. 软件架构
@@ -20,7 +20,7 @@
 
 ![APP](http://i.imgur.com/RqZ7Lp1.png)
 
-#### 3.1.2 核心目录一瞥
+#### 3.1.2 核心文件一瞥
 
 ![Model](http://i.imgur.com/x5YSZvY.png)
 
@@ -28,6 +28,8 @@
 
 ![Api](http://i.imgur.com/iHGgxOz.png)
 
+
+请注意：在扩展时，请尽量让派生类继承契约文件夹下的契约父类，以降低维护的成本。
 
 
 #### 3.1.3 数据库配置
@@ -86,7 +88,10 @@ Laravel中数据库配置文件为config/database.php，打开该文件，设置
 		...
 	];
 
-如果要修改数据库配置信息，去修改.env对应值即可。多个数据库配置，参考[这里](http://fideloper.com/laravel-multiple-database-connections "Multiple DB Connections in Laravel")。mysql_client用于关联具体的物业数据库，使用Config::set()方法修改。
+修改数据库配置信息，该应用采用了两种方案：
+
+1. 本地数据库连接——去修改.env对应值即可，然后在config/database.php/connections数组中添加。多个数据库配置，参考[这里](http://fideloper.com/laravel-multiple-database-connections "Multiple DB Connections in Laravel")。
+2. 需要在运行期动态连接的数据库——仅需要在connections数组中添加mysql_client；即可使用Config::set()方法动态连接任何服务器上的数据库。
 
 ### 3.2	基于“仓库模式”的业务逻辑和数据访问分离
 
@@ -139,6 +144,8 @@ Repository 模式将业务逻辑和数据访问分离开，两者之间通过 Re
 
 ![Repository](http://i.imgur.com/CdDcd3S.png)
 
+其中，\_example\_template\_XXXRepository是**通用Repository模板**；**扩展**时只需自动生成相应的仓库类，然后简单配置即可。
+
 以**UserInfoRepository**为例，该类实现了父类AbstractRepository的抽象方法model():
 
     function model()
@@ -147,7 +154,8 @@ Repository 模式将业务逻辑和数据访问分离开，两者之间通过 Re
         return 'App\Models\UserInfoModel';
     }
 
-请记住：通过继承AbstractRepository并实现抽象方法model()，便可利用面向对象语言的多态特性的把具体的数据对象和仓库关联起来，从而实现了代码复用。
+请记住：AbstractRepository是契约父类，尽量让具体仓库派生类继承自契约父类，以降低维护成本。通过继承AbstractRepository并实现抽象方法model()，便可利用面向对象语言的多态特性的把具体的数据对象和仓库关联起来，从而实现了代码复用。
+
 
 #### 3.2.3 Model满怀喜悦地挥手告别Controller
 
@@ -155,9 +163,11 @@ Repository 模式将业务逻辑和数据访问分离开，两者之间通过 Re
 
 下面我从一个特化的例子来阐述**XXXModel + XXXRepository => XXXApi => XXXControler<---> Route**是如何工作的。
 
-顾名思义，Data Source（数据源）是存放数据的仓库，及数据库，这里我们选择Mysql作为数据库。以数据库HWDeviceCloutRood中的user_info这张表为例：首先建立该表对应的Model，即UserInfoModel。UML类图如下：
+顾名思义，Data Source（数据源）是存放数据的仓库，及数据库，这里我们选择Mysql作为数据库。以数据库hw***root中的user_info这张表为例：首先建立该表对应的Model，即UserInfoModel。UML类图如下：
 
-![Model](http://i.imgur.com/4KLrorx.png)
+![Models](http://i.imgur.com/TRR01Yp.png)
+
+其中，\_example\_template\_XXXModel和\_example\_template\_client\_XXXModel分别为**通用Model模板**和**具体物业的Model模板**。**扩展**时只需选择对应模板自动生成相应的模型类，然后简单配置即可。
 
 XXXModel常用的成员变量有：
 
@@ -190,7 +200,13 @@ XXXModel常用的成员变量有：
 
 为了让程序具有易扩展性、高复用性及低耦合性，设计了Api，最终的Api提供了十分清晰的接口。下面介绍我在开发Api时使用的特色技术。依然从UML类图入手：
 
-![Api](http://i.imgur.com/AamkHAg.png)
+![API](http://i.imgur.com/MxcVTeI.png)
+
+
+其中：
+
+1. \_example\_template\_XXXApi是**通用Api模板**；**扩展**时只需自动生成相应的Api类，然后简单配置即可；
+2. create方法的参数$runtimeDatabaseName具有默认值""，如不需要在运行期指定数据库，那么使用默认值即可。
 
 请记住：父类Api是我规定的一个契约，所有的Api子类都应该继承它。Api仅有一个数据成员$repositoryMgr（仓库管理员），那么如何关联到具体数据模型的仓库管理员呢？这里我借鉴了Cocos2d-x中[CREATE_FUNC](http://baike.baidu.com/link?url=6WfTtr1SaeezotqiTea9e43X8xDAPaIaLPB2CrZMpg6G_8UC157gsjPTJ3F5mgisHAwajSunz17-jbandHJKbLtFjIdxpfMY9wC0B3unAaG "Cocos2d-x CREATE_FUNC")宏的设计，并加以改进为ApiInstanceFactory工具类，该工具类使用**静态工厂方法模式**；只需要在派生类Api中的静态方法create中调用该工具类的CREATE_FUNC即可关联到具体的仓库管理员。
 
@@ -218,3 +234,13 @@ XXXModel常用的成员变量有：
 ![Final](http://i.imgur.com/ERM9Hnm.png)
 
 ### 3.3	基于“订阅·发布”模式的消息驱动模型
+
+数据或显示的同步可采用“观察者模式”，即“订阅·发布模式”。Laravel框架下的开发不需要自己实现该模式，可采用框架提供的**事件和监听器**，相关类分别写在项目的app/Events目录和app/Listeners，并需要在Providers/EventServiceProvider.php里面注册。
+
+在该应用中，将数据库表间同步更新操作采用事件驱动，在Api中需要同步表数据的地方触发事件（Event），然后在相应的监听器类（Listener）里进行相应更新即可。比如，物业信息改变的事件及其监听器的UML类图如下：
+
+![EventListener](http://i.imgur.com/gwnhjzx.png)
+
+其中，Event是作为契约的父类，我们应该让事件子类继承自它。事件子类继承了父类中的公有成员变量：$MSG_TYPE及$data，它们分别是**消息的类型**和事件触发时**传递的数据**。在事件触发的地方传递消息类型和数据，在Listener中的handle方法中进行逻辑处理。
+
+其他消息驱动模型类似于此。

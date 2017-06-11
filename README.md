@@ -55,7 +55,7 @@
 
 ### 2.2	系统逻辑拓扑结构
 
-![](http://i.imgur.com/jZoDmjt.png)
+![LogicPic](http://i.imgur.com/OQPcDcC.png)
 
 ## 3. 应用设计结构
 ### 3.1	Laravel应用核心程序包结构

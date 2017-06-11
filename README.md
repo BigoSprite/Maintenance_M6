@@ -137,7 +137,19 @@ Laravel中数据库配置文件为config/database.php，打开该文件，设置
 1. 本地数据库连接——去修改.env对应值即可，然后在config/database.php/connections数组中添加。多个数据库配置，参考[这里](http://fideloper.com/laravel-multiple-database-connections "Multiple DB Connections in Laravel")。
 2. 需要在运行期动态连接的数据库——仅需要在connections数组中添加mysql_client；即可使用Config::set()方法动态连接任何服务器上的数据库。
 
-### 3.2	基于“仓库模式”的业务逻辑和数据访问分离
+
+
+### 3.2	MVC设计
+
+### 3.3 缓存设计
+#### 3.3.1 静态页面缓存
+#### 3.3.2 动态页面缓存
+#### 3.3.3 业务数据缓存
+
+
+
+
+## 4. 基于“仓库模式”的业务逻辑和数据访问分离
 
 本章主要介绍后端开发过程中的一些重要特性，由于该应用的前后端完全分离——基于“前端请求·后端响应”的机制，前端负责MVC架构的View模块，所以这里主要介绍模型（Model）和控制器（Controller）模块。
 
@@ -153,7 +165,7 @@ Laravel中数据库配置文件为config/database.php，打开该文件，设置
 - Controller主要负责和Route做交互，过多的逻辑写在Controller中，不利于复用；
 - Model和Controller混合在一起，虽然可以实现功能，但会写更多重复代码，代码耦合性更强。
 
-#### 3.2.1 仓库模式逻辑结构
+### 4.1 仓库模式逻辑结构
 
 首先需要声明的是设计模式和使用的框架以及语言是无关的，关键是要理解设计模式背后的原则。
 
@@ -170,7 +182,7 @@ Repository 模式将业务逻辑和数据访问分离开，两者之间通过 Re
 - 减少重复代码
 - 使程序出错的几率降低
 
-#### 3.2.2 Repository最佳实践
+### 4.2 Repository最佳实践
 
 要实现 Repository 模式，首先需要定义接口，这些接口就像 Laravel中的契约一样（面向对象编程都具备的习惯：面向接口编程），需要具体类去实现。假定有两个数据对象 UserInfo和NodeInfo。这两个数据对象上可以进行哪些操作呢？一般情况下，我们会做这些事情：
 
@@ -201,7 +213,7 @@ Repository 模式将业务逻辑和数据访问分离开，两者之间通过 Re
 请记住：AbstractRepository是契约父类，尽量让具体仓库派生类继承自契约父类，以降低维护成本。通过继承AbstractRepository并实现抽象方法model()，便可利用面向对象语言的多态特性的把具体的数据对象和仓库关联起来，从而实现了代码复用。
 
 
-#### 3.2.3 Model满怀喜悦地挥手告别Controller
+### 4.3 Model满怀喜悦地挥手告别Controller
 
 在上一小节中，介绍了Repsoitory的逻辑结构，并使用UML类图展示了Reposiotry的具体架构。现在介绍逻辑结构图中的Data Source和Business Logic（业务逻辑），细心的读者已经注意到了业务逻辑下面带有下划线的XXXApi，它表示我们把业务逻辑不直接提供给Controller层，而是封装成Api，降低与Controller的耦合，方便复用，模块化开发，亦可遵循此约定来**分层独立**开发！
 
@@ -238,7 +250,7 @@ XXXModel常用的成员变量有：
 
 到目前为止，有了UserInfoRepository（仓库管理员类）和UserInfoModel（数据模型类），那么是时候谈谈业务逻辑了，将在下一小节中详细介绍。
 
-#### 3.2.4 Api的前世今生
+### 4.4 Api的前世今生
 
 之前已经介绍过，为解除业务逻辑和Controller的耦合，可以把仓库管理员与Controller分离。否则，仓库管理员访问数据库（其实就是业务逻辑）和Controller混在一起，这时如果别的控制器A需要使用当前控制器（依赖它）时，就不能为控制器A提供清晰的服务，这是因为一个规则：Controller的主要任务是响应请求（get、post等），且Controller中的每个方法对应一个路由（Route）；破坏了这一规则，就破坏了**单一职责原则**，程序的结构将越来越复杂混乱。
 
@@ -255,7 +267,7 @@ XXXModel常用的成员变量有：
 请记住：父类Api是我规定的一个契约，所有的Api子类都应该继承它。Api仅有一个数据成员$repositoryMgr（仓库管理员），那么如何关联到具体数据模型的仓库管理员呢？这里我借鉴了Cocos2d-x中[CREATE_FUNC](http://baike.baidu.com/link?url=6WfTtr1SaeezotqiTea9e43X8xDAPaIaLPB2CrZMpg6G_8UC157gsjPTJ3F5mgisHAwajSunz17-jbandHJKbLtFjIdxpfMY9wC0B3unAaG "Cocos2d-x CREATE_FUNC")宏的设计，并加以改进为ApiInstanceFactory工具类，该工具类使用**静态工厂方法模式**；只需要在派生类Api中的静态方法create中调用该工具类的CREATE_FUNC即可关联到具体的仓库管理员。
 
 
-#### 3.2.5 Outstanding Feature
+### 4.5 Outstanding Feature
 
 这里总结一下后端项目的突出特性：
 
@@ -277,7 +289,7 @@ XXXModel常用的成员变量有：
 
 ![Final](http://i.imgur.com/ERM9Hnm.png)
 
-### 3.3	基于“订阅·发布”模式的消息驱动模型
+### 5 基于“订阅·发布”模式的消息驱动模型
 
 数据或显示的同步可采用“观察者模式”，即“订阅·发布模式”。Laravel框架下的开发不需要自己实现该模式，可采用框架提供的**事件和监听器**，相关类分别写在项目的app/Events目录和app/Listeners，并需要在Providers/EventServiceProvider.php里面注册。
 

@@ -29,7 +29,7 @@
 业务组件： 
 
 - \_example\_template\_XXXModel组件——和通用业务相对应的数据模型，主要用于配置在本地的数据库；
-- \_example\_template\_client_XXXModel组件——和具体物业业务相对应的数据模型，主要用于runtime时连接哪一个数据库；
+- \_example\_template\_client_XXXModel组件——和具体物业相对应的数据模型，主要用于runtime时连接哪一个数据库；
 - \_example\_template\_XXXRepository组件——封装主要的数据库处理逻辑，使具体的数据库处理独立于业务处理；
 - \_example\_template\_XXXApi组件——封装主要的业务处理逻辑。该组件基于模块创建，可复用；
 - XXXController组件——职责单一，为Route提供路由接口，响应前端请求。

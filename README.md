@@ -28,7 +28,8 @@
 
 业务组件： 
 
-- \_example\_template\_XXXModel组件——和业务相对应的数据模型；
+- \_example\_template\_XXXModel组件——和通用业务相对应的数据模型，主要用于配置在本地的数据库；
+- \_example\_template\_client_XXXModel组件——和具体物业业务相对应的数据模型，主要用于runtime时连接哪一个数据库；
 - \_example\_template\_XXXRepository组件——封装主要的数据库处理逻辑，使具体的数据库处理独立于业务处理；
 - \_example\_template\_XXXApi组件——封装主要的业务处理逻辑。该组件基于模块创建，可复用；
 - XXXController组件——职责单一，为Route提供路由接口，响应前端请求。
@@ -277,11 +278,12 @@ XXXModel常用的成员变量有：
 - 一个没有被关注的特性：借助PhpStorm IDE自动生成特化的Model、Api及Repository
 
 
-基于以上全部特性，自动生成如下三种模板，提高开发效率并降低错误：
+基于以上全部特性，自动生成如下四种模板，提高开发效率并降低错误：
 
 1. \_example\_template_XXXModel.php
-2. \_example\_template_XXXRepository.php
-3. \_example\_template_XXXApi.php
+2. \_example\_template\_client_XXXModel
+3. \_example\_template_XXXRepository.php
+4. \_example\_template_XXXApi.php
 
 因此，系统核心架构如下图所示：
 

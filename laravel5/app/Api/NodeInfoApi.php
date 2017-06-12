@@ -168,7 +168,8 @@ class NodeInfoApi extends Api
                     $modelArr = $conn->select("SELECT * FROM distribution_room_info");
                     foreach ($modelArr as $e) {
                         $tmp['children'][] = [
-                            'label'=>$e->roomName
+                            'label'=>$e->roomName,
+                            'serialId'=>$e->serialId
                         ];
                     }
                 }else{

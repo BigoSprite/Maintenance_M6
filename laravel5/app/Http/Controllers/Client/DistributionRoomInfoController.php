@@ -15,7 +15,7 @@ class DistributionRoomInfoController extends Controller
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      *
      * 响应请求 方法 GET
-     * http://localhost:8888/api/content/verify/distributionRoom/jinyehotel/3
+     * http://localhost:8888/api/content/verify/distributionRoom/jinyehotel/1
      */
     public function isRoomExist($dbName, $serialId)
     {
@@ -25,17 +25,49 @@ class DistributionRoomInfoController extends Controller
     }
 
     /**
-     * 功能：从distribution_Room_info表中获得“某序列号”对应的一行（配电室的所有属性）
+     * 功能：判断$roomName对应的数据对象是否存在
      * @param $dbName
-     * @param $serialId
+     * @param $roomName
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      *
      * 响应请求 方法 GET
-     * http://localhost:8888/api/content/distributionRoomInfo/jinyehotel/0
+     * http://localhost:8888/api/content/verify/distributionRoomEx/jinyehotel/配电室1
      */
+    public function isRoomExist_Ex($dbName, $roomName)
+    {
+        $arr = DistributionRoomInfoApi::create($dbName)->isRoomExist_Ex($roomName);
+
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
+    }
+
+    /**
+ * 功能：从distribution_Room_info表中获得“某序列号”对应的一行（配电室的所有属性）
+ * @param $dbName
+ * @param $serialId
+ * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+ *
+ * 响应请求 方法 GET
+ * http://localhost:8888/api/content/distributionRoomInfo/jinyehotel/0
+ */
     public function getRoomInfo($dbName, $serialId)
     {
         $arr = DistributionRoomInfoApi::create($dbName)->getRoomInfo($serialId);
+
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
+    }
+
+    /**
+     * 功能：从distribution_Room_info表中获得$roomName对应的一行（配电室的所有属性）
+     * @param $dbName
+     * @param $roomName
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     *
+     * 响应请求 方法 GET
+     * http://localhost:8888/api/content/distributionRoomInfoEx/jinyehotel/配电室1
+     */
+    public function getRoomInfo_Ex($dbName, $roomName)
+    {
+        $arr = DistributionRoomInfoApi::create($dbName)->getRoomInfo_Ex($roomName);
 
         return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
     }
@@ -70,7 +102,6 @@ class DistributionRoomInfoController extends Controller
         return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
     }
 
-
     /**
      * 功能：注册配电室
      * @param $dbName
@@ -82,18 +113,16 @@ class DistributionRoomInfoController extends Controller
      */
     public function registerRoom($dbName)
     {
-        $serialId = Input::get('serialId');
+        $roomName = Input::get('roomName');
         $data = [
-            'serialId'=>$serialId,
-            'roomName'=>Input::get('roomName'),
+            'roomName'=>$roomName,
             'description'=>Input::get('description'),
             'address'=>Input::get('address'),
-            'productionPro'=>Input::get('productionPro'),
-            'telephoneNumber'=>Input::get('telephoneNumber'),
-            'installationDate'=>Input::get('installationDate')
+            'contactPerson'=>Input::get('contactPerson'),
+            'contactTel'=>Input::get('contactTel')
         ];
 
-        $arr = DistributionRoomInfoApi::create($dbName)->register($data, 'serialId', $serialId);
+        $arr = DistributionRoomInfoApi::create($dbName)->register($data, 'roomName', $roomName);
 
         return response()->json($arr, 200);
     }
@@ -111,13 +140,11 @@ class DistributionRoomInfoController extends Controller
     {
         $serialId = Input::get('serialId');
         $data = [
-            'serialId'=>$serialId,
             'roomName'=>Input::get('roomName'),
             'description'=>Input::get('description'),
             'address'=>Input::get('address'),
-            'productionPro'=>Input::get('productionPro'),
-            'telephoneNumber'=>Input::get('telephoneNumber'),
-            'installationDate'=>Input::get('installationDate')
+            'contactPerson'=>Input::get('contactPerson'),
+            'contactTel'=>Input::get('contactTel')
         ];
 
         $arr = DistributionRoomInfoApi::create($dbName)->update($data, 'serialId', $serialId);

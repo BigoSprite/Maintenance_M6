@@ -14,24 +14,29 @@
                         "label": "金叶大厦",
                         "children": [
                             {
+                                "database":'jinyehotel',
                                 "label": "配电室（001）",
                                 'serialId':'0'
                             },
                             {
+                                "database":'jinyehotel',
                                 "label": "配电室（002）",
                                 'serialId':'0'
                             }
                         ],
-                        "database":'jinyehotel'
+                         "database":'jinyehotel'
+
                     },
                     {
                         "label": "管城花园",
                         "children": [
                             {
+                                "database":'guanchenghuayuan',
                                 "label": "配电室（001）",
                                 'serialId':'0'
                             },
                             {
+                                "database":'guanchenghuayuan',
                                 "label": "水电房（002）",
                                 'serialId':'0'
                             }
@@ -42,13 +47,16 @@
             },
             {
                 "lable": "西北节点",
-                "children": [{
+                "children": [
+                    {
                         "label": "T大厦",
                         "children": [{
+                                "database":'thotel',
                                 "label": "配电室（001）",
                                 'serialId':'0'
                             },
                             {
+                                "database":'thotel',
                                 "label": "配电室（002）",
                                 'serialId':'0'
                             }
@@ -58,15 +66,18 @@
                     {
                         "label": "R花园",
                         "children": [{
+                                "database":'rhuayuan',
                                 "label": "配电室（001）",
                                 'serialId':'0'
                             },
                             {
+                                "database":'rhuayuan',
                                 "label": "水电房（002）",
                                 'serialId':'0'
                             }
                         ],
                         "database":'rhuayuan'
+
                     }
                 ]
             }

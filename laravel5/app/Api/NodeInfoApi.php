@@ -151,14 +151,14 @@ class NodeInfoApi extends Api
             $realEstateNameList = $data['data'];
             // 遍历物业名字数组，获得物业label及该物业下的所有配电室
             foreach ($realEstateNameList as $item) {
+                $dbName = $item['dbName'];
                 $tmp = [
                     'label'=> $item['realEstateName'],
                     'children'=>[],
-                    'database'=>$item['dbName']
+                    'database'=>$dbName
                 ];
 
                 // ---------连接远程数据库
-                $dbName = $item['dbName'];
                 $dbIp = $item['dbIp'];
                 $dbPort = $item['dbPort'];
                 $dbUserName= $item['dbUserName'];
@@ -168,6 +168,7 @@ class NodeInfoApi extends Api
                     $modelArr = $conn->select("SELECT * FROM distribution_room_info");
                     foreach ($modelArr as $e) {
                         $tmp['children'][] = [
+                            'database'=>$dbName,
                             'label'=>$e->roomName,
                             'serialId'=>$e->serialId
                         ];

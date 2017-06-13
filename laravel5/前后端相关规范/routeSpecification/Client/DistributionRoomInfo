@@ -12,9 +12,39 @@
       "isExist": "true" or "false"
    }
 
+1-1. 验证dbName数据库下的roomName对应的配电室是否存在
+   对应路由为：http://localhost:8888/api/content/verify/distributionRoomEx/{dbName}/{roomName}
+   倒数两个参数为可变参数，如：http://localhost:8888/api/content/verify/distributionRoomEx/jinyehotel/配电室1
+
+   响应请求 方法 GET
+
+   返回数据格式：
+   {
+      "isExist": "true" or "false"
+   }
+
 2. 从dbName数据库下的distribution_Room_info表中获得“某序列号”对应的一行（配电室的所有属性）
    对应路由为：http://localhost:8888/api/content/distributionRoomInfo/{dbName}/{serialId}
    倒数两个参数为可变参数，如：http://localhost:8888/api/content/distributionRoomInfo/jinyehotel/0
+
+   响应请求 方法 GET
+
+   返回数据格式：
+    {
+        "data":{
+            "serialId":"0",
+            "roomName":"配电室1",
+            "description":"test",
+            "address":"测试地址",
+            "contactPerson":"test",
+            "contactTel":"12344556778",
+            "registerDate":"2017-06-05 21:07:32"
+        }
+    }
+
+2-1. 从dbName数据库下的distribution_Room_info表中获得roomName对应的一行（配电室的所有属性）
+   对应路由为：http://localhost:8888/api/content/distributionRoomInfo/{dbName}/{roomName}
+   倒数两个参数为可变参数，如：http://localhost:8888/api/content/distributionRoomInfoEx/jinyehotel/配电室1
 
    响应请求 方法 GET
 
@@ -25,9 +55,9 @@
             "roomName":"配电室1",
             "description":"test",
             "address":"测试地址",
-            "productionPro":"test",
-            "telephoneNumber":"12344556778",
-            "installationDate":"2017-06-05 21:07:32"
+            "contactPerson":"test",
+            "contactTel":"12344556778",
+            "registerDate":"2017-06-05 21:07:32"
         }
    }
 
@@ -45,10 +75,10 @@
                 "roomName":"配电室1",
                 "description":"test",
                 "address":"测试地址",
-                "productionPro":"test",
-                "telephoneNumber":"12344556778",
-                "installationDate":"2017-06-05 21:07:32"
-            },
+                "contactPerson":"test",
+                "contactTel":"12344556778",
+                "registerDate":"2017-06-05 21:07:32"
+
             ...
         ]
    }
@@ -75,13 +105,11 @@
 
    请求数据格式：
    {
-        'serialId':'10',
-        'roomName':'配电室2',
-        'description':'test',
-        'address':'测试地址',
-        'productionPro':'test',
-        'telephoneNumber':'12344556778',
-        'installationDate':'2019-01-22'
+        "roomName":"配电室1",
+        "description":"test",
+        "address":"测试地址",
+        "contactPerson":"hanzhiwei",
+        "contactTel":"13253503691"
    }
 
    返回数据格式：见插入或更新数据时后端返回状态规范
@@ -92,13 +120,12 @@
 
    请求数据格式：
    {
-        serialId':'10',
-        roomName':'配电室2',
-        description':'test',
-        address':'测试地址',
-        productionPro':'test',
-        telephoneNumber':'12344556778',
-        installationDate':'2019-01-22'
+        "serialId":"1", /// !!!更新时传入的数据带有序列号
+        "roomName":"配电室1",
+        "description":"test",
+        "address":"测试地址",
+        "contactPerson":"hanzhiwei",
+        "contactTel":"13253503691"
    }
 
    返回数据格式：见插入或更新数据时后端返回状态规范

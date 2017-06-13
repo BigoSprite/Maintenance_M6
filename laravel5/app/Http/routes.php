@@ -79,6 +79,7 @@ Route::group(['prefix'=>'api'],function (){
         Route::group(['namespace'=>'Client'], function (){
 
             Route::get('distributionRoomInfo/{dbName}/{serialId}', 'DistributionRoomInfoController@getRoomInfo');
+            Route::get('distributionRoomInfoEx/{dbName}/{roomName}', 'DistributionRoomInfoController@getRoomInfo_Ex');
             Route::get('distributionRoomInfoList/{dbName}', 'DistributionRoomInfoController@getRoomInfoList');
             Route::get('distributionRoomNameList/serialId/{dbName}', 'DistributionRoomInfoController@getRoomNameListWithSerialId');
 
@@ -89,6 +90,7 @@ Route::group(['prefix'=>'api'],function (){
             // 验证
             Route::group(['prefix'=>'verify'], function (){
                 Route::get('distributionRoom/{dbName}/{serialId}', 'DistributionRoomInfoController@isRoomExist');
+                Route::get('distributionRoomEx/{dbName}/{roomName}', 'DistributionRoomInfoController@isRoomExist_Ex');
                 Route::get('deviceType/{dbName}/{typeName}', 'VDeviceTypeInfoController@isDeviceTypeExist');
             });
             // 注册

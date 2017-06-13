@@ -31,6 +31,8 @@ class DistributionRoomInfoModel extends Model
      */
     protected $table = 'distribution_room_info';
 
+    protected $primaryKey = 'serialId';
+
     /**
      * Indicates if the model should be timestamped.
      *
@@ -46,6 +48,6 @@ class DistributionRoomInfoModel extends Model
      * @NOTE 如果想使用Mass Assignable，那么需要"显式"设置，或$guarded置为空数组（全部字段均可批量赋值）
      * 且二者只可设置其一，切记！它们决定create()是否可用！
      */
-    protected $guarded = [];
+    protected $guarded = ['serialId', 'registerDate'];
 
 }

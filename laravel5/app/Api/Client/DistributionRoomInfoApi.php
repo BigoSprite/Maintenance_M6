@@ -55,10 +55,8 @@ class DistributionRoomInfoApi extends Api
      * 功能：判断$serialId对应的数据对象是否存在
      * @param $serialId
      * @return array
-     *
-     * @NOTE Don't forget to CHANGE XXX to the right attribute!
      */
-    public function isRoomExist(/*$dbName, TODO*/ $serialId)
+    public function isRoomExist($serialId)
     {
         $ret = [
             'isExist'=>'false'
@@ -73,11 +71,33 @@ class DistributionRoomInfoApi extends Api
         return $ret;
     }
 
+
     /**
-     * 功能：从distribution_Room_info表中获得“某序列号”对应的一行（配电室的所有属性）
-     * @param $serialId
+     * 功能：判断$roomName对应的数据对象是否存在
+     * @param $roomName
      * @return array
      */
+    public function isRoomExist_Ex($roomName)
+    {
+        $ret = [
+            'isExist'=>'false'
+        ];
+
+        $isExist = $this->repositoryMgr->isFieldExist('roomName', $roomName);
+
+        if($isExist){
+            $ret['isExist'] = 'true';
+        }
+
+        return $ret;
+    }
+
+
+    /**
+ * 功能：从distribution_Room_info表中获得“某序列号”对应的一行（配电室的所有属性）
+ * @param $serialId
+ * @return array
+ */
     public function getRoomInfo($serialId)
     {
         $arrMap = $this->repositoryMgr->findBy('serialId', $serialId);
@@ -88,9 +108,33 @@ class DistributionRoomInfoApi extends Api
                 'roomName' => $arrMap['roomName'],
                 'description' => $arrMap['description'],
                 'address' => $arrMap['address'],
-                'productionPro' => $arrMap['productionPro'],
-                'telephoneNumber' => $arrMap['telephoneNumber'],
-                'installationDate' => (string)$arrMap['installationDate']
+                'contactPerson' => $arrMap['contactPerson'],
+                'contactTel' => $arrMap['contactTel'],
+                'registerDate' => (string)$arrMap['registerDate']
+            ];
+        }
+
+        return ['data'=>$roomInfo];
+    }
+
+    /**
+     * 功能：从distribution_Room_info表中获得$roomName对应的一行（配电室的所有属性）
+     * @param $roomName
+     * @return array
+     */
+    public function getRoomInfo_Ex($roomName)
+    {
+        $arrMap = $this->repositoryMgr->findBy('roomName', $roomName);
+        $roomInfo = array();
+        if($arrMap != null) {
+            $roomInfo = [
+                'serialId' => $arrMap['serialId'],
+                'roomName' => $arrMap['roomName'],
+                'description' => $arrMap['description'],
+                'address' => $arrMap['address'],
+                'contactPerson' => $arrMap['contactPerson'],
+                'contactTel' => $arrMap['contactTel'],
+                'registerDate' => (string)$arrMap['registerDate']
             ];
         }
 
@@ -112,9 +156,9 @@ class DistributionRoomInfoApi extends Api
                     'roomName' => $item->roomName,
                     'description' => $item->description,
                     'address' => $item->address,
-                    'productionPro' => $item->productionPro,
-                    'telephoneNumber' => $item->telephoneNumber,
-                    'installationDate' => (string)$item->installationDate
+                    'contactPerson' => $item->contactPerson,
+                    'contactTel' => $item->contactTel,
+                    'registerDate' => (string)$item->registerDate
                 ];
                 $data[] = $tmp;
             }

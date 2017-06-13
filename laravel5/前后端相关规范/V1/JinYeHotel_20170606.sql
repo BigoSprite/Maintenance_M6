@@ -3,16 +3,15 @@ CREATE DATABASE JinYeHotel;
 USE JinYeHotel;
 
 CREATE TABLE distribution_room_info (
-  serialId						char(20) 				NOT NULL,
-  roomName						char(50) 				NOT NULL,
-  description					char(100) 				DEFAULT NULL,
+  serialId						int(20) 				NOT NULL AUTO_INCREMENT,
+  roomName						char(50) 				NOT NULL UNIQUE,
+  description					char(100) 			DEFAULT NULL,
   address						  char(50) 				NOT NULL,
-  productionPro					char(50) 				DEFAULT NULL,
-  telephoneNumber				char(50) 				NOT NULL,
-  installationDate				timestamp 				NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  contactPerson				char(50) 				NOT NULL,
+  contactTel  				char(50) 				NOT NULL,
+  registerDate				timestamp 	    NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (serialId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 CREATE TABLE vdevice_type_info (
   name 							char(50) 				NOT NULL,

@@ -4,8 +4,8 @@
 
 本文主要以实现前后端完全分离、低耦合、易扩展及高复用性的WEB应用为目的，设计一个基于Laravel框架的PHP大型WEB系统分布式平台架构，并以一个实际例子（配电室运维后台管理系统）详细说明分布式业务对象缓存、分布式数据库数据存取、数据库集群、网页静态化处理、用户安全认证等技术的设计和使用。
 
-
 ## 1 软件架构
+
 ### 1.1 组件或功能的划分
 整个系统由各个独立的模块组建而成。
 ### 1.2	软件层次的划分或开发模式的考虑
@@ -14,7 +14,7 @@
 - 业务逻辑层：所有的业务逻辑部分由Laravel框架来处理，编写了Api以简化业务逻辑；
 - 数据实体层：采用分布式数据库设计架构。
 
-### 1.3	框架的建立
+  ### 1.3框架的建立
 
 - 采用目前最流行的Laravel作为底层框架，基于MVC思想的开发模式构建整个系统，保证了整个应用系统结构的清晰，提高了易维护性；
 - 整个系统采用模块化思想进行组件搭建，每个模块包含与其业务相关的所有数据文件、视图文件、业务逻辑处理是完全独立于其它模块的；
@@ -37,11 +37,12 @@
 
 通用组件： 
 
-- ApiInstanceFactory组件——用于创建Api实例，使用类似于Cocos2d-x风格的CREATE_FUNC方法；
+- ApiInstanceFactory组件——用于创建Api实例，使用类似于Cocos2d-x风格的CREATE_FUNC宏方法；
 - DBConfigUtil组件——用于动态连接数据库；
-- DBDirector组件——用于为DB门面动态连接数据库。
+- DBDirector组件——用于为DB门面动态连接数据库；
+- CacheManager组件——用于数据缓存的管理(TODO)。
 
-### 1.5	安全的考虑
+  ### 1.5安全的考虑
 
 - 对涉及的保密数据，采用加密手法进行信息的传输；
 - 对于异常处理，采用日志记录进行跟踪管理；
@@ -82,26 +83,26 @@
 Laravel中数据库配置文件为config/database.php，打开该文件，设置内容如下：
 
     <?php
-	return [
-	    //默认返回结果集为PHP对象实例
-	    'fetch' => PDO::FETCH_CLASS,
-	    //默认数据库连接为mysql，可以在.env文件中修改DB_CONNECTION的值
-	    'default' => env('DB_CONNECTION', 'mysql'),
-	
-	    'connections' => [
-	        ...
-	        // 数据库hw***root
-	        'mysql' => [
-	            'driver' => 'mysql',
-	            'host' => env('DB_HOST', 'localhost'),
-	            'database' => env('DB_DATABASE', 'forge'),
-	            'username' => env('DB_USERNAME', 'forge'),
-	            'password' => env('DB_PASSWORD', ''),
-	            'charset' => 'utf8',
-	            'collation' => 'utf8_unicode_ci',
-	            'prefix' => '',
-	            'strict' => false,
-	        ],
+    return [
+        //默认返回结果集为PHP对象实例
+        'fetch' => PDO::FETCH_CLASS,
+        //默认数据库连接为mysql，可以在.env文件中修改DB_CONNECTION的值
+        'default' => env('DB_CONNECTION', 'mysql'),
+    
+        'connections' => [
+            ...
+            // 数据库hw***root
+            'mysql' => [
+                'driver' => 'mysql',
+                'host' => env('DB_HOST', 'localhost'),
+                'database' => env('DB_DATABASE', 'forge'),
+                'username' => env('DB_USERNAME', 'forge'),
+                'password' => env('DB_PASSWORD', ''),
+                'charset' => 'utf8',
+                'collation' => 'utf8_unicode_ci',
+                'prefix' => '',
+                'strict' => false,
+            ],
  			// 数据库hw***node
 	        'mysql_cloud_node' => [
 	            'driver'    => 'mysql',

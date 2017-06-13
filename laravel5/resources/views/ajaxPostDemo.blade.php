@@ -27,25 +27,25 @@
 //                url:'api/admin/verify/login',
 //                data:{'username':"hanzhiwei2", 'password':'hanzhiwei2'},
 
-                url:'api/admin/update/realEstate',
-                data:{
-                    'dbName':'guachenghuayuan',
-                    'realEstateName': '冠城花园11',
-                    'address':'test address1',
-                    'description':'test desc',
-                    'manageCompany':'uestc',
-                    'serviceEndDateTime':'2018-02-11-22',
-                    'contactPersonName':'hanzhiwei',
-                    'contactTel':'15828251950',
-                    'longitude':'0',
-                    'latitude':'0',
-                    'nodeInfo_nodeName':'冠城花园',
-                    'dbIp':'127.0.0.1',
-                    'dbPort':'3306',
-                    'dbUserName':'root',
-                    'dbPassword':'root',
-                    'isDiscarded':'0'
-                },
+//                url:'api/admin/update/realEstate',
+//                data:{
+//                    'dbName':'guachenghuayuan',
+//                    'realEstateName': '冠城花园11',
+//                    'address':'test address1',
+//                    'description':'test desc',
+//                    'manageCompany':'uestc',
+//                    'serviceEndDateTime':'2018-02-11-22',
+//                    'contactPersonName':'hanzhiwei',
+//                    'contactTel':'15828251950',
+//                    'longitude':'0',
+//                    'latitude':'0',
+//                    'nodeInfo_nodeName':'冠城花园',
+//                    'dbIp':'127.0.0.1',
+//                    'dbPort':'3306',
+//                    'dbUserName':'root',
+//                    'dbPassword':'root',
+//                    'isDiscarded':'0'
+//                },
 
 
 //                url:'api/admin/register/node',
@@ -68,26 +68,24 @@
 //                },
 
 
-
-//                data:{
-//                    'serialId':"5",
-//                    'roomName':'配电室5',
-//                    'description':"miaoshu",
-//                    'address':'uestc',
-//                    'productionPro':'switch',
-//                    'telephoneNumber':'15828251950',
-//                    'installationDate':'2015-01-11'
-//                },
-
-                url:'api/content/register/asset/jinyehotel',
+                url: 'api/content/register/distributionRoom/jinyehotel',
                 data:{
-                    'distributionRoomInfo_serialId':'1',
-                    'name':'开关2',
-                    'type':"switch",
-                    'unit':'个',
-                    'amount':'4',
-                    'addDate':'2015-01-11'
+                    'roomName':'配电室',
+                    'description':"miaoshu",
+                    'address':'uestc',
+                    'contactPerson':'hanzhiwei',
+                    'contactTel':'15828251950'
                 },
+
+//                url:'api/content/register/asset/jinyehotel',
+//                data:{
+//                    'distributionRoomInfo_serialId':'1',
+//                    'name':'开关2',
+//                    'type':"switch",
+//                    'unit':'个',
+//                    'amount':'4',
+//                    'addDate':'2015-01-11'
+//                },
 
 //                  url:'api/content/update/device',
 //                  data:{

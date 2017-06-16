@@ -40,9 +40,9 @@
 通用组件： 
 
 - ApiInstanceFactory组件——用于创建Api实例，使用类似于Cocos2d-x风格的CREATE_FUNC宏方法；
-- DBConfigUtil组件——用于动态连接数据库；
-- DBDirector组件——用于为DB门面动态连接数据库；
-- CacheManager组件——用于数据缓存的管理(TODO)。
+- DBConfigUtil组件——用于动态连接数据库，使用静态CREATE_FUNC；
+- DBDirector组件——用于为DB门面动态连接数据库，使用单例模式；
+- CacheManager组件——用于数据缓存的管理(TODO)，使用单例模式。
 
 ### 1.5 安全的考虑
 

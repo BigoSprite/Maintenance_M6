@@ -108,7 +108,7 @@
         'dbPort':'3306',
         'dbUserName':'root',
         'dbPassword':'root',
-        isDiscarded':'0'
+        'isDiscarded':'0'
    }
    返回数据格式：见插入或更新数据时后端返回状态规范
 

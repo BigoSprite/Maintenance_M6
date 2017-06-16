@@ -11,6 +11,7 @@
 
 namespace App\Api\Node;
 use App\Api\Contracts\Api;
+use App\Api\RealEstateInfoApi;
 use App\Repositories\Eloquent\AbstractRepository;
 use App\Api\Utils\ApiInstanceFactory;
 
@@ -132,6 +133,38 @@ class VDeviceInfoApi extends Api
 
         return ["data"=>$retArray];
     }
+
+    /**
+     * 功能：获取$dbName对应小区的所有设备
+     * @param $dbName
+     * @return array
+     */
+    public function getDeviceList($dbName)
+    {
+        $status = 'fail';
+        $isExist = RealEstateInfoApi::create()->isRealEstateExist($dbName)['isExist'];
+        $data = array();
+        if($isExist == 'true') {
+            $status = 'success';
+
+            $deviceNameArray = $this->repositoryMgr->find2NBy('realestateinfo_dbName', $dbName,
+                ['gprsID', 'deviceName', 'deviceTypeName', 'monitoredUnitName']);
+
+            if (count($deviceNameArray) > 0) {
+                foreach ($deviceNameArray as $item) {
+                    $tmp = [
+                        'gprsID' => $item->gprsID,
+                        'deviceName' => $item->deviceName,
+                        'deviceTypeName' => $item->deviceTypeName,
+                        'distributionRoom' => $item->monitoredUnitName
+                    ];
+                    $data[] = $tmp;
+                }
+            }
+        }
+       return ['status'=>$status, 'data'=>$data];
+    }
+
 
     /**
      * 功能：注册设备

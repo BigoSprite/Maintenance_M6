@@ -53,6 +53,22 @@ class VDeviceInfoController extends Controller
     }
 
     /**
+     * 功能：获取全部设备的信息
+     * @param $dbName
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     *
+     * 响应请求 方法 GET
+     * http://localhost:8888/api/content/deviceList/jinyehotel
+     */
+    public function getDeviceList($dbName)
+    {
+        $arr = VDeviceInfoApi::create()->getDeviceList($dbName);
+
+        return response(json_encode($arr, JSON_UNESCAPED_UNICODE));
+    }
+
+
+    /**
      * 功能：注册设备
      * @return \Illuminate\Http\JsonResponse
      *

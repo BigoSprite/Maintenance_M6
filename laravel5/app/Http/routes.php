@@ -30,6 +30,7 @@ Route::group(['prefix'=>'api'],function (){
         Route::group(['namespace'=>'Node'], function(){
 
             Route::get('deviceInformation','VDeviceInfoController@getDeviceInfoList');
+            Route::get('deviceList/{dbName}','VDeviceInfoController@getDeviceList');
             Route::get('deviceInformation/{gprsid}','VDeviceInfoController@getDeviceInfo');
             Route::get('deviceStatusList', 'VDeviceStatusController@getDeviceStatusList');
             Route::get('deviceStatus/{gprsid}', 'VDeviceStatusController@getDeviceStatus');

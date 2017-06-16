@@ -1,30 +1,29 @@
+JinYeHotelé…ç”µå®¤è¿ç»´ç›¸å…³è·¯ç”±è§„èŒƒ
 
-JinYeHotelÅäµçÊÒÔËÎ¬Ïà¹ØÂ·ÓÉ¹æ·¶
 
-
-1¡¢¡°Éè±¸ĞÅÏ¢¡±¶ÔÓ¦µÄÂ·ÓÉ£¬·µ»ØÊı¾İµÄ¸ñÊ½¶ÔÓ¦deviceInformationTable_bodyData.json
+1ã€â€œè®¾å¤‡ä¿¡æ¯â€å¯¹åº”çš„è·¯ç”±ï¼Œè¿”å›æ•°æ®çš„æ ¼å¼å¯¹åº”deviceInformationTable_bodyData.json
 
 http://localhost/laravel/public/jinYeHotel/gmDeviceInfo
 
 
-2¡¢¡°Éè±¸Ê÷Êı¾İ¡±¶ÔÓ¦µÄÂ·ÓÉ£¬·µ»ØÊı¾İµÄ¸ñÊ½¶ÔÓ¦deviceTree_bodyData.json
+2ã€â€œè®¾å¤‡æ ‘æ•°æ®â€å¯¹åº”çš„è·¯ç”±ï¼Œè¿”å›æ•°æ®çš„æ ¼å¼å¯¹åº”deviceTree_bodyData.json
 
 http://localhost/laravel/public/jinYeHotel/gmDeviceTreeData
 
 
-3¡¢¡°ÊµÊ±Êı¾İ¡±¶ÔÓ¦µÄÂ·ÓÉ£¬·Ö±ğÎª±íÍ·ºÍ±íÎ²Â·ÓÉ£»±íÎ²·µ»ØÊı¾İµÄ¸ñÊ½¶ÔÓ¦realTimeDataTable_bodyData.json
+3ã€â€œå®æ—¶æ•°æ®â€å¯¹åº”çš„è·¯ç”±ï¼Œåˆ†åˆ«ä¸ºè¡¨å¤´å’Œè¡¨å°¾è·¯ç”±ï¼›è¡¨å°¾è¿”å›æ•°æ®çš„æ ¼å¼å¯¹åº”realTimeDataTable_bodyData.json
 
 http://localhost/laravel/public/jinYeHotel/tableHeader
 
 http://localhost/laravel/public/jinYeHotel/realTimeData
 
 
-4¡¢¡°ÀúÊ·Êı¾İ¡±¶ÔÓ¦µÄÂ·ÓÉ£¬·Ö±ğÎª±íÍ·ºÍ±íÎ²Â·ÓÉ£»·µ»ØµÄÊı¾İ¸ñÊ½·Ö±ğ¶ÔÓ¦historyDataTable_headerData.jsonºÍhistoryDataTable_bodyData.json
+4ã€â€œå†å²æ•°æ®â€å¯¹åº”çš„è·¯ç”±ï¼Œåˆ†åˆ«ä¸ºè¡¨å¤´å’Œè¡¨å°¾è·¯ç”±ï¼›è¿”å›çš„æ•°æ®æ ¼å¼åˆ†åˆ«å¯¹åº”historyDataTable_headerData.jsonå’ŒhistoryDataTable_bodyData.json
 
 http://localhost/laravel/public/jinYeHotel/historyTableHeader
 
 http://localhost/laravel/public/jinYeHotel/historyData/0000000001
 
 
-×¢£º¢Ù http://localhostÎª±¾µØ²âÊÔµÄURLÇ°×º£¬¶Ë¿ÚºÅ£º£»¸ÃÖ÷»úIPv4µØÖ·Îª£º192.168.223.1
-	¢Ú µÚ4ÌõµÄÀúÊ·Êı¾İÂ·ÓÉÖĞ²ÎÊı0000000001¶ÔÓ¦jinyehotelÊı¾İ¿â£¨MySql£©ÖĞidÎª0000000001µÄµÄÉè±¸£¬Ä¿Ç°Ö»ÓĞ¸ÃÉè±¸ÀúÊ·Êı¾İ¡£
+æ³¨ï¼šâ‘  http://localhostä¸ºæœ¬åœ°æµ‹è¯•çš„URLå‰ç¼€ï¼Œç«¯å£å·ï¼šï¼›è¯¥ä¸»æœºIPv4åœ°å€ä¸ºï¼š192.168.223.1
+	â‘¡ ç¬¬4æ¡çš„å†å²æ•°æ®è·¯ç”±ä¸­å‚æ•°0000000001å¯¹åº”jinyehotelæ•°æ®åº“ï¼ˆMySqlï¼‰ä¸­idä¸º0000000001çš„çš„è®¾å¤‡ï¼Œç›®å‰åªæœ‰è¯¥è®¾å¤‡å†å²æ•°æ®ã€‚

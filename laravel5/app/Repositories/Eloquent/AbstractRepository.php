@@ -99,6 +99,13 @@ abstract class AbstractRepository implements IRepository
     }
 
 
+    /**
+     * @function get some models based on field.
+     * @param $field
+     * @param $value
+     * @param array $columns
+     * @return mixed
+     */
     public function find2NBy($field, $value, $columns = array('*'))
     {
         return $this->model->where($field, '=', $value)->get($columns);

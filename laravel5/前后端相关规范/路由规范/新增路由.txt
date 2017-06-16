@@ -121,9 +121,9 @@
 =======>Database.table：hwdevicecloud.gmdevice_info
 		Controller：ComponentCneter\GmDevice_Information_Controller.php
 4.获取当前小区（realEstate）的所有的设备列表，路由为：
-	http://localhost:8888/api/content/deviceList/realEstateName
+	http://localhost:8888/api/content/deviceList/{dbName}
 
-	路由最后一个参数（英文字符串）为可变参数；注释：realEstateName对应realestateinfo表中的dbName
+	路由最后一个参数（英文字符串）为可变参数；
 
 	响应请求 GET 方法
 
@@ -156,7 +156,7 @@
 					gprsID: '0000000001',
 					deviceName: '昂思1',
 					deviceTypeName： 'US2000',
-					distributionRoom: '配电1',
+					distributionRoom: '配电1'
 				}
 			],
 			status: 'success'

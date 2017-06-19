@@ -158,13 +158,13 @@ class NodeInfoApi extends Api
                     'database'=>$dbName
                 ];
 
-                // ---------连接远程数据库
+                // ---------连接远程数据库----------------
                 $dbIp = $item['dbIp'];
                 $dbPort = $item['dbPort'];
                 $dbUserName= $item['dbUserName'];
                 $dbPassword = $item['dbPassword'];
                 $conn = DBDirector::getInstance()->connection($dbIp, $dbName, $dbUserName, $dbPassword);
-                if($conn != null){
+                if($conn != null){// 连接成功
                     $modelArr = $conn->select("SELECT * FROM distribution_room_info");
                     foreach ($modelArr as $e) {
                         $tmp['children'][] = [
@@ -173,7 +173,7 @@ class NodeInfoApi extends Api
                             'serialId'=>$e->serialId
                         ];
                     }
-                }else{
+                }else{// ！！！连接失败---数据库不存在，应该先配置具体物业的数据库
                     continue;
                 }
 

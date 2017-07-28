@@ -36,7 +36,6 @@ class UserInfoApi extends Api
      */
     public static function create(string $runtimeDatabaseName = "")
     {
-
         /** Don't forget to configure model's connection, if you wanna change database at runtime! */
         parent::configureConnection($runtimeDatabaseName);
 

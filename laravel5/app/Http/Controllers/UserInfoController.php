@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Api\Module\Encrypt\EncryptFactory\EncryptFactory;
 use App\Api\UserInfoApi;
 use Illuminate\Support\Facades\Input;
 
@@ -13,7 +14,7 @@ class UserInfoController extends Controller
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      *
      * 响应请求 方法 GET
-     * http://localhost:8888/api/admin/verify/user/admin
+     * http://localhost:8888/api/admin/verify/user/misayozi
      */
     public function isUserNameExist($userName)
     {
@@ -70,9 +71,10 @@ class UserInfoController extends Controller
     {
         $userName = Input::get('username');
         $password = Input::get('password');
+
         $data = [
             'userName'=>$userName,
-            'loginPassword'=>$password
+            'loginPassword'=>EncryptFactory::getInstance()->createEncrypt()->doEncrypt($password)
         ];
 
         $arr = UserInfoApi::create()->registerUser($data, 'userName', $userName);
@@ -92,7 +94,7 @@ class UserInfoController extends Controller
         $username = Input::get('username');
         $password = Input::get('password');
 
-        $arr = UserInfoApi::create()->updateUserPassword(['loginPassword'=>$password], 'userName', $username);
+        $arr = UserInfoApi::create()->updateUserPassword(['loginPassword'=>EncryptFactory::getInstance()->createEncrypt()->doEncrypt($password)], 'userName', $username);
 
         return response()->json($arr, 200);
     }

@@ -137,28 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Repositories/Contracts/IRepository.php" />
-        <option value="$PROJECT_DIR$/前后端相关规范/route_revised_version.txt" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/NodeInfoController.php" />
-        <option value="$PROJECT_DIR$/前后端相关规范/add" />
-        <option value="$PROJECT_DIR$/前后端相关规范/routeSpecification/NodeInfo" />
-        <option value="$PROJECT_DIR$/app/Events/RealEstateRegistered.php" />
-        <option value="$PROJECT_DIR$/app/Api/RealEstateInfoApi.php" />
-        <option value="$PROJECT_DIR$/app/Listeners/RealEstateRegisteredListener.php" />
-        <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
-        <option value="$PROJECT_DIR$/readme.md" />
-        <option value="$PROJECT_DIR$/app/Events/Event.php" />
-        <option value="$PROJECT_DIR$/app/Events/Contracts/Event.php" />
-        <option value="$PROJECT_DIR$/app/Events/RealEstateInfoChanged.php" />
-        <option value="$PROJECT_DIR$/app/Listeners/RealEstateInfoChangedListener.php" />
-        <option value="$PROJECT_DIR$/前后端相关规范/routeSpecification/Client/VDeviceTypeInfo" />
-        <option value="$PROJECT_DIR$/app/Repositories/TestRepository.php" />
-        <option value="$PROJECT_DIR$/app/Models/TestModel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
-        <option value="$PROJECT_DIR$/app/Models/Client/_example_template_remote_XXXModel.php" />
-        <option value="$PROJECT_DIR$/app/Api/Utils/DBConfigUtil.php" />
-        <option value="$PROJECT_DIR$/app/Api/Contracts/Api.php" />
-        <option value="$PROJECT_DIR$/app/Api/Client/VDeviceTypeInfoApi.php" />
         <option value="$PROJECT_DIR$/app/Api/_example_template_XXXApi.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Client/VDeviceTypeInfoController.php" />
         <option value="$PROJECT_DIR$/app/Models/Client/AssetInfoModel.php" />
@@ -169,7 +147,6 @@
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/app/Models/_example_template_remote_XXXModel.php" />
         <option value="$PROJECT_DIR$/app/Models/_example_template_client_XXXModel.php" />
-        <option value="$PROJECT_DIR$/app/Api/UserInfoApi.php" />
         <option value="$PROJECT_DIR$/前后端相关规范/routeSpecification/NodeTree.txt" />
         <option value="$PROJECT_DIR$/前后端相关规范/V1/JinYeHotel_20170606.sql" />
         <option value="$PROJECT_DIR$/app/Models/Client/DistributionRoomInfoModel.php" />
@@ -177,7 +154,6 @@
         <option value="$PROJECT_DIR$/前后端相关规范/routeSpecification/Client/DistributionRoomInfo" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Client/DistributionRoomInfoController.php" />
         <option value="$PROJECT_DIR$/前后端相关规范/routeSpecification/RealEstateInfo.txt" />
-        <option value="$PROJECT_DIR$/resources/views/ajaxPostDemo.blade.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Eloquent/AbstractRepository.php" />
         <option value="$PROJECT_DIR$/前后端相关规范/路由规范/路由规范.txt" />
         <option value="$PROJECT_DIR$/前后端相关规范/路由规范/新增路由.txt" />
@@ -185,9 +161,33 @@
         <option value="$PROJECT_DIR$/app/Api/Node/VDeviceInfoApi.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Node/VDeviceInfoController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UserInfoController.php" />
         <option value="$PROJECT_DIR$/app/Api/Utils/DBDirector.php" />
         <option value="$PROJECT_DIR$/app/Api/NodeInfoApi.php" />
+        <option value="$PROJECT_DIR$/app/Api/EncryptModule/AbstractEncrypter.php" />
+        <option value="$PROJECT_DIR$/app/Api/UserInfoApi.php" />
+        <option value="$PROJECT_DIR$/app/Api/EncryptModule/Encrypt/AbstractEncrypter.php" />
+        <option value="$PROJECT_DIR$/app/Api/EncryptModule/EncryptFactory/AbstractFactory.php" />
+        <option value="$PROJECT_DIR$/app/Api/EncryptModule/Encrypt/EncryptAdapter.php" />
+        <option value="$PROJECT_DIR$/app/Api/EncryptModule/EncryptFactory/EncryptFactory.php" />
+        <option value="$PROJECT_DIR$/app/EncryptModule/Encrypt/AbstractEncrypter.php" />
+        <option value="$PROJECT_DIR$/app/EncryptModule/Encrypt/EncryptAdapter.php" />
+        <option value="$PROJECT_DIR$/app/EncryptModule/EncryptFactory/AbstractFactory.php" />
+        <option value="$PROJECT_DIR$/app/EncryptModule/EncryptFactory/EncryptFactory.php" />
+        <option value="$PROJECT_DIR$/app/Module/EncryptModule/Encrypt/AbstractEncrypter.php" />
+        <option value="$PROJECT_DIR$/app/Module/EncryptModule/Encrypt/EncryptAdapter.php" />
+        <option value="$PROJECT_DIR$/app/Module/EncryptModule/EncryptFactory/AbstractFactory.php" />
+        <option value="$PROJECT_DIR$/app/Module/EncryptModule/EncryptFactory/EncryptFactory.php" />
+        <option value="$PROJECT_DIR$/app/Api/Module/EncryptModule/Encrypt/AbstractEncrypter.php" />
+        <option value="$PROJECT_DIR$/app/Api/Module/EncryptModule/Encrypt/EncryptAdapter.php" />
+        <option value="$PROJECT_DIR$/app/Api/Module/EncryptModule/EncryptFactory/AbstractFactory.php" />
+        <option value="$PROJECT_DIR$/app/Api/Module/EncryptModule/EncryptFactory/EncryptFactory.php" />
+        <option value="$PROJECT_DIR$/app/Api/Module/Encrypt/AbstractEncrypter.php" />
+        <option value="$PROJECT_DIR$/app/Api/Module/Contracts/AbstractFactory.php" />
+        <option value="$PROJECT_DIR$/resources/views/ajaxPostDemo.blade.php" />
+        <option value="$PROJECT_DIR$/app/Api/Module/Encrypt/EncryptFactory/EncryptFactory.php" />
+        <option value="$PROJECT_DIR$/app/Api/Module/Encrypt/AbstractEncrypt.php" />
+        <option value="$PROJECT_DIR$/app/Api/Module/Encrypt/EncryptAdapter.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserInfoController.php" />
       </list>
     </option>
   </component>
@@ -205,9 +205,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
-    <option name="y" value="29" />
+    <option name="y" value="26" />
     <option name="width" value="1938" />
-    <option name="height" value="1060" />
+    <option name="height" value="1063" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -226,7 +226,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -239,8 +238,195 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Encrypt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Encrypt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EncryptFactory" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Module" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Contracts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,15 +438,15 @@
     <property name="php.override.implement.member.chooser.php.doc" value="INHERIT" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\wnmp\nginx\nginx-1.12.0\html\laravel5\app\Api\Module\Contracts" />
+      <recent name="D:\wnmp\nginx\nginx-1.12.0\html\laravel5\app\Api\Module\Encrypt" />
+      <recent name="D:\wnmp\nginx\nginx-1.12.0\html\laravel5\app\Api\Module" />
+      <recent name="D:\wnmp\nginx\nginx-1.12.0\html\laravel5\app\Api" />
+      <recent name="D:\wnmp\nginx\nginx-1.12.0\html\laravel5\app\Module" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\laravel\public" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\wnmp\nginx\nginx-1.12.0\html\laravel5\app\Models" />
-      <recent name="D:\wnmp\nginx\nginx-1.12.0\html\laravel5\app\Events\Contracts" />
-      <recent name="D:\wnmp\nginx\nginx-1.12.0\html\laravel5\前后端相关规范\routeSpecification" />
-      <recent name="D:\wnmp\nginx\nginx-1.12.0\html\laravel5\前后端相关规范\routeSpecification\Node" />
-      <recent name="D:\wnmp\nginx\nginx-1.12.0\html\laravel5\app" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -493,11 +679,14 @@
       <workItem from="1497948607285" duration="260000" />
       <workItem from="1497949043826" duration="63000" />
       <workItem from="1497949134661" duration="106000" />
+      <workItem from="1499224031017" duration="10000" />
+      <workItem from="1499397619406" duration="183000" />
+      <workItem from="1501206864743" duration="6397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="602555000" />
+    <option name="totallyTimeSpent" value="609145000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -509,7 +698,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="29" width="1938" height="1060" extended-state="6" />
+    <frame x="-9" y="26" width="1938" height="1063" extended-state="6" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -545,185 +734,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="uml://PHP/D:/wnmp/nginx/nginx-1.12.0/html/laravel5/app/Events">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>PHP</ID>
-          <OriginalElement>$PROJECT_DIR$/app/Events</OriginalElement>
-          <nodes>
-            <node x="" y="">\App\Events\Contracts\Event</node>
-            <node x="" y="">\App\Listeners\RealEstateInfoChangedListener</node>
-            <node x="" y="">\App\Events\RealEstateInfoChanged</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="143.0" y="242.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constants</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://PHP/\App\Listeners\RealEstateInfoChangedListener">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>PHP</ID>
-          <OriginalElement>\App\Listeners\RealEstateInfoChangedListener</OriginalElement>
-          <nodes>
-            <node x="" y="">\App\Listeners\RealEstateInfoChangedListener</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="154.0" y="25.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constants</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://PHP/D:/wnmp/nginx/nginx-1.12.0/html/laravel5/app/Models">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>PHP</ID>
-          <OriginalElement>$PROJECT_DIR$/app/Models</OriginalElement>
-          <nodes>
-            <node x="" y="">\App\Models\_example_template_XXXModel</node>
-            <node x="" y="">\App\Models\Client\_example_template_client_XXXModel</node>
-            <node x="" y="">\Illuminate\Database\Eloquent\Model</node>
-            <node x="" y="">\App\Models\UserInfoModel</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="654.0" y="176.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Contracts/Api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/_example_template_XXXApi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/UserInfoApi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="36" column="67" lean-forward="true" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Utils/DBConfigUtil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://PHP/D:/wnmp/nginx/nginx-1.12.0/html/laravel5/app/Api">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>PHP</ID>
-          <OriginalElement>$PROJECT_DIR$/app/Api</OriginalElement>
-          <nodes>
-            <node x="0.0" y="0.0">\App\Api\Contracts\Api</node>
-            <node x="298.0" y="208.0">\App\Api\UserInfoApi</node>
-            <node x="736.0" y="208.0">\App\Api\_example_template_XXXApi</node>
-            <node x="-2.0" y="-108.0">\App\Api\Utils\ApiInstanceFactory</node>
-          </nodes>
-          <notes>
-            <note x="1042.0" y="-4.0">
-              <node>\App\Api\Utils\ApiInstanceFactory</node>
-              <value>Cocos2d-x style CREATE_FUNC</value>
-              <edge>
-                <point x="0.0" y="0.0" />
-                <point x="1192.0" y="-64.0" />
-                <point x="0.0" y="0.0" />
-              </edge>
-            </note>
-          </notes>
-          <edges>
-            <edge source="\App\Api\_example_template_XXXApi" target="\App\Api\Contracts\Api">
-              <point x="0.0" y="0.0" />
-              <point x="929.5" y="84.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="\App\Api\UserInfoApi" target="\App\Api\Contracts\Api">
-              <point x="0.0" y="0.0" />
-              <point x="502.5" y="84.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="633.0" y="216.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Client/DistributionRoomInfoModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1247">
-          <caret line="50" column="51" lean-forward="false" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/ClientRepository/DistributionRoomInfoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-246">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Client/DistributionRoomInfoApi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4800">
-          <caret line="216" column="41" lean-forward="false" selection-start-line="216" selection-start-column="41" selection-end-line="216" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/前后端相关规范/routeSpecification/Client/DistributionRoomInfo" />
-    <entry file="file://$PROJECT_DIR$/resources/views/ajaxPostDemo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Node/VDeviceNodeInfoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="44" column="55" lean-forward="false" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/DistributionRoomInfoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -788,13 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserInfoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RealEstateInfoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="841">
@@ -842,24 +845,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Utils/DBDirector.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NodeInfoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-29">
           <caret line="28" column="23" lean-forward="true" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/NodeInfoApi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="162" column="42" lean-forward="true" selection-start-line="162" selection-start-column="42" selection-end-line="162" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -873,6 +862,160 @@
     <entry file="file://$PROJECT_DIR$/前后端相关规范/V1/HWDeviceCloudRoot.sql" />
     <entry file="file://$PROJECT_DIR$/前后端相关规范/V1/JinYeHotel_20170606.sql" />
     <entry file="file://$PROJECT_DIR$/前后端相关规范/V1/HWDeviceCloudNode.sql" />
+    <entry file="file://$PROJECT_DIR$/app/Api/Contracts/Api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Utils/ApiInstanceFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-261">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/NodeInfoApi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4431">
+          <caret line="162" column="42" lean-forward="true" selection-start-line="162" selection-start-column="42" selection-end-line="162" selection-end-column="42" />
+          <folding>
+            <marker date="1497837068686" expanded="true" signature="4637:4673" ph="SELECT * FRO... distribution_room_info" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://PHP/D:/wnmp/nginx/nginx-1.12.0/html/laravel5/app/Api/EncryptModule">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>$PROJECT_DIR$/app/Api/EncryptModule</OriginalElement>
+          <nodes>
+            <node x="" y="">\App\Api\EncryptModule\Encrypt\EncryptAdapter</node>
+            <node x="" y="">\App\Api\EncryptModule\Encrypt\AbstractEncrypt</node>
+            <node x="" y="">\App\Api\EncryptModule\EncryptFactory\AbstractFactory</node>
+            <node x="" y="">\App\Api\EncryptModule\EncryptFactory\EncryptFactory</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="84.0" y="171.0" />
+          <SelectedNodes />
+          <Categories />
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="40" lean-forward="true" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="93" column="9" lean-forward="false" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Utils/DBConfigUtil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Utils/DBDirector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="29" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Module/Encrypt/AbstractEncrypter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/ajaxPostDemo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserInfoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1646">
+          <caret line="75" column="34" lean-forward="true" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
+          <folding>
+            <element signature="e#40#97#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/UserInfoApi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="124" column="14" lean-forward="true" selection-start-line="124" selection-start-column="14" selection-end-line="124" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Module/Contracts/AbstractFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Module/Encrypt/EncryptAdapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#42#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Module/Encrypt/AbstractEncrypt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Module/Encrypt/EncryptFactory/EncryptFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="45" lean-forward="true" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

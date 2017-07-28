@@ -44,11 +44,16 @@
 - DBDirector组件——用于为DB门面动态连接数据库，使用单例模式；
 - CacheManager组件——用于数据缓存的管理(TODO)，使用单例模式。
 
+新增模块：
+
+- 使用适配器模式设计了加密器产品；
+- 使用抽象工厂模式提供了创建具体产品（比如加密器）的接口、新增产品的的接口。
+
 ### 1.5 安全的考虑
 
 - 对涉及的保密数据，采用加密手法进行信息的传输；
 - 对于异常处理，采用日志记录进行跟踪管理；
-- MD5二次加密；
+- 使用openssl加密；
 - Sql防注入；
 - CRSF攻击。
 
@@ -271,7 +276,43 @@ XXXModel常用的成员变量有：
 请记住：父类Api是我规定的一个契约，所有的Api子类都应该继承它。Api仅有一个数据成员$repositoryMgr（仓库管理员），那么如何关联到具体数据模型的仓库管理员呢？这里我借鉴了Cocos2d-x中[CREATE_FUNC](http://baike.baidu.com/link?url=6WfTtr1SaeezotqiTea9e43X8xDAPaIaLPB2CrZMpg6G_8UC157gsjPTJ3F5mgisHAwajSunz17-jbandHJKbLtFjIdxpfMY9wC0B3unAaG "Cocos2d-x CREATE_FUNC")宏的设计，并加以改进为ApiInstanceFactory工具类，该工具类使用**静态工厂方法模式**；只需要在派生类Api中的静态方法create中调用该工具类的CREATE_FUNC即可关联到具体的仓库管理员。
 
 
-### 4.5 Outstanding Feature
+### 4.5 新增模块
+
+#### 4.5.1 加密器模块
+
+该系统某些地方需要提供一个加密操作，比如需将用户信息（如密码等机密信息）加密之后再存储在数据库中。为了提高开发效率，现需要重用已有的加密算法，这些算法封装在一些由第三方提供的类中，有些甚至没有源代码。这里我使用适配器模式设计该加密模块，实现在不修改现有Laravel框架提供的加密类的基础上重用它的加密方法，以使得原有的加密器类的接口转换为我希望的另一个接口。类图如下：
+
+![factory_adapter](http://i.imgur.com/b07OBq7.png)
+
+适配器模式中的参与者：
+
+- **AbstractEncrypt**（Target）
+  - 定义了与加密器相关的特定接口。
+- **EncryptAdapter**（Adapter）
+  - 对Adaptee的接口与Target接口进行适配；
+  - 因使用对象结构模型，所有维护了一个指向Adaptee的指针或引用——这里是引用_encrypter。
+- **Encrypter**（Adaptee）
+  - 定义一个已存在的接口，这个接口需要适配；这里使用Laravel框架自带的加密类。
+
+整张类图中的参与者为：
+
+- **AbstractFactory**
+  - 声明一个创建抽象产品对象的操作接口。
+- **ConcreteFactory**（EncryptFactory）
+  - 实现创建具体产品对象的操作。具体产品类一般实现为单件。
+- **AbstractProduct**（AbstractEncrypt）
+  - 为一类产品对象声明接口。
+- **ConcreteProduct**（EncryptAdapter）  
+  - 定义一个将被相应的具体工厂创建的产品对象；
+  - 实现AbstractProduct接口。
+
+
+
+
+
+
+
+### 4.6 Outstanding Feature
 
 这里总结一下后端项目的突出特性：
 

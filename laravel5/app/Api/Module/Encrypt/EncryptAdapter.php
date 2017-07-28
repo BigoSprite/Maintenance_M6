@@ -16,9 +16,6 @@ class EncryptAdapter extends AbstractEncrypt
      */
     protected $_encrypter;
 
-    /**
-     * 注意该构造函数注入了Laravel框架提供的用于加密的类
-     */
     public function  __construct()
     {
         $random_key = env('APP_KEY');

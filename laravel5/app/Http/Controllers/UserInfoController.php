@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Api\Module\Contracts\AbstractFactory;
 use App\Api\Module\Encrypt\EncryptFactory\EncryptFactory;
 use App\Api\UserInfoApi;
 use Illuminate\Support\Facades\Input;

@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+// ORM
 class UserInfoModel extends Model
 {
     protected $connection = 'mysql';
